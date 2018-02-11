@@ -15,18 +15,47 @@
 # in the templates via {{ site.myvariable }}.
 title: Homepage of Miretz
 email: 
+name: "Miretz"
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to my personal website! I'm a senior software engineer, architect and IT lead
   in the area of text mining, machine learning and natural language processing. 
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://miretz.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
 github_username:  miretz
 linkedin_username: miroslav-semerad-0b620154
+repository: "miretz/miretz.github.io"
+search: true
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      read_time: true
+      author_profile: true
+      share: true
+      related: true
+      toc: true
+
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+
+author:
+  name   : "Miroslav Semerad"
+  avatar : "/assets/images/bio-foto.jpg"
+  bio    : "I'm a senior software engineer, architect and IT lead in the area of text mining, machine learning and natural language processing."
+  email  : # optional
+  uri    : "https://miretz.github.io/about"
+  home   : # null (default), "absolute or relative url to link to author home"
+
 
 # Build settings
 markdown: kramdown
-theme: minima
+remote_theme: "mmistakes/minimal-mistakes"
+# theme: minimal-mistakes-jekyll
+minimal_mistakes_skin: "air"
 plugins:
   - jekyll-feed
 

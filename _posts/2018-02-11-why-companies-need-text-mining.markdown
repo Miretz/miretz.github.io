@@ -1,8 +1,13 @@
 ---
-layout: post
+layout: single
 title:  "Why companies need text mining"
 date:   2018-02-11 16:00:00 +0100
 categories: analytics
+header:
+    overlay_image: /assets/images/old-docs.jpeg
+    show_overlay_excerpt: false
+    overlay_filter: rgba(0, 73, 101, 0.5)
+    teaser: /assets/images/old-docs-teaser.jpeg
 ---
 
 The business world is littered with all kinds of documents which contain important data. Corporate employees have to process thousands of documents every day. Ranging from various contracts, reports, documentation to spreadsheets and receipts. Manual entry into enterprise systems is a tedious and error prone process that does not ensure that the data input really reflects what is in the document.
@@ -76,4 +81,4 @@ I recommend these tools as starting points:
 Many times companies do not realize how much they depend on their unstructured data. Understanding the information in the documents they process every day should not be an IT goal. It should be a business goal. The new benefits that text mining brings to the table, gives the company not only a competitive edge, but also insights into data they already have. The capabilities to quickly find and process documents is essential in the modern competetive market.
 Having a text mining team close to the business helps to modernize many business processes.
 
-[Miretz](/about)
+
