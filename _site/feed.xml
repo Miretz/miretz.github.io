@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-11T20:53:09+01:00</updated><id>http://localhost:4000/</id><title type="html">Homepage of Miretz</title><subtitle>Welcome to my personal website! I'm a senior software engineer, architect and IT lead in the area of document analytics which includes text mining, machine learning and natural language processing. </subtitle><entry><title type="html">Why companies need text mining</title><link href="http://localhost:4000/analytics/2018/02/11/why-companies-need-text-mining.html" rel="alternate" type="text/html" title="Why companies need text mining" /><published>2018-02-11T16:00:00+01:00</published><updated>2018-02-11T16:00:00+01:00</updated><id>http://localhost:4000/analytics/2018/02/11/why-companies-need-text-mining</id><content type="html" xml:base="http://localhost:4000/analytics/2018/02/11/why-companies-need-text-mining.html">&lt;p&gt;The business world is littered with all kinds of documents which contain important data. Corporate employees have to process thousands of documents every day. Ranging from various contracts, reports, documentation to spreadsheets and receipts. Manual entry into enterprise systems is a tedious and error prone process that does not ensure that the data input really reflects what is in the document.&lt;/p&gt;
+
+&lt;p&gt;In this article I’m going to explore some typical document processing challenges and provide some basic starting points, tools and methodologies.&lt;/p&gt;
+
+&lt;h2 id=&quot;storage-digitalization-and-records-management&quot;&gt;Storage, Digitalization and Records Management&lt;/h2&gt;
+
+&lt;p&gt;Many companies still process and store a lot of paper documents. These take up a lot of space and need to be stored in specific ways to be easy to retrieve if needed. This is very difficult and expensive so more and more companies invest in scanning and &lt;a href=&quot;https://en.wikipedia.org/wiki/Enterprise_content_management&quot;&gt;ECM&lt;/a&gt; platforms.
+To turn the documents into searchable plain text format an &lt;a href=&quot;https://en.wikipedia.org/wiki/Optical_character_recognition&quot;&gt;OCR&lt;/a&gt; tool is required.&lt;/p&gt;
+
+&lt;p&gt;A global company must be able to handle documents in many languages. Languages like arabic and chinese are difficult to process and the company needs to make sure that all the enterprise systems can work with these languages.
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Unicode&quot;&gt;Unicode standard&lt;/a&gt; should be preferred.&lt;/p&gt;
+
+&lt;p&gt;Having a &lt;a href=&quot;https://en.wikipedia.org/wiki/Records_management&quot;&gt;Records Management&lt;/a&gt; function supported by enterprise systems is very beneficial. Proper RM can help reducing document processing workloads and also helps to filter out the documents that are no longer relevant to the business.&lt;/p&gt;
+
+&lt;p&gt;Starting points:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Optical_character_recognition&quot;&gt;OCR&lt;/a&gt; platform - to convert scans into plain text&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Enterprise_content_management&quot;&gt;ECM&lt;/a&gt; platform - to store documents and metadata&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Unicode&quot;&gt;Unicode&lt;/a&gt; - to ensure consistend document encoding&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Records_management&quot;&gt;Records Management&lt;/a&gt; - to manage lifecycle of information&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;searching&quot;&gt;Searching&lt;/h2&gt;
+
+&lt;p&gt;Reading a 100 page contract to answer a simple question consumes a lot of time. Searching the text for specific term might produce the desired information but often it is hard to know exactly what to search for. The document might be written in such way that a plain text search does not answer our question at all without understanding the intent and contextual meaning in the document. &lt;a href=&quot;https://en.wikipedia.org/wiki/Semantic_search&quot;&gt;Semantic search&lt;/a&gt; is a much better way to solve this issue and is successfully used by major search engines.&lt;/p&gt;
+
+&lt;p&gt;A good starting point is to deploy and integrate open source search engines, fill them with unstructured data and build analytics on top of them. The most popular search engines are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.elastic.co/&quot;&gt;Elastic Search&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://lucene.apache.org/solr/&quot;&gt;Solr&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;table-extraction&quot;&gt;Table extraction&lt;/h2&gt;
+
+&lt;p&gt;On the other hand, tabular data might be easier to be processed by a human. However, if there is a lot of them (imagine thousands of receipts) it can become very exhaustive. Computers are much better at performing these repetetive tasks. Automation of table extraction is the way to tackle this problem. There are some tools that can help:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://tabula.technology/&quot;&gt;Tabula&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://pdftables.com/&quot;&gt;PDF Tables&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/WZBSocialScienceCenter/pdftabextract&quot;&gt;pdftableextract&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These tools are a good starting point to understand extraction of values from tables. The concrete solution really depends on how complex are the documents that the company needs to process.&lt;/p&gt;
+
+&lt;h2 id=&quot;classification&quot;&gt;Classification&lt;/h2&gt;
+
+&lt;p&gt;Many business processes are based on correct classification of the incomming documents. The employee must first identify and categorize the document before he can decide what to do with it. With the advent of machine learning, classification of documents became available and much more reliable. The pool of open source and commercial text classification tools is still growing and more advanced techniques based on &lt;a href=&quot;https://en.wikipedia.org/wiki/Deep_learning&quot;&gt;deep learning&lt;/a&gt; are accessible and abstracted in high level machine learning frameworks.&lt;/p&gt;
+
+&lt;p&gt;In text classification the data preparation is as important as training the machine learning model.&lt;/p&gt;
+
+&lt;p&gt;There are various preprocessing steps used in text classification:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Stemming&quot;&gt;stemming&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Lemmatisation&quot;&gt;lemmatisation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;splitting to &lt;a href=&quot;https://en.wikipedia.org/wiki/N-gram&quot;&gt;n-grams&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;removal of &lt;a href=&quot;https://en.wikipedia.org/wiki/Stop_words&quot;&gt;stop words&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;There are 2 common approaches to prepare input for the model:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Tf%E2%80%93idf&quot;&gt;tf-idf&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Word2vec&quot;&gt;word2vec&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The model architecture really depends on experimentation and measuring. Sometimes linear models like &lt;a href=&quot;https://en.wikipedia.org/wiki/Logistic_regression&quot;&gt;logistic regression&lt;/a&gt; might perform good enough. Other times deep &lt;a href=&quot;https://en.wikipedia.org/wiki/Artificial_neural_network&quot;&gt;neural networks&lt;/a&gt; might be a better option providing higher  accuracy. It is up to the data science team to explore the documents, define the preprocessing steps, compare various models, tune their parameters and measure the results.&lt;/p&gt;
+
+&lt;p&gt;I recommend these tools as starting points:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html&quot;&gt;scikit-learn&lt;/a&gt; - basics of text classification&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://spark.apache.org/mllib/&quot;&gt;Apache Spark MLib&lt;/a&gt; - scalable machine learning library&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://keras.io/&quot;&gt;Keras&lt;/a&gt; - high level deep learning library&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://pytorch.org/&quot;&gt;PyTorch&lt;/a&gt; - deep learning framework&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://radimrehurek.com/gensim/&quot;&gt;Gensim&lt;/a&gt; - topic modelling and text similarity&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;text-mining-and-the-business&quot;&gt;Text mining and the business&lt;/h2&gt;
+
+&lt;p&gt;Many times companies do not realize how much they depend on their unstructured data. Understanding the information in the documents they process every day should not be an IT goal. It should be a business goal. The new benefits that text mining brings to the table, gives the company not only a competitive edge, but also insights into data they already have. The capabilities to quickly find and process documents is essential in the modern competetive market.
+Having a text mining team close to the business helps to modernize many business processes.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/about&quot;&gt;Miretz&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">The business world is littered with all kinds of documents which contain important data. Corporate employees have to process thousands of documents every day. Ranging from various contracts, reports, documentation to spreadsheets and receipts. Manual entry into enterprise systems is a tedious and error prone process that does not ensure that the data input really reflects what is in the document.</summary></entry></feed>
