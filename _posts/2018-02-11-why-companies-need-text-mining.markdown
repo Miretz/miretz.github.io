@@ -33,9 +33,9 @@ Starting points:
 
 ## Searching
 
-Reading a 100 page contract to answer a simple question consumes a lot of time. Searching the text for specific term might produce the desired information but often it is hard to know exactly what to search for. The document might be written in such way that a plain text search does not answer our question at all without understanding the intent and contextual meaning in the document. [Semantic search](https://en.wikipedia.org/wiki/Semantic_search) is a much better way to solve this issue and is successfully used by major search engines.
+Reading a 100 page contract to answer a simple question consumes a lot of time. Searching the text for a specific term might lead to the desired information but often it is hard to know the exact phrase to search for. The document might be written in such way that a plain text search does not answer our question at all without understanding the intent and contextual meaning in the document. [Semantic search](https://en.wikipedia.org/wiki/Semantic_search) is a much better way to solve this issue and it is successfully used by major search engines.
 
-A good starting point is to deploy and integrate open source search engines, fill them with unstructured data and build analytics on top of them. The most popular search engines are:
+A good starting point is to deploy and integrate an open source search engine, fill it with unstructured data and build analytics on top of it. The most popular search engines are:
 - [Elastic Search](https://www.elastic.co/)
 - [Solr](http://lucene.apache.org/solr/) 
 
@@ -54,7 +54,7 @@ These tools are a good starting point to understand extraction of values from ta
 
 Many business processes are based on correct classification of the incomming documents. The employee must first identify and categorize the document before he can decide what to do with it. With the advent of machine learning, classification of documents became available and much more reliable. The pool of open source and commercial text classification tools is still growing and more advanced techniques based on [deep learning](https://en.wikipedia.org/wiki/Deep_learning) are accessible and abstracted in high level machine learning frameworks.
 
-In text classification the data preparation is as important as training the machine learning model.
+The data preparation steps are as important as training the machine learning classifier itself.
 
 There are various preprocessing steps used in text classification:
 - [stemming](https://en.wikipedia.org/wiki/Stemming)
