@@ -78,7 +78,7 @@ I recommend these tools as starting points:
 
 ## Text mining and the business
 
-Many times companies do not realize how much they depend on their unstructured data. Understanding the information in the documents they process every day should not be an IT goal. It should be a business goal. The new benefits that text mining brings to the table, gives the company not only a competitive edge, but also insights into data they already have. The capabilities to quickly find and process documents is essential in the modern competetive market.
+Many times companies do not realize how much they depend on their unstructured data. Understanding the information in the documents they process every day should not be an IT goal. It should be a business goal. The new benefits that text mining brings to the table, gives the company not only a competetive edge, but also insights into data they already have. The capabilities to quickly find and process documents is essential in the modern competetive market.
 Having a text mining team close to the business helps to modernize many business processes.
 
 
