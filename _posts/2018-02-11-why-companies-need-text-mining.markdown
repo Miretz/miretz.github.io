@@ -27,7 +27,7 @@ Having a [Records Management](https://en.wikipedia.org/wiki/Records_management) 
 Starting points:
 - [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition) platform - to convert scans into plain text
 - [ECM](https://en.wikipedia.org/wiki/Enterprise_content_management) platform - to store documents and metadata
-- [Unicode](https://en.wikipedia.org/wiki/Unicode) - to ensure consistend document encoding
+- [Unicode](https://en.wikipedia.org/wiki/Unicode) - to ensure consistent document encoding
 - [Records Management](https://en.wikipedia.org/wiki/Records_management) - to manage lifecycle of information
 
 
