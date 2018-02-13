@@ -17,7 +17,7 @@ But what exactly is a project? What are the essential phases and best practices 
 
 ## Project
 
-From a high level point of view a project is an individual or collaborative activity to achieve certain goals. This activity involves various tasks like desing, research, planning and development which are executed over a period of time. Projects might be long-term or temporary and might be completely operational (like running databases, systems or services).
+From a high level point of view a project is an individual or collaborative activity to achieve certain goals. This activity involves various tasks like design, research, planning and development which are executed over a period of time. Projects might be long-term or temporary and might be completely operational (like running databases, systems or services).
 
 ## Idea
 
@@ -29,7 +29,7 @@ There is a way to give value to an idea. It is called a [Proof of concept](https
 
 ## Proof of concept
 
-Proof of concept is a validation of a feasibility of a particular idea. This is usually done in a form of demonstration of a prototype to the potentional customers and investors. In the real world the creator of an idea must invest his own resources first to develop this protytpe. If the product has immediate value by solving a real problem this is a good validation of the idea. However, not all prototypes provide a good basis to estimate future value. For example for a [social network](https://en.wikipedia.org/wiki/Social_network) website the ONLY value will be actual users. There are many websites with a better idea and better code than the current popular social networks, but without any users. This can be applied to many other software projects as well. Without users the product becomes useless. So what do we do next? How do we know that the project will succeed? 
+Proof of concept is a validation of a feasibility of a particular idea. This is usually done in a form of demonstration of a prototype to the potentional customers and investors. In the real world the creator of an idea must invest his own resources first to develop this prototype. If the product has immediate value by solving a real problem this is a good validation of the idea. However, not all prototypes provide a good basis to estimate future value. For example for a [social network](https://en.wikipedia.org/wiki/Social_network) website the ONLY value will be actual users. There are many websites with a better idea and better code than the current popular social networks, but without any users. This can be applied to many other software projects as well. Without users the product becomes useless. So what do we do next? How do we know that the project will succeed? 
 
 ## Research
 
@@ -63,7 +63,7 @@ Here is a short list of the phases and the steps to take when creating new proje
 ## Proof of concept phase
 
 1. Design the **business logic** 
-2. Desing the **presentation layer**
+2. Design the **presentation layer**
 2. Develop a **basic prototype**
     - focus on main features or particular user stories
 3. Make sure that the prototype is **fully functional** for at least one of the user stories
