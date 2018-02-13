@@ -12,7 +12,7 @@ header:
 
 In the current world of business, IT is tightly integrated into every process of the company. Each operation is usually supported, controlled or monitored using a specific information system. Payroll, accounting, internal and external communication, human resources, marketing, reporting and other activities rely heavily on IT systems operating correctly.
 
-These systems were introduced in a form of a software project. 
+All of these systems and many more useful applications started in a form of a software project. 
 But what exactly is a project? What are the essential phases and best practices to start a new project? 
 
 ## Project
@@ -23,7 +23,7 @@ From a high level point of view a project is an individual or collaborative acti
 
 At the very beginning of a project is an idea. This could be a completely new thing or an improvement of something that already exists. Ideas are actually the easiest step in the project. People who observe the environment around them can come up with a lot of good and relevant ideas. There are also many people who claim that they have the idea for the next "big thing", but until it is executed, **the idea is actually worth nothing**.
 
-Ideas have no value to investors and even if the person got someone on board, the investment they bring will be worth infinitely more than the initial idea. The original "idea guy" will be left with 1% ownership and 0 control.
+Ideas don't have value to investors and even if the person got someone on board, the investment they bring will be worth infinitely more than the initial idea. The original "idea guy" will be left with 1% ownership and 0 control.
 
 There is a way to give value to an idea. It is called a [Proof of concept](https://en.wikipedia.org/wiki/Proof_of_concept).
 
