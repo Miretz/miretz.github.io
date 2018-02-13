@@ -57,7 +57,7 @@ Here is a short list of the phases and the steps to take when creating new proje
   - Underline the purpose of the project and the desired outcomes
   - Do you know something similar, but want to do a better version of it? (How would it be better? Why should users switch to your version?)
 3. List of **main features**
-4. **Personas** - Make up people, imagine future users, Remember to stay with why, not how
+4. **Personas** -  Imagine future users, Remember to stay with why, not how
 5. Design concrete **user stories**
 
 ## Proof of concept phase
@@ -79,4 +79,4 @@ Here is a short list of the phases and the steps to take when creating new proje
 
 ## Development phase
 
-When the project reaches this phase we could say that the project has officialy started. This does not mean that it will be sucessful, but we minimized the chance of working on something which is not feasible. I will expand more on the topic of software project development in one of my next posts. Thanks for reading the article and good luck on your projects!
+When the project reaches this phase we could say that the project has officialy started. This does not mean that it will be sucessful, but we minimized the chance of working on something which is not feasible. I will expand more on the topic of software project development in one of my next posts. Thanks for reading the article and good luck on your own projects!
