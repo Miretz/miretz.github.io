@@ -16,7 +16,7 @@ Let's explore some typical challenges and some basic starting steps, tools and m
 
 ## Storage, Digitalization and Records Management
 
-Many companies still process and store a lot of paper documents. These take up a lot of space and need to be stored in specific ways for easy retrieval if needed. It is very difficult and expensive to set this up, so more and more companies invest in scanning and store the scans in [Enterprise Content Management (ECM)](https://en.wikipedia.org/wiki/Enterprise_content_management) systems.
+Many companies still process and store a lot of paper documents. These take up a lot of space and need to be stored in specific ways for easy retrieval if needed. It is very difficult and expensive to set this up, so more and more companies invest in scanning and store the digital scans in [Enterprise Content Management (ECM)](https://en.wikipedia.org/wiki/Enterprise_content_management) systems.
 To turn these scans (which are images) into searchable plain text format an [Optical Character Recognition (OCR)](https://en.wikipedia.org/wiki/Optical_character_recognition) tool is required.
 
 A global company must be able to handle documents in many languages. Languages like arabic and chinese are difficult to process and the company needs to make sure that all the enterprise systems can work with these languages.
