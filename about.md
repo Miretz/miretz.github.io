@@ -7,13 +7,13 @@ permalink: /about/
 Welcome to my personal website! I'm a senior software engineer, architect and technical lead
 in the area of text mining, machine learning and natural language processing.
 
-My IT journey began in my high school years when I started to write simple applications in Delpi and 
+My IT journey began in my high school years when I started to write simple applications in Delphi and 
 websites using PHP. During my college years I shifted my focus to Java, as there was a high
 demand for Java programmers at the time and I saw it as perfect way to begin my career in IT.
 
 I've spent most of my years as a Java developer working on complex enterprise applications.
 Working for a company that builds and sells [Records Management](https://en.wikipedia.org/wiki/Records_management) and
-[Information Governance](https://en.wikipedia.org/wiki/Information_governance) software made me realise 
+[Information Governance](https://en.wikipedia.org/wiki/Information_governance) software made me realize 
 how hard it is for a company to correctly catalog huge amounts of documents.
 Companies lose track of important data in terabytes of various documents processed each day.
 

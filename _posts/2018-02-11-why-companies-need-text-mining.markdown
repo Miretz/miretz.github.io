@@ -42,7 +42,7 @@ A good starting point is to deploy and integrate an open source search engine, f
 
 ## Table extraction
 
-On the other hand, tabular data might be easier to be processed by a human. However, if there is a lot of them (imagine thousands of receipts) it can become very exhaustive. Computers are much better at performing these repetetive tasks. Automation of table extraction is the way to tackle this problem. There are some tools that can help:
+On the other hand, tabular data might be easier to be processed by a human. However, if there is a lot of them (imagine thousands of receipts) it can become very exhaustive. Computers are much better at performing these repetitive tasks. Automation of table extraction is the way to tackle this problem. There are some tools that can help:
 - [Tabula](http://tabula.technology/)
 - [PDF Tables](https://pdftables.com/)
 - [pdftableextract](https://github.com/WZBSocialScienceCenter/pdftabextract)
@@ -52,7 +52,7 @@ These tools are a good starting point to understand extraction of values from ta
 
 ## Classification
 
-Many business processes are based on correct classification of the incomming documents. The employee must first identify and categorize the document before he can decide what to do with it. With the advent of machine learning, classification of documents became available and much more reliable. The pool of open source and commercial text classification tools is still growing and more advanced techniques based on [deep learning](https://en.wikipedia.org/wiki/Deep_learning) are accessible and abstracted in high level machine learning frameworks.
+Many business processes are based on correct classification of the incoming documents. The employee must first identify and categorize the document before he can decide what to do with it. With the advent of machine learning, classification of documents became available and much more reliable. The pool of open source and commercial text classification tools is still growing and more advanced techniques based on [deep learning](https://en.wikipedia.org/wiki/Deep_learning) are accessible and abstracted in high level machine learning frameworks.
 
 The data preparation steps are as important as training the machine learning classifier itself.
 
@@ -74,11 +74,11 @@ I recommend these tools as starting points:
 - [Apache Spark MLib](https://spark.apache.org/mllib/) - scalable machine learning library
 - [Keras](https://keras.io/) - high level deep learning library
 - [PyTorch](http://pytorch.org/) - deep learning framework
-- [Gensim](https://radimrehurek.com/gensim/) - topic modelling and text similarity
+- [Gensim](https://radimrehurek.com/gensim/) - topic modeling and text similarity
 
 ## Text mining and the business
 
-Many times companies do not realize how much they depend on their unstructured data. Understanding the information in the documents they process every day should not be an IT goal. It should be a business goal. The new benefits that text mining brings to the table, gives the company not only a competetive edge, but also insights into data they already have. The capabilities to quickly find and process documents is essential in the modern competetive market.
+Many times companies do not realize how much they depend on their unstructured data. Understanding the information in the documents they process every day should not be an IT goal. It should be a business goal. The new benefits that text mining brings to the table, gives the company not only a competitive edge, but also insights into data they already have. The capabilities to quickly find and process documents is essential in the modern competitive market.
 Having a text mining team close to the business helps to modernize many business processes.
 
 

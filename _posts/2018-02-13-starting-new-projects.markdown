@@ -29,11 +29,11 @@ There is a way to give value to an idea. It is called a [Proof of concept](https
 
 ## Proof of concept
 
-Proof of concept is a validation of a feasibility of a particular idea. This is usually done in a form of demonstration of a prototype to the potentional customers and investors. In the real world the creator of an idea must invest his own resources first to develop this prototype. If the product has immediate value by solving a real problem this is a good validation of the idea. However, not all prototypes provide a good basis to estimate future value. For example for a [social network](https://en.wikipedia.org/wiki/Social_network) website the ONLY value will be actual users. There are many websites with a better idea and better code than the current popular social networks, but without any users. This can be applied to many other software projects as well. Without users the product becomes useless. So what do we do next? How do we know that the project will succeed? 
+Proof of concept is a validation of a feasibility of a particular idea. This is usually done in a form of demonstration of a prototype to the potential customers and investors. In the real world the creator of an idea must invest his own resources first to develop this prototype. If the product has immediate value by solving a real problem this is a good validation of the idea. However, not all prototypes provide a good basis to estimate future value. For example for a [social network](https://en.wikipedia.org/wiki/Social_network) website the ONLY value will be actual users. There are many websites with a better idea and better code than the current popular social networks, but without any users. This can be applied to many other software projects as well. Without users the product becomes useless. So what do we do next? How do we know that the project will succeed? 
 
 ## Research
 
-It is hard to guess if a software project will be successful. We must execute extensive research to ensure that the project has the potential to be sucessful. I have deliberately put this step after the proof of concept phase. If we already have something in a form of a prototype we can ask for real feedback, use analytics and study usability of the software. With more feedback we can react and introduce improvements and changes. We do it again with the new version and collect even more data. This is an iterative process which has two possible outcomes:
+It is hard to guess if a software project will be successful. We must execute extensive research to ensure that the project has the potential to be successful. I have deliberately put this step after the proof of concept phase. If we already have something in a form of a prototype we can ask for real feedback, use analytics and study usability of the software. With more feedback we can react and introduce improvements and changes. We do it again with the new version and collect even more data. This is an iterative process which has two possible outcomes:
 - We realize that our project will fail - cancel the project as soon as possible, save money, focus on other projects
 - We realize that our project has potential - continue with research and the next phases of the project development
 
@@ -68,15 +68,15 @@ Here is a short list of the phases and the steps to take when creating new proje
     - focus on main features or particular user stories
 3. Make sure that the prototype is **fully functional** for at least one of the user stories
 
-## Reserach phase
+## Research phase
 
 1. Decide who will be your **target audience**
 2. Enable access to the prototype for a sample of your **target audience**
 3. Design and develop techniques to quickly **gather feedback**
-4. Integrate **analytics** and measure the usage, look for patterns in user behaviour
+4. Integrate **analytics** and measure the usage, look for patterns in user behavior
 5. **Act on the feedback** by improving the prototype
 6. **Iterate**, unless you realize the project might be a failure
 
 ## Development phase
 
-When the project reaches this phase we could say that the project has officialy started. This does not mean that it will be sucessful, but we minimized the chance of working on something which is not feasible. I will expand more on the topic of software project development in one of my next posts. Thanks for reading the article and good luck on your own projects!
+When the project reaches this phase we could say that the project has officially started. This does not mean that it will be successful, but we minimized the chance of working on something which is not feasible. I will expand more on the topic of software project development in one of my next posts. Thanks for reading the article and good luck on your own projects!
