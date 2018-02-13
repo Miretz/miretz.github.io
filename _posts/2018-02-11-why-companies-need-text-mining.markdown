@@ -12,12 +12,12 @@ header:
 
 The business world is littered with all kinds of documents which contain important data. Corporate employees have to process thousands of documents every day. Ranging from various contracts, reports, documentation to spreadsheets and receipts. Manual entry into enterprise systems is a tedious and error prone process that does not ensure that the data input really reflects what is in the document.
 
-In this article I'm going to explore some typical document processing challenges and provide some basic starting points, tools and methodologies.
+Let's explore some typical challenges and some basic starting steps, tools and methodologies that will help companies to handle their document processing tasks.
 
 ## Storage, Digitalization and Records Management
 
-Many companies still process and store a lot of paper documents. These take up a lot of space and need to be stored in specific ways to be easy to retrieve if needed. This is very difficult and expensive so more and more companies invest in scanning and [ECM](https://en.wikipedia.org/wiki/Enterprise_content_management) platforms.
-To turn the documents into searchable plain text format an [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition) tool is required.
+Many companies still process and store a lot of paper documents. These take up a lot of space and need to be stored in specific ways for easy retrieval if needed. It is very difficult and expensive to set this up, so more and more companies invest in scanning and store the scans in [Enterprise Content Management (ECM)](https://en.wikipedia.org/wiki/Enterprise_content_management) systems.
+To turn these scans (which are images) into searchable plain text format an [Optical Character Recognition (OCR)](https://en.wikipedia.org/wiki/Optical_character_recognition) tool is required.
 
 A global company must be able to handle documents in many languages. Languages like arabic and chinese are difficult to process and the company needs to make sure that all the enterprise systems can work with these languages.
 [Unicode standard](https://en.wikipedia.org/wiki/Unicode) should be preferred.
@@ -25,8 +25,8 @@ A global company must be able to handle documents in many languages. Languages l
 Having a [Records Management](https://en.wikipedia.org/wiki/Records_management) function supported by enterprise systems is very beneficial. Proper RM can help reducing document processing workloads and also helps to filter out the documents that are no longer relevant to the business. 
 
 Starting points:
-- [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition) platform - to convert scans into plain text
-- [ECM](https://en.wikipedia.org/wiki/Enterprise_content_management) platform - to store documents and metadata
+- [Optical Character Recognition (OCR)](https://en.wikipedia.org/wiki/Optical_character_recognition) - to convert scans into plain text
+- [Enterprise Content Management (ECM)](https://en.wikipedia.org/wiki/Enterprise_content_management) - to store documents and metadata
 - [Unicode](https://en.wikipedia.org/wiki/Unicode) - to ensure consistent document encoding
 - [Records Management](https://en.wikipedia.org/wiki/Records_management) - to manage lifecycle of information
 
@@ -64,8 +64,8 @@ There are various preprocessing steps used in text classification:
 
 
 There are 2 common approaches to prepare input for the model: 
-- [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
-- [word2vec](https://en.wikipedia.org/wiki/Word2vec)
+- [tf-idf](https://en.wikipedia.org/wiki/Tf%E2%80%93idf "term frequency–inverse document frequency") - term frequency–inverse document frequency
+- [word2vec](https://en.wikipedia.org/wiki/Word2vec "Word2vec") - word vectors
 
 The model architecture really depends on experimentation and measuring. Sometimes linear models like [logistic regression](https://en.wikipedia.org/wiki/Logistic_regression) might perform good enough. Other times deep [neural networks](https://en.wikipedia.org/wiki/Artificial_neural_network) might be a better option providing higher  accuracy. It is up to the data science team to explore the documents, define the preprocessing steps, compare various models, tune their parameters and measure the results. 
 
