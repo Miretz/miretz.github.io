@@ -60,7 +60,7 @@ Here is a short list of the phases and the steps to take when creating new proje
 4. **Personas** -  Imagine future users, Remember to stay with why, not how
 5. Design concrete **user stories**
 
-## Proof of concept phase
+### Proof of concept phase
 
 1. Design the **business logic** 
 2. Design the **presentation layer**
@@ -68,7 +68,7 @@ Here is a short list of the phases and the steps to take when creating new proje
     - focus on main features or particular user stories
 3. Make sure that the prototype is **fully functional** for at least one of the user stories
 
-## Research phase
+### Research phase
 
 1. Decide who will be your **target audience**
 2. Enable access to the prototype for a sample of your **target audience**
