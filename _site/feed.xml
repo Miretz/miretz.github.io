@@ -1,10 +1,95 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-13T08:48:14+01:00</updated><id>http://localhost:4000/</id><title type="html">Homepage of Miretz</title><subtitle>Welcome to my personal website! I'm a senior software engineer, architect and IT lead in the area of text mining, machine learning and natural language processing. </subtitle><author><name>Miroslav Semerad</name><uri>https://miretz.github.io/about</uri></author><entry><title type="html">Why companies need text mining</title><link href="http://localhost:4000/analytics/2018/02/11/why-companies-need-text-mining.html" rel="alternate" type="text/html" title="Why companies need text mining" /><published>2018-02-11T16:00:00+01:00</published><updated>2018-02-11T16:00:00+01:00</updated><id>http://localhost:4000/analytics/2018/02/11/why-companies-need-text-mining</id><content type="html" xml:base="http://localhost:4000/analytics/2018/02/11/why-companies-need-text-mining.html">&lt;p&gt;The business world is littered with all kinds of documents which contain important data. Corporate employees have to process thousands of documents every day. Ranging from various contracts, reports, documentation to spreadsheets and receipts. Manual entry into enterprise systems is a tedious and error prone process that does not ensure that the data input really reflects what is in the document.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-13T12:19:29+01:00</updated><id>http://localhost:4000/</id><title type="html">Homepage of Miretz</title><subtitle>Welcome to my personal website! I'm a senior software engineer, architect and IT lead in the area of text mining, machine learning and natural language processing. </subtitle><author><name>Miroslav Semerad</name><uri>https://miretz.github.io/about</uri></author><entry><title type="html">How to start new projects</title><link href="http://localhost:4000/management/2018/02/13/starting-new-projects.html" rel="alternate" type="text/html" title="How to start new projects" /><published>2018-02-13T12:00:00+01:00</published><updated>2018-02-13T12:00:00+01:00</updated><id>http://localhost:4000/management/2018/02/13/starting-new-projects</id><content type="html" xml:base="http://localhost:4000/management/2018/02/13/starting-new-projects.html">&lt;p&gt;In the current world of business, IT is tightly integrated into every process of the company. Each operation is usually supported, controlled or monitored using a specific information system. Payroll, accounting, internal and external communication, human resources, marketing, reporting and other activities rely heavily on IT systems operating correctly.&lt;/p&gt;
+
+&lt;p&gt;These systems were introduced in a form of a software project. 
+But what exactly is a project? What are the essential phases and best practices to start a new project?&lt;/p&gt;
+
+&lt;h2 id=&quot;project&quot;&gt;Project&lt;/h2&gt;
+
+&lt;p&gt;From a high level point of view a project is an individual or collaborative activity to achieve certain goals. This activity involves various tasks like desing, research, planning and development which are executed over a period of time. Projects might be long-term or temporary and might be completely operational (like running databases, systems or services).&lt;/p&gt;
+
+&lt;h2 id=&quot;idea&quot;&gt;Idea&lt;/h2&gt;
+
+&lt;p&gt;At the very beginning of a project is an idea. This could be a completely new thing or an improvement of something that already exists. Ideas are actually the easiest step in the project. People who observe the environment around them can come up with a lot of good and relevant ideas. There are also many people who claim that they have the idea for the next “big thing”, but until it is executed, &lt;strong&gt;the idea is actually worth nothing&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ideas have no value to investors and even if the person got someone on board, the investment they bring will be worth infinitely more than the initial idea. The original “idea guy” will be left with 1% ownership and 0 control.&lt;/p&gt;
+
+&lt;p&gt;There is a way to give value to an idea. It is called a &lt;a href=&quot;https://en.wikipedia.org/wiki/Proof_of_concept&quot;&gt;Proof of concept&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;proof-of-concept&quot;&gt;Proof of concept&lt;/h2&gt;
+
+&lt;p&gt;Proof of concept is a validation of a feasibility of a particular idea. This is usually done in a form of demonstration of a prototype to the potentional customers and investors. In the real world the creator of an idea must invest his own resources first to develop this protytpe. If the product has immediate value by solving a real problem this is a good validation of the idea. However, not all prototypes provide a good basis to estimate future value. For example for a &lt;a href=&quot;https://en.wikipedia.org/wiki/Social_network&quot;&gt;social network&lt;/a&gt; website the ONLY value will be actual users. There are many websites with a better idea and better code than the current popular social networks, but without any users. This can be applied to many other software projects as well. Without users the product becomes useless. So what do we do next? How do we know that the project will succeed?&lt;/p&gt;
+
+&lt;h2 id=&quot;research&quot;&gt;Research&lt;/h2&gt;
+
+&lt;p&gt;It is hard to guess if a software project will be successful. We must execute extensive research to ensure that the project has the potential to be sucessful. I have deliberately put this step after the proof of concept phase. If we already have something in a form of a prototype we can ask for real feedback, use analytics and study usability of the software. With more feedback we can react and introduce improvements and changes. We do it again with the new version and collect even more data. This is an iterative process which has two possible outcomes:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;We realize that our project will fail - cancel the project as soon as possible, save money, focus on other projects&lt;/li&gt;
+  &lt;li&gt;We realize that our project has potential - continue with research and the next phases of the project development&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;We can use these data and present them to possible investors. It will give our product much more value that just an idea or a proof of concept.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;What if we don’t get any feedback? Consider the following:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;We are not targeting the right people - change target and try again&lt;/li&gt;
+  &lt;li&gt;No feedback means no interest - cancel the project!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If our project is successful we should continue gathering the feedback in the future. It can save us a lot of time and money when introducing new features or changes.&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+
+&lt;p&gt;Here is a short list of the phases and the steps to take when creating new projects.&lt;/p&gt;
+
+&lt;h3 id=&quot;idea-phase&quot;&gt;Idea phase&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;One sentence summary&lt;/strong&gt; - in 1 hour create a one sentence summary of the project&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Motivation&lt;/strong&gt; - take some time to create a longer description - paragraph:
+    &lt;ul&gt;
+      &lt;li&gt;Concentrate on motivation: why do you want to start this project?&lt;/li&gt;
+      &lt;li&gt;Underline the purpose of the project and the desired outcomes&lt;/li&gt;
+      &lt;li&gt;Do you know something similar, but want to do a better version of it? (How would it be better? Why should users switch to your version?)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;List of &lt;strong&gt;main features&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Personas&lt;/strong&gt; - Make up people, imagine future users, Remember to stay with why, not how&lt;/li&gt;
+  &lt;li&gt;Design concrete &lt;strong&gt;user stories&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;proof-of-concept-phase&quot;&gt;Proof of concept phase&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Design the &lt;strong&gt;business logic&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Desing the &lt;strong&gt;presentation layer&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Develop a &lt;strong&gt;basic prototype&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;focus on main features or particular user stories&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Make sure that the prototype is &lt;strong&gt;fully functional&lt;/strong&gt; for at least one of the user stories&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;reserach-phase&quot;&gt;Reserach phase&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Decide who will be your &lt;strong&gt;target audience&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Enable access to the prototype for a sample of your &lt;strong&gt;target audience&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Design and develop techniques to quickly &lt;strong&gt;gather feedback&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Integrate &lt;strong&gt;analytics&lt;/strong&gt; and measure the usage, look for patterns in user behaviour&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Act on the feedback&lt;/strong&gt; by improving the prototype&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Iterate&lt;/strong&gt;, unless you realize the project might be a failure&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;development-phase&quot;&gt;Development phase&lt;/h2&gt;
+
+&lt;p&gt;When the project reaches this phase we could say that the project has officialy started. This does not mean that it will be sucessful, but we minimized the chance of working on something which is not feasible. I will expand more on the topic of software project development in one of my next posts. Thanks for reading the article and good luck on your projects!&lt;/p&gt;</content><author><name>Miroslav Semerad</name><uri>https://miretz.github.io/about</uri></author><summary type="html">In the current world of business, IT is tightly integrated into every process of the company. Each operation is usually supported, controlled or monitored using a specific information system. Payroll, accounting, internal and external communication, human resources, marketing, reporting and other activities rely heavily on IT systems operating correctly.</summary></entry><entry><title type="html">Why companies need text mining</title><link href="http://localhost:4000/analytics/2018/02/11/why-companies-need-text-mining.html" rel="alternate" type="text/html" title="Why companies need text mining" /><published>2018-02-11T16:00:00+01:00</published><updated>2018-02-11T16:00:00+01:00</updated><id>http://localhost:4000/analytics/2018/02/11/why-companies-need-text-mining</id><content type="html" xml:base="http://localhost:4000/analytics/2018/02/11/why-companies-need-text-mining.html">&lt;p&gt;The business world is littered with all kinds of documents which contain important data. Corporate employees have to process thousands of documents every day. Ranging from various contracts, reports, documentation to spreadsheets and receipts. Manual entry into enterprise systems is a tedious and error prone process that does not ensure that the data input really reflects what is in the document.&lt;/p&gt;
 
 &lt;p&gt;Let’s explore some typical challenges and some basic starting steps, tools and methodologies that will help companies to handle their document processing tasks.&lt;/p&gt;
 
 &lt;h2 id=&quot;storage-digitalization-and-records-management&quot;&gt;Storage, Digitalization and Records Management&lt;/h2&gt;
 
-&lt;p&gt;Many companies still process and store a lot of paper documents. These take up a lot of space and need to be stored in specific ways for easy retrieval if needed. It is very difficult and expensive to set this up, so more and more companies invest in scanning and store the scans in &lt;a href=&quot;https://en.wikipedia.org/wiki/Enterprise_content_management&quot;&gt;Enterprise Content Management (ECM)&lt;/a&gt; systems.
+&lt;p&gt;Many companies still process and store a lot of paper documents. These take up a lot of space and need to be stored in specific ways for easy retrieval if needed. It is very difficult and expensive to set this up, so more and more companies invest in scanning and store the digital scans in &lt;a href=&quot;https://en.wikipedia.org/wiki/Enterprise_content_management&quot;&gt;Enterprise Content Management (ECM)&lt;/a&gt; systems.
 To turn these scans (which are images) into searchable plain text format an &lt;a href=&quot;https://en.wikipedia.org/wiki/Optical_character_recognition&quot;&gt;Optical Character Recognition (OCR)&lt;/a&gt; tool is required.&lt;/p&gt;
 
 &lt;p&gt;A global company must be able to handle documents in many languages. Languages like arabic and chinese are difficult to process and the company needs to make sure that all the enterprise systems can work with these languages.
