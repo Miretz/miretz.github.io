@@ -16,11 +16,11 @@ As with many things in the industry, it starts with the right mindset. So what i
 
 ## Software quality mindset
 
-There is a common mistake made by some software developers and managers. That mistake is too much **optimism**. 
+There is a common mistake made by some software developers and managers. They often forget to include software quality as a part of the development process. 
 
-Many developers tend to believe that their code is so perfect that they do not need any quality checks. Later the code fails horribly in production due to trivial and totally avoidable errors. **Believing in quality is not enough. It has to be measured.** One the tools for measuring the quality are tests. In real world manufacturing it is a common practice. You would not fly in an untested plane or drive and untested car.
+Many developers tend to believe that their code is so perfect that they do not need any quality checks. They estimate the time needed to write the feature and do not include any time for writing or updating tests. Later the code fails horribly in production due to trivial and totally avoidable errors. **Believing in quality is not enough. It has to be measured.** There are many tools for measuring the code quality and a professional developer has to use them and to prevent code issues in the future.
 
-The optimism is also typical for the project managers, IT leads and CTO's. They often overlook the fact that their projects have no quality measurements and do not enforce them. They might blindly trust their developers (or external vendors) to do the right thing and never even ask about it. Asking the developers about software quality could be uncomfortable, but it is necessary. **The manager should be able to validate the quality of the product that he is responsible for.**
+This is also typical for the project managers, IT leads and CTO's. They often overlook the fact that their projects have no quality measurements and do not enforce them. They might blindly trust their developers (or external vendors) to do the right thing and never even ask about it. Asking the developers about software quality could be uncomfortable, but it is necessary. **The manager should be able to validate the quality of the product that he is responsible for.**
 
 Having the software quality mindset means that both developers and managers actively measure and prevent any technical issues with the software. Having a dedicated [Quality assurance](https://en.wikipedia.org/wiki/Quality_assurance) person on the team is good, but quality should be measured on all levels. Software projects  should try to avoid the creation and accumulation of **technical debt**.
 
