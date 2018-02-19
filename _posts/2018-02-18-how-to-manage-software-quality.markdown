@@ -18,7 +18,7 @@ As with many things in the industry, it starts with the right mindset. So what i
 
 There is a common mistake made by some software developers and managers. They often **forget about software quality** as a part of the development process. 
 
-Many developers tend to believe that their code is so perfect that they do not need any quality checks. They estimate the time needed to write a feature and do not include any time for writing or updating tests. Later the code fails horribly in production due to a trivial and totally avoidable error. **Believing in code quality is not enough. It has to be measured.** Code quality is the **responsibility of the developer** when implementing any new features. 
+Many developers tend to believe that their code is so perfect that they do not need any quality checks. They estimate the time needed to write a feature and do not include any time for writing or updating tests. Later the code fails horribly in production due to a trivial and totally avoidable error. **Believing in code quality is not enough. It has to be measured.** Code quality is the **responsibility of the developer** when implementing new features. 
 
 This is also typical for the project managers, IT leads and CTO's. They often overlook the fact that their projects have no software quality measurements and do not enforce them. They might blindly trust their developers (or external vendors) to do the right thing and never even ask about it. Asking the developers about software quality could be uncomfortable, but it is necessary. The time estimates should include the time needed to ensure software quality. **The manager is responsible for the overall quality of the software product.**
 
