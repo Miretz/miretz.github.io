@@ -44,7 +44,7 @@ paginate_path: /page:num/
 author:
   name   : "Miroslav Semerad"
   avatar : "/assets/images/bio-foto.jpg"
-  bio    : "I'm a senior software engineer, architect and IT lead in the area of text mining, machine learning and natural language processing."
+  bio    : "I'm a senior analytics engineer, backend developer, data scientist and a hobby game developer."
   email  : # optional
   uri    : "https://miretz.github.io/about"
   home   : # null (default), "absolute or relative url to link to author home"
