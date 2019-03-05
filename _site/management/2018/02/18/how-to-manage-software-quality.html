@@ -1,16 +1,16 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.9.1 by Michael Rose
-  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.15.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
-  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>How to manage software quality  Homepage of Miretz</title>
-<meta name="description" content="At the heart of the software project lifecycle is the development phase. I have described how to get to this phase in my previous post on How to start new projects. In this article I’m going to dive deeper into the development phase with focus on how to prevent project failures due to insufficient software quality.">
+<!-- begin _includes/seo.html --><title>How to manage software quality - Homepage of Miretz</title>
+<meta name="description" content="At the heart of the software project lifecycle is the development phase. I have described how projects get to this phase in my previous post on How to start new projects. In this article I’m going to dive deeper into the development phase with focus on how to prevent project failures due to insufficient software quality.">
 
 
 
@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://localhost:4000/management/2018/02/18/how-to-manage-software-quality.html">
 
 
-  <meta property="og:description" content="At the heart of the software project lifecycle is the development phase. I have described how to get to this phase in my previous post on How to start new projects. In this article I’m going to dive deeper into the development phase with focus on how to prevent project failures due to insufficient software quality.">
+  <meta property="og:description" content="At the heart of the software project lifecycle is the development phase. I have described how projects get to this phase in my previous post on How to start new projects. In this article I’m going to dive deeper into the development phase with focus on how to prevent project failures due to insufficient software quality.">
 
 
 
@@ -55,11 +55,9 @@
 <!-- end _includes/seo.html -->
 
 
-<link href="http://localhost:4000/feed.xml" type="application/atom+xml" rel="alternate" title="Homepage of Miretz Feed">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Homepage of Miretz Feed">
 
-<!-- http://t.co/dKP3o1e -->
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
+<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
@@ -67,9 +65,9 @@
 </script>
 
 <!-- For all browsers -->
-<link rel="stylesheet" href="http://localhost:4000/assets/css/main.css">
+<link rel="stylesheet" href="/assets/css/main.css">
 
-<!--[if lte IE 9]>
+<!--[if IE ]>
   <style>
     /* old IE unsupported flexbox fixes */
     .greedy-nav .site-title {
@@ -85,11 +83,13 @@
 <![endif]-->
 
 
+
     <!-- start custom head snippets -->
 
-<!-- insert favicons. use http://realfavicongenerator.net/ -->
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
 
 <!-- end custom head snippets -->
+
   </head>
 
   <body class="layout--single">
@@ -98,28 +98,27 @@
 <div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
 <![endif]-->
 
-    <div class="masthead">
+    
+
+<div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
-        <a class="site-title" href="http://localhost:4000/">Homepage of Miretz</a>
-        <ul class="visible-links">
-          
-            
-            <li class="masthead__menu-item">
-              <a href="http://localhost:4000/about/" >About</a>
-            </li>
-          
-        </ul>
+        
+        <a class="site-title" href="/">Homepage of Miretz</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li></ul>
         
         <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
           <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
             <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
           </svg>
         </button>
         
         <button class="greedy-nav__toggle hidden" type="button">
-          <span class="visually-hidden">Toggle Menu</span>
+          <span class="visually-hidden">Toggle menu</span>
           <div class="navicon"></div>
         </button>
         <ul class="hidden-links hidden"></ul>
@@ -127,6 +126,7 @@
     </div>
   </div>
 </div>
+
 
     <div class="initial-content">
       
@@ -143,16 +143,25 @@
 
 
 <div class="page__hero--overlay"
-  style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://localhost:4000/assets/images/code-quality.jpeg');"
+  style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/images/code-quality.jpeg');"
 >
   
     <div class="wrapper">
-      <h1 class="page__title" itemprop="headline">
+      <h1 id="page-title" class="page__title" itemprop="headline">
         
           How to manage software quality
 
         
       </h1>
+      
+      
+        <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  6 minute read
+</p>
       
       
       
@@ -171,14 +180,14 @@
   
 
 
-<div itemscope itemtype="http://schema.org/Person">
+<div itemscope itemtype="https://schema.org/Person">
 
   
     <div class="author__avatar">
       
 
       
-        <img src="http://localhost:4000/assets/images/bio-foto.jpg" alt="Miroslav Semerad" itemprop="image">
+        <img src="/assets/images/bio-foto.jpg" alt="Miroslav Semerad" itemprop="image">
       
     </div>
   
@@ -189,7 +198,7 @@
     
     
       <p class="author__bio" itemprop="description">
-        I'm a senior software engineer, architect and IT lead in the area of text mining, machine learning and natural language processing.
+        I'm a senior analytics engineer, backend developer, data scientist and a hobby game developer.
       </p>
     
   </div>
@@ -197,6 +206,8 @@
   <div class="author__urls-wrapper">
     <button class="btn btn--inverse">Follow</button>
     <ul class="author__urls social-icons">
+      
+
       
 
       
@@ -268,9 +279,9 @@
   </div>
 
 
-  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="How to manage software quality">
-    <meta itemprop="description" content="At the heart of the software project lifecycle is the development phase. I have described how to get to this phase in my previous post on How to start new projects. In this article I’m going to dive deeper into the development phase with focus on how to prevent project failures due to insufficient software quality.">
+    <meta itemprop="description" content="At the heart of the software project lifecycle is the development phase. I have described how projects get to this phase in my previous post on How to start new projects. In this article I’m going to dive deeper into the development phase with focus on how to prevent project failures due to insufficient software quality.">
     <meta itemprop="datePublished" content="February 18, 2018">
     
 
@@ -279,7 +290,7 @@
 
       <section class="page__content" itemprop="text">
         
-          <aside class="sidebar__right">
+          <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> </h4></header>
               <ul class="toc__menu">
@@ -296,17 +307,17 @@
             </nav>
           </aside>
         
-        <p>At the heart of the software project lifecycle is the development phase. I have described how to get to this phase in my previous post on <a href="/management/2018/02/13/starting-new-projects.html">How to start new projects</a>. In this article I’m going to dive deeper into the development phase with focus on how to prevent project failures due to insufficient software quality.</p>
+        <p>At the heart of the software project lifecycle is the development phase. I have described how projects get to this phase in my previous post on <a href="/management/2018/02/13/starting-new-projects.html">How to start new projects</a>. In this article I’m going to dive deeper into the development phase with focus on how to prevent project failures due to insufficient software quality.</p>
 
 <p>As with many things in the industry, it starts with the right mindset. So what is this software quality mindset?</p>
 
 <h2 id="software-quality-mindset">Software quality mindset</h2>
 
-<p>There is a common mistake made by some software developers and managers. That mistake is too much <strong>optimism</strong>.</p>
+<p>There is a common mistake made by some software developers and managers. They often <strong>forget about software quality</strong> as a part of the development process.</p>
 
-<p>Many developers tend to believe that their code is so perfect that they do not need any quality checks. Later the code fails horribly in production due to trivial and totally avoidable errors. <strong>Believing in quality is not enough. It has to be measured.</strong> One the tools for measuring the quality are tests. In real world manufacturing it is a common practice. You would not fly in an untested plane or drive and untested car.</p>
+<p>Many developers tend to believe that their code is so perfect that they do not need any quality checks. They estimate the time needed to write a feature and do not include any time for writing or updating tests. Later the code fails horribly in production due to a trivial and totally avoidable error. <strong>Believing in code quality is not enough. It has to be measured.</strong> Code quality is the <strong>responsibility of the developer</strong> when implementing new features.</p>
 
-<p>The optimism is also typical for the project managers, IT leads and CTO’s. They often overlook the fact that their projects have no quality measurements and do not enforce them. They might blindly trust their developers (or external vendors) to do the right thing and never even ask about it. Asking the developers about software quality could be uncomfortable, but it is necessary. <strong>The manager should be able to validate the quality of the product that he is responsible for.</strong></p>
+<p>This is also typical for the project managers, IT leads and CTO’s. They often overlook the fact that their projects have no software quality measurements and do not enforce them. They might blindly trust their developers (or external vendors) to do the right thing and never even ask about it. Asking the developers about software quality could be uncomfortable, but it is necessary. The time estimates should include the time needed to ensure software quality. <strong>The manager is responsible for the overall quality of the software product.</strong></p>
 
 <p>Having the software quality mindset means that both developers and managers actively measure and prevent any technical issues with the software. Having a dedicated <a href="https://en.wikipedia.org/wiki/Quality_assurance">Quality assurance</a> person on the team is good, but quality should be measured on all levels. Software projects  should try to avoid the creation and accumulation of <strong>technical debt</strong>.</p>
 
@@ -416,11 +427,12 @@ I will summarize them in the following points:</p>
       
   <nav class="pagination">
     
-      <a href="http://localhost:4000/management/2018/02/13/starting-new-projects.html" class="pagination--pager" title="How to start new projects
+      <a href="/management/2018/02/13/starting-new-projects.html" class="pagination--pager" title="How to start new projects
 ">Previous</a>
     
     
-      <a href="#" class="pagination--pager disabled">Next</a>
+      <a href="/philosophy/2018/02/18/on-meaningless-work.html" class="pagination--pager" title="On Meaningless work
+">Next</a>
     
   </nav>
 
@@ -440,19 +452,56 @@ I will summarize them in the following points:</p>
 
 
 <div class="grid__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
         <img src=
           
-            "http://localhost:4000/assets/images/startup-photos-teaser.jpeg"
+            "/assets/images/meaningless-work-teaser.jpeg"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="http://localhost:4000/management/2018/02/13/starting-new-projects.html" rel="permalink">How to start new projects
+        <a href="/philosophy/2018/02/18/on-meaningless-work.html" rel="permalink">On Meaningless work
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">On Literature
+
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/startup-photos-teaser.jpeg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/management/2018/02/13/starting-new-projects.html" rel="permalink">How to start new projects
 </a>
       
     </h2>
@@ -468,25 +517,26 @@ I will summarize them in the following points:</p>
     <p class="archive__item-excerpt" itemprop="description">In the current world of business, IT is tightly integrated into every process of the company. Each operation is usually supported, controlled or monitored us...</p>
   </article>
 </div>
+
         
           
 
 
 
 <div class="grid__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
         <img src=
           
-            "http://localhost:4000/assets/images/old-docs-teaser.jpeg"
+            "/assets/images/old-docs-teaser.jpeg"
           
           alt="">
       </div>
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="http://localhost:4000/analytics/2018/02/11/why-companies-need-text-mining.html" rel="permalink">Why companies need text mining
+        <a href="/analytics/2018/02/11/why-companies-need-text-mining.html" rel="permalink">Why companies need text mining
 </a>
       
     </h2>
@@ -502,6 +552,7 @@ I will summarize them in the following points:</p>
     <p class="archive__item-excerpt" itemprop="description">The business world is littered with all kinds of documents which contain important data. Corporate employees have to process thousands of documents every day...</p>
   </article>
 </div>
+
         
       </div>
     </div>
@@ -513,10 +564,9 @@ I will summarize them in the following points:</p>
 
     
       <div class="search-content">
-        <div class="search-content__inner-wrap">
-  <input type="text" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
-  <div id="results" class="results"></div>
-</div>
+        <div class="search-content__inner-wrap"><input type="text" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+
       </div>
     
 
@@ -528,32 +578,28 @@ I will summarize them in the following points:</p>
         <div class="page__footer-follow">
   <ul class="social-icons">
     
+
     
-    
-    
-    
-    
-    <li><a href="http://localhost:4000/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2018 Miretz. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2019 Miretz. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
 
     
-  <script src="http://localhost:4000/assets/js/main.min.js"></script>
-  <script src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script data-search-pseudo-elements defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
 
 
 
-  
-  
-  <script src="http://localhost:4000/assets/js/lunr/lunr.min.js"></script>
-  <script src="http://localhost:4000/assets/js/lunr/lunr-store.js"></script>
-  <script src="http://localhost:4000/assets/js/lunr/lunr-en.js"></script>
 
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
 
 
 
