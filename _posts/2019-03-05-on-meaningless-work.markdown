@@ -10,8 +10,6 @@ header:
     teaser: /assets/images/meaningless-work-teaser.jpeg
 ---
 
-## On Literature
-
 I like reading books. Many people find them to be a good source of relaxation and enjoy stories which aim to kindle the childish imagination which is buried deep inside all of us. People might enjoy The Lord of the Rings, Harry Potter or The Hunger Games. Books that resonate with a large audience and their fantasy worlds inspired several movies. Mass production of merchandise and advertising makes sure that even those who never read the books or watch the movies know what the story is about.
 
 However, I am a fan of a very different kind of literature. When you think about the typical stories in the current popular bestsellers, you realize that they are mostly one-off experiences. You will enjoy them while reading/watching, finish the consumption of the product and forget about them. The adverts everywhere will eventually make you sick of them.
