@@ -10,7 +10,7 @@ header:
     teaser: /assets/images/meaningless-work-teaser.jpeg
 ---
 
-I like reading books. Many people find them to be a good source of relaxation and enjoy stories which aim to kindle the childish imagination which is buried deep inside all of us. People might enjoy The Lord of the Rings, Harry Potter or The Hunger Games. Books that resonate with a large audience and their fantasy worlds inspired several movies. Mass production of merchandise and advertising makes sure that even those who never read the books or watch the movies know what the story is about.
+I like reading books. Many people find them to be a good source of relaxation and enjoy the stories which aim to kindle the childish imagination which is buried deep inside all of us. People might enjoy The Lord of the Rings, Harry Potter or The Hunger Games. Books that resonate with a large audience and their fantasy worlds inspired several movies. Mass production of merchandise and advertising makes sure that even those who never read the books or watch the movies know what the story is about.
 
 However, I am a fan of a very different kind of literature. When you think about the typical stories in the current popular bestsellers, you realize that they are mostly one-off experiences. You will enjoy them while reading/watching, finish the consumption of the product and forget about them. The adverts everywhere will eventually make you sick of them.
 
@@ -28,7 +28,7 @@ Why is that? Let's imagine filling a bucket and pouring it out and then filling 
 
 ## Modern corporate work
 
-It is not such a big stretch, if we draw a parallel to the modern corporate work. How many jobs might be meaningless or seem meaningless from the outset. What does this type of work do to us? David Graeber in his book [Bullshit Jobs: A theory](https://en.wikipedia.org/wiki/Bullshit_Jobs) talks a lot about the harm caused by meaningless jobs. He even categorizes the jobs into 5 types:  flunkies, goons, duct tapers, box tickers, and taskmasters. If you want to know more about these types I highly recommend that you read this book. It might even open your eyes and make changes that will eventually make you more happy in your current work.
+It is not such a big stretch, if we draw a parallel to the modern corporate work. How many jobs might be meaningless or seem meaningless from the outset. What does this type of work do to us? David Graeber in his book [Bullshit Jobs: A theory](https://en.wikipedia.org/wiki/Bullshit_Jobs) talks a lot about the harm caused by meaningless jobs. He even categorizes the jobs into 5 types:  flunkies, goons, duct tapers, box tickers, and taskmasters. If you want to know more about these types I highly recommend that you read the book. It might even open your eyes to make changes that will eventually make you more happy in your current work.
 
 Meaningless work is one of the biggest reasons why senior staff leaves their current employer. While junior people might be driven by money, the experienced people know that they will not get a huge salary increase if they go somewhere else. They leave their manager or they leave their meaningless job for a job in a fresh new company, interesting startup or start their own business.
 

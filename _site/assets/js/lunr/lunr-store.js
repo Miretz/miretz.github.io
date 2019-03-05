@@ -15,7 +15,7 @@ var store = [{
         "url": "http://localhost:4000/management/2018/02/18/how-to-manage-software-quality.html",
         "teaser":"http://localhost:4000/assets/images/code-quality-teaser.jpeg"},{
         "title": "On Meaningless work",
-        "excerpt":"I like reading books. Many people find them to be a good source of relaxation and enjoy stories which aim to kindle the childish imagination which is buried deep inside all of us. People might enjoy The Lord of the Rings, Harry Potter or The Hunger Games. Books that resonate...","categories": ["philosophy"],
+        "excerpt":"I like reading books. Many people find them to be a good source of relaxation and enjoy the stories which aim to kindle the childish imagination which is buried deep inside all of us. People might enjoy The Lord of the Rings, Harry Potter or The Hunger Games. Books that...","categories": ["philosophy"],
         "tags": [],
         "url": "http://localhost:4000/philosophy/2018/02/18/on-meaningless-work.html",
         "teaser":"http://localhost:4000/assets/images/meaningless-work-teaser.jpeg"}]
