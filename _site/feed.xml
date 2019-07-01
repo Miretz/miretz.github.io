@@ -1,4 +1,786 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-05T21:19:39+01:00</updated><id>http://localhost:4000/</id><title type="html">Homepage of Miretz</title><subtitle>Welcome to my personal website! I'm a senior analytics engineer, backend developer, data scientist and a hobby game developer. </subtitle><author><name>Miroslav Semerad</name><uri>https://miretz.github.io/about</uri></author><entry><title type="html">On Meaningless work</title><link href="http://localhost:4000/philosophy/2018/02/18/on-meaningless-work.html" rel="alternate" type="text/html" title="On Meaningless work" /><published>2018-02-18T08:00:00+01:00</published><updated>2018-02-18T08:00:00+01:00</updated><id>http://localhost:4000/philosophy/2018/02/18/on-meaningless-work</id><content type="html" xml:base="http://localhost:4000/philosophy/2018/02/18/on-meaningless-work.html">&lt;p&gt;I like reading books. Many people find them to be a good source of relaxation and enjoy the stories which aim to kindle the childish imagination which is buried deep inside all of us. People might enjoy The Lord of the Rings, Harry Potter or The Hunger Games. Books that resonate with a large audience and their fantasy worlds inspired several movies. Mass production of merchandise and advertising makes sure that even those who never read the books or watch the movies know what the story is about.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-01T23:33:29+02:00</updated><id>http://localhost:4000/</id><title type="html">Homepage of Miretz</title><subtitle>Welcome to my personal website! I'm a senior analytics engineer, backend developer, data scientist and a hobby game developer. </subtitle><author><name>Miroslav Semerad</name><uri>https://miretz.github.io/about</uri></author><entry><title type="html">Data manipulation from the UNIX command line</title><link href="http://localhost:4000/analytics/2019/07/01/data-manipulation-command-line.html" rel="alternate" type="text/html" title="Data manipulation from the UNIX command line" /><published>2019-07-01T21:00:00+02:00</published><updated>2019-07-01T21:00:00+02:00</updated><id>http://localhost:4000/analytics/2019/07/01/data-manipulation-command-line</id><content type="html" xml:base="http://localhost:4000/analytics/2019/07/01/data-manipulation-command-line.html">&lt;p&gt;In this article I’m going to demonstrate various tools from the UNIX command line which can be used for effective data manipulation. This guide is written mainly for absolute beginners, but hopefully it will also provide useful information for seasoned data scientists and data engineers.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-the-command-line&quot;&gt;What is the Command line?&lt;/h2&gt;
+
+&lt;p&gt;The UNIX command line (also called the UNIX shell) is a user interface which enables interaction with (Unix-like) operating systems using text-based commands.&lt;/p&gt;
+
+&lt;p&gt;To run a command, you just type it in with the keyboard and then press the &lt;em&gt;ENTER&lt;/em&gt; key.&lt;/p&gt;
+
+&lt;p&gt;It is both an &lt;em&gt;interactive interpreter&lt;/em&gt; (executes commands that you type in) and a &lt;em&gt;scripting language&lt;/em&gt; (runs shell script from a file). To access the command line typically a &lt;em&gt;terminal emulator&lt;/em&gt; program is used (Linux Console, Terminal, xterm, Konsole, iTerm2,…).&lt;/p&gt;
+
+&lt;h2 id=&quot;command-line-basics&quot;&gt;Command line basics&lt;/h2&gt;
+
+&lt;p&gt;The command line comes with various commands to navigate the file system, get information about the system and work with files.&lt;/p&gt;
+
+&lt;h3 id=&quot;first-steps&quot;&gt;First steps&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;whoami&lt;/strong&gt; : Displays the name of the current user.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;whoami
+miroslav
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;hostname&lt;/strong&gt; : Displays the the current computer’s host name and domain name.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;hostname
+HOME-PC
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;echo&lt;/strong&gt; &lt;em&gt;[string]&lt;/em&gt; : Display a line of text.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;hello
+hello
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;history&lt;/strong&gt; : Displays the history of the commands typed in by the current user. &lt;em&gt;Note: You can also search the history by pressing the key combination CTRL+R.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;getting-help&quot;&gt;Getting help&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;man&lt;/strong&gt; &lt;em&gt;[command]&lt;/em&gt; : Opens the manual page for a specific command. Example usage:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;man whoami
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;&lt;strong&gt;To exit the manual press Q&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This guide does not cover all of the existing options and features of the commands. To get all the details please use the &lt;code class=&quot;highlighter-rouge&quot;&gt;man&lt;/code&gt; command above.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Also this guide does not cover all the possible commands as this depends on what software is installed on the system.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;navigation-and-file-operations&quot;&gt;Navigation and file operations&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;pwd&lt;/strong&gt; : Display current directory location.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
+/home/miroslav/stuff/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;cd&lt;/strong&gt; &lt;em&gt;[path]&lt;/em&gt; : Change the current directory to the directory specified as &lt;em&gt;path&lt;/em&gt;. Note that also relative paths can be used and also there are a few special symbols:
+    &lt;ul&gt;
+      &lt;li&gt;current directory: &lt;code class=&quot;highlighter-rouge&quot;&gt;.&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;parent directory: &lt;code class=&quot;highlighter-rouge&quot;&gt;..&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;home directory: &lt;code class=&quot;highlighter-rouge&quot;&gt;~&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;Example:
+        &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~/stuff
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;
+/home/miroslav/stuff/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ls&lt;/strong&gt; : List the contents of the current directory.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ls&lt;/strong&gt; &lt;em&gt;[path]&lt;/em&gt; : List the contents of the specified directory.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; ~/stuff
+file1 file2 file3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ls -lf&lt;/strong&gt; : List the directory contents with details.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-lf&lt;/span&gt; ~/stuff
+total 0
+drwxr-xr-x    4 miroslav  staff   128 Jun 25 13:48 &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+drwxr-xr-x+ 130 miroslav  staff  4160 Jun 25 13:48 ..
+&lt;span class=&quot;nt&quot;&gt;-rw-r--r--&lt;/span&gt;    1 miroslav  staff     0 Jun 25 13:48 file2
+&lt;span class=&quot;nt&quot;&gt;-rw-r--r--&lt;/span&gt;    1 miroslav  staff     0 Jun 25 13:48 file1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;mkdir&lt;/strong&gt; &lt;em&gt;[path]&lt;/em&gt; : Create a new directory in the specified path.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;touch&lt;/strong&gt; &lt;em&gt;[path]&lt;/em&gt; : Create a new empty file in the specified path.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;cp&lt;/strong&gt; &lt;em&gt;[source]&lt;/em&gt; &lt;em&gt;[target]&lt;/em&gt; : Copy a file or a folder (with the &lt;code class=&quot;highlighter-rouge&quot;&gt;-r&lt;/code&gt; switch) from the &lt;em&gt;source&lt;/em&gt; to &lt;em&gt;target&lt;/em&gt;. Relative paths also work here just like in the &lt;code class=&quot;highlighter-rouge&quot;&gt;cd&lt;/code&gt; command. Note there is an additional symbol called the wildcard &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; which is useful for selecting multiple files.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cp file8.txt stuff/
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cp &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; stuff2 stuff/
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cp &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.txt texts/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;mv&lt;/strong&gt; &lt;em&gt;[source]&lt;/em&gt; &lt;em&gt;[target]&lt;/em&gt; : Move a file or rename from the &lt;em&gt;source&lt;/em&gt; to &lt;em&gt;target&lt;/em&gt;. This command also supports relative paths just like &lt;code class=&quot;highlighter-rouge&quot;&gt;cp&lt;/code&gt;.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mv file8.txt stuff/
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;mv file9.txt file10.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;find&lt;/strong&gt; &lt;em&gt;[directory]&lt;/em&gt; &lt;em&gt;[options]&lt;/em&gt; : Search for files in the directory.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;find ./stuff/ &lt;span class=&quot;nt&quot;&gt;-name&lt;/span&gt; file&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;
+./stuff//files.txt
+./stuff//file2.txt
+./stuff//file1.txt
+./stuff//file4.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;rm&lt;/strong&gt; &lt;em&gt;[path]&lt;/em&gt; : Delete a file. For deleting directories use the &lt;code class=&quot;highlighter-rouge&quot;&gt;-r&lt;/code&gt; switch.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rm file8.txt
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;rm &lt;span class=&quot;nt&quot;&gt;-r&lt;/span&gt; stuff2/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;&lt;strong&gt;Warning:&lt;/strong&gt; There is no recycle bin, so be careful when deleting files and directories.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;reading-files&quot;&gt;Reading files&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;cat&lt;/strong&gt; &lt;em&gt;[file]&lt;/em&gt; : Display the whole content of a file. This command can also be used to concatenate multiple files and creating new files.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;file1.txt
+file1 text
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;file1.txt file2.txt
+file1 text
+file2 text
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;cat&lt;/strong&gt; &amp;gt; &lt;em&gt;[file]&lt;/em&gt; : Cat can also be used to type in a new file. To exit the editor press &lt;strong&gt;CTRL + C&lt;/strong&gt;
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; newfile.txt
+hello
+hi
+hola
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;head&lt;/strong&gt; &lt;em&gt;[file]&lt;/em&gt; : Displays lines at the beginning of the file. Number of lines can be specified with the &lt;code class=&quot;highlighter-rouge&quot;&gt;-n&lt;/code&gt; option.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;head &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; 2 file8.txt
+line1
+line2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;tail&lt;/strong&gt; &lt;em&gt;[file]&lt;/em&gt; : Displays lines at the end of the file. Number of lines can be specified with the &lt;code class=&quot;highlighter-rouge&quot;&gt;-n&lt;/code&gt; option.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;less&lt;/strong&gt; &lt;em&gt;[file]&lt;/em&gt; : View contents of a file one page at a time. Allows forward and backward scrolling through the file as well as searching in the file. Ideal for opening very large files that do not fit into memory. You can use the arrow keys to scroll. &lt;strong&gt;To exit press Q&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;advanced-usage&quot;&gt;Advanced usage&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;wget&lt;/strong&gt; &lt;em&gt;[url]&lt;/em&gt; : Download a file from an url address.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;wget https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt
+&lt;span class=&quot;nt&quot;&gt;--2019-06-25&lt;/span&gt; 14:39:24--  https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt
+Resolving ocw.mit.edu &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ocw.mit.edu&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;... 104.125.20.72
+Connecting to ocw.mit.edu &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;ocw.mit.edu&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;|104.125.20.72|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 5458199 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;5.2M&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;text/plain]
+Saving to: ‘t8.shakespeare.txt’
+
+t8.shakespeare.txt  100%[&lt;span class=&quot;o&quot;&gt;===================&amp;gt;]&lt;/span&gt;   5.21M  10.7MB/s    &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;0.5s    
+
+2019-06-25 14:39:25 &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;10.7 MB/s&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; - ‘t8.shakespeare.txt’ saved &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;5458199/5458199]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;tar&lt;/strong&gt; &lt;em&gt;[options]&lt;/em&gt; &lt;em&gt;[archive]&lt;/em&gt; &lt;em&gt;[directory]&lt;/em&gt;: Tar is the standard archiving utility in Unix-like operating systems. Depending on the type of compression there are various options to use. The most common are:
+    &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;create gzip archive&lt;/strong&gt; : &lt;code class=&quot;highlighter-rouge&quot;&gt;-cvzf&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;create bzip archive&lt;/strong&gt; : &lt;code class=&quot;highlighter-rouge&quot;&gt;-cvjf&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;extract gzip archive&lt;/strong&gt; e.g. file.tar.gz : &lt;code class=&quot;highlighter-rouge&quot;&gt;-xvzf&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;strong&gt;extract bzip archive&lt;/strong&gt; e.g. file.tar.bz2 : &lt;code class=&quot;highlighter-rouge&quot;&gt;-xvjf&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;tar examples:&lt;/strong&gt; In the first line the &lt;em&gt;to_archive/&lt;/em&gt; directory is compressed into &lt;em&gt;archive.tar.gz&lt;/em&gt;. In the second line the file is extracted.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;tar&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-cvzf&lt;/span&gt; archive.tar.gz to_archive/
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;tar&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-xvzf&lt;/span&gt; archive.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;grep&lt;/strong&gt; &lt;em&gt;[expression]&lt;/em&gt; &lt;em&gt;[file]&lt;/em&gt; : Processes files line by line and returns the lines where the expression term has been matched. The main strength of the tool is the support for &lt;a href=&quot;https://en.wikipedia.org/wiki/Regular_expression&quot;&gt;Regular Expressions&lt;/a&gt;. You can play around with Regular Expressions on &lt;a href=&quot;https://regex101.com/&quot;&gt;Regex 101&lt;/a&gt;.
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ grep 'princess' t8.shakespeare.txt
+  And leave eighteen. Alas, poor princess,
+  And here the bracelet of the truest princess
+  Teach you our princess English?
+  Shall be call'd queen, but princess dowager
+  An aged princess; many days shall see her,
+  Holds hand with any princess of the world.
+  The best I had, a princess wrought it me-
+  Kent. Kind and dear princess!
+  ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;|&lt;/strong&gt; : The pipe operator is used to chain output from one command to the input of another command or program. Example search for files and directories with a specific name:
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;grep &lt;/span&gt;stuff
+stuff1
+stuff2
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&amp;gt;&lt;/strong&gt; : The redirect operator is used to pass the output to either a file or stream. Single arrow indicates that you wish to overwrite the file if it exists, while the double arrows &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&amp;gt;&lt;/code&gt; are used to append to an existing file.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; files.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;wc&lt;/strong&gt; &lt;em&gt;[options]&lt;/em&gt; &lt;em&gt;[file]&lt;/em&gt; : Counts the number of lines &lt;code class=&quot;highlighter-rouge&quot;&gt;-l&lt;/code&gt;, characters &lt;code class=&quot;highlighter-rouge&quot;&gt;-m&lt;/code&gt; or words &lt;code class=&quot;highlighter-rouge&quot;&gt;-w&lt;/code&gt; in a file.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;wc &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; t8.shakespeare.txt
+124456 t8.shakespeare.txt
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;wc &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; t8.shakespeare.txt
+ 5458199 t8.shakespeare.txt
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;wc &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; t8.shakespeare.txt
+901325 t8.shakespeare.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;bc&lt;/strong&gt; : Command line calculator. To exit the program type &lt;code class=&quot;highlighter-rouge&quot;&gt;exit&lt;/code&gt;.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;bc
+123+333
+456
+&lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;seq&lt;/strong&gt; &lt;em&gt;[range]&lt;/em&gt; : Generate a sequence of numbers.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;seq 6
+1
+2
+3
+4
+5
+6
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sort&lt;/strong&gt; &lt;em&gt;[file]&lt;/em&gt; : Rearrange the lines in a text file so that they are sorted, numerically and alphabetically.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sort data.txt
+apples
+bananas
+kiwis
+oranges
+pears
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;uniq&lt;/strong&gt; : Returns unique lines from the sorted input. The command can be used to display all the unique lines &lt;code class=&quot;highlighter-rouge&quot;&gt;-u&lt;/code&gt; or duplicate lines &lt;code class=&quot;highlighter-rouge&quot;&gt;-d&lt;/code&gt; from a file.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sort data.txt | uniq &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt;
+bananas
+kiwis
+oranges
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sort data.txt | uniq &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt;
+apples
+pears
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;cut&lt;/strong&gt; &lt;em&gt;[options]&lt;/em&gt; &lt;em&gt;[file]&lt;/em&gt; : Select columns from output of a program. It is possible to use bytes &lt;code class=&quot;highlighter-rouge&quot;&gt;-b&lt;/code&gt;, columns &lt;code class=&quot;highlighter-rouge&quot;&gt;-c&lt;/code&gt;, field number &lt;code class=&quot;highlighter-rouge&quot;&gt;-f&lt;/code&gt; or a specific delimiter &lt;code class=&quot;highlighter-rouge&quot;&gt;-d&lt;/code&gt;. In the first example below &lt;code class=&quot;highlighter-rouge&quot;&gt;2-&lt;/code&gt; means cut everything from the second byte until the end of line. In the second example there is the opposite &lt;code class=&quot;highlighter-rouge&quot;&gt;-2&lt;/code&gt; cut everything from the beginning to the second byte.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cut &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; 2- data.txt
+pples
+ranges
+ears
+iwis
+ananas
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cut &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-2&lt;/span&gt; data.txt
+ap
+or
+pe
+ki
+ba
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;comm&lt;/strong&gt; &lt;em&gt;[file1]&lt;/em&gt; &lt;em&gt;[file2]&lt;/em&gt; : Compare two sorted files and write to standard output: the lines that are common, plus the lines that are unique.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;comm file1.txt file2.txt
+file1 text
+          file2 text
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;cmp&lt;/strong&gt; &lt;em&gt;[file1]&lt;/em&gt; &lt;em&gt;[file2]&lt;/em&gt; : Compares two files byte by byte and helps to find out if two files are identical.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;cmp file1.txt file2.txt
+file1.txt file2.txt differ: char 5, line 1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;diff&lt;/strong&gt; &lt;em&gt;[file1]&lt;/em&gt; &lt;em&gt;[file2]&lt;/em&gt; : Diff stands for difference. This command is used to display the differences in the files by comparing the files line by line.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;diff file1.txt file2.txt
+1c1
+&amp;lt; file1 text
+&lt;span class=&quot;nt&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; file2 text
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;paste&lt;/strong&gt; &lt;em&gt;[options]&lt;/em&gt; &lt;em&gt;[file1]&lt;/em&gt; &lt;em&gt;[file2]&lt;/em&gt; : Used to join files horizontally (parallel merging) by outputting lines consisting of lines from each file. A delimiter can be specified with the &lt;code class=&quot;highlighter-rouge&quot;&gt;-d&lt;/code&gt; flag.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;paste file1.txt file2.txt
+id  value
+10  12
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;paste &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;,&quot;&lt;/span&gt; file1.txt file2.txt
+id,value
+10,12
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;split&lt;/strong&gt; &lt;em&gt;[options]&lt;/em&gt; &lt;em&gt;[file]&lt;/em&gt; : Split file into specified chunks.
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;split &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; 20M output.log
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;awk&quot;&gt;Awk&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;awk&lt;/strong&gt; &lt;em&gt;[options]&lt;/em&gt; ‘&lt;em&gt;[code]&lt;/em&gt;’ &lt;em&gt;[file]&lt;/em&gt; : Awk is a pattern-directed scanning and processing language.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Awk is a standard tool on every UNIX system. It is very useful for text-processing tasks and other scripting needs. The syntax of the language is similar to the C programming language, but without mandatory semicolons, manual memory management, or static typing.&lt;/p&gt;
+
+&lt;p&gt;It excels at text processing. It can be used from the command line or as a stand-alone scripting language.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;In this guide I’m going to show only a few useful features of this language. For a more complete tutorial please visit the &lt;a href=&quot;http://www.grymoire.com/Unix/Awk.html&quot;&gt;Awk Tutorial&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A very quick introduction to the Awk language can also be found here: &lt;a href=&quot;https://learnxinyminutes.com/docs/awk/&quot;&gt;https://learnxinyminutes.com/docs/awk/&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In the command line the Awk code needs to be placed between quote characters &lt;code class=&quot;highlighter-rouge&quot;&gt;' '&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Print words from a file which are longer than 5 characters&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;words.txt
+brown
+tree
+craftsmanship
+book
+beautiful
+existence
+ministerial
+computer
+town
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;awk &lt;span class=&quot;s1&quot;&gt;'length($1) &amp;gt; 5'&lt;/span&gt; words.txt
+craftsmanship
+beautiful
+existence
+ministerial
+computer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;AWK is a &lt;strong&gt;line oriented language&lt;/strong&gt;. It divides a file into lines and line is broken up into a sequence of fields. These fields can be accessed using the variables like: &lt;code class=&quot;highlighter-rouge&quot;&gt;$1&lt;/code&gt; which represents the first field, &lt;code class=&quot;highlighter-rouge&quot;&gt;$2&lt;/code&gt; the second and so on. 
+The &lt;code class=&quot;highlighter-rouge&quot;&gt;$0&lt;/code&gt; variable refers to the line.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;length()&lt;/code&gt; function above is also a part of the language. There are many useful built-in functions and variables.
+In the example below, the built-in variable &lt;code class=&quot;highlighter-rouge&quot;&gt;NR&lt;/code&gt; contains the current line which is being processed.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Return every second line from a file&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;awk &lt;span class=&quot;s1&quot;&gt;'NR % 2 == 0 {print}'&lt;/span&gt; words.txt
+tree
+book
+existence
+computer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Print line numbers for each line in a file using the NR variable&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt; awk &lt;span class=&quot;s1&quot;&gt;'{print NR, $0}'&lt;/span&gt; words.txt
+1 brown
+2 tree
+3 craftsmanship
+4 book
+5 beautiful
+6 existence
+7 ministerial
+8 computer
+9 town
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Search for a pattern&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;awk &lt;span class=&quot;s1&quot;&gt;'match($0, /^[c,b]/)'&lt;/span&gt; words.txt
+brown
+craftsmanship
+book
+beautiful
+computer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;match()&lt;/code&gt; function above is another useful built-in function which also supports regular expressions.
+Match takes 2 parameters. The first one &lt;code class=&quot;highlighter-rouge&quot;&gt;$0&lt;/code&gt; represents the current line of text.
+The second parameter is the regular expression &lt;code class=&quot;highlighter-rouge&quot;&gt;/^[c,b]/&lt;/code&gt; which matches with the characters &lt;code class=&quot;highlighter-rouge&quot;&gt;c&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt; if they are at the beginning of the line.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Number of lines from two files&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;awk &lt;span class=&quot;s1&quot;&gt;'END {print NR}'&lt;/span&gt; words.txt words2.txt
+36
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;BEGIN&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;END&lt;/code&gt; are special patterns in the language which are executed before and after every line has been processed. The example above demonstrates the use of &lt;code class=&quot;highlighter-rouge&quot;&gt;END&lt;/code&gt;. It will print only once after all lines have been processed and returns 36 which is actually the number of lines in both files together.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Using BEGIN to create a header&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;awk &lt;span class=&quot;s1&quot;&gt;'BEGIN {print &quot;id,name&quot;}'&lt;/span&gt; users.txt
+id,name
+1,John
+2,Tom
+3,Jane
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Replacing text with Awk&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello John&quot;&lt;/span&gt; | awk &lt;span class=&quot;s1&quot;&gt;'{$2=&quot;Miroslav&quot;; print $0}'&lt;/span&gt;
+Hello Miroslav
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In the example above we have reassigned the &lt;code class=&quot;highlighter-rouge&quot;&gt;$2&lt;/code&gt; (second field) with our own word and printed the result. We can do this with any file and even define complex rules for replacement.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Replacing the field separator&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;one,two,three&quot;&lt;/span&gt; | awk &lt;span class=&quot;s1&quot;&gt;'$1=$1'&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;FS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,&quot;&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;OFS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;:&quot;&lt;/span&gt;
+one:two:three
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The above example uses two additional parameters:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;FS&lt;/code&gt; which tells Awk what is the field separator in the input data. (Alternatively &lt;code class=&quot;highlighter-rouge&quot;&gt;-F&quot;,&quot;&lt;/code&gt; could have been used)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;OFS&lt;/code&gt; which is the output field separator.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note that the default field separator in Awk is whitespace and using the FS and OFS parameters we can change it to whatever we want.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Using Awk to calculate fields&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;2,4,6&quot;&lt;/span&gt; | awk &lt;span class=&quot;nt&quot;&gt;-F&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,&quot;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{print $1 * 2, $2 * 3, $3 * 4}'&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;OFS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,&quot;&lt;/span&gt; 
+4,12,24
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The example above shows how Awk can deal with numerical text data and do some calculations with it.
+The text &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;2,4,6&quot;&lt;/code&gt; is split by the &lt;code class=&quot;highlighter-rouge&quot;&gt;,&lt;/code&gt; and then each field is multiplied by a different number.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;The first field &lt;code class=&quot;highlighter-rouge&quot;&gt;$1&lt;/code&gt; contains 2 and the calculation is 2 * 2 = 4&lt;/li&gt;
+  &lt;li&gt;Second field &lt;code class=&quot;highlighter-rouge&quot;&gt;$2&lt;/code&gt; contains 4 and the calculation is 4 * 3 = 12&lt;/li&gt;
+  &lt;li&gt;Third field &lt;code class=&quot;highlighter-rouge&quot;&gt;$3&lt;/code&gt; contains 6 and the calculation is 6 * 4 = 24&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Please take a while to understand this concept as it is very useful for working with large CSV files which might be too big to do this calculation in Excel.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;To learn about CSV files please check &lt;a href=&quot;https://en.wikipedia.org/wiki/Comma-separated_values&quot;&gt;https://en.wikipedia.org/wiki/Comma-separated_values&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;sed&quot;&gt;Sed&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;sed&lt;/strong&gt; &lt;em&gt;[options]&lt;/em&gt; ‘&lt;em&gt;[code]&lt;/em&gt;’ &lt;em&gt;[file]&lt;/em&gt; : Stream editor.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Sed is another standard UNIX command line tool. The name stands for stream editor and it can perform various functions on files like, search, find and replace, insert or delete. The most common usage is substitution of text in files (by using special patterns) without even opening them.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;For a more detailed tutorial please check the &lt;a href=&quot;http://www.grymoire.com/Unix/Sed.html&quot;&gt;Sed Tutorial&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Substitution of word in a file&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;fruit.txt
+apples are great
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sed &lt;span class=&quot;s1&quot;&gt;'s/apples/oranges/'&lt;/span&gt; fruit.txt
+oranges are great
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here the &lt;code class=&quot;highlighter-rouge&quot;&gt;s&lt;/code&gt; specifies the substitution operation. The &lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt; are delimiters. The text &lt;code class=&quot;highlighter-rouge&quot;&gt;apples&lt;/code&gt; is the search pattern and the text &lt;code class=&quot;highlighter-rouge&quot;&gt;oranges&lt;/code&gt; is the replacement string.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Replacing the Nth occurrence&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;fruit.txt
+apple apple apple apple
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sed &lt;span class=&quot;s1&quot;&gt;'s/apple/orange/3'&lt;/span&gt; fruit.txt
+apple apple orange apple
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Replacing all the occurrences&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;fruit.txt
+apple apple apple apple
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sed &lt;span class=&quot;s1&quot;&gt;'s/apple/orange/g'&lt;/span&gt; fruit.txt
+orange orange orange orange
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;g&lt;/code&gt; parameter means global as oposed to the previous example where we used &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt; to substitute only the 3rd occurrence.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Add parentheses around a word&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sed &lt;span class=&quot;s1&quot;&gt;'s/apple/(&amp;amp;)/3'&lt;/span&gt; fruit.txt
+apple apple &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;apple&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; apple
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Add a prefix to a word&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;sed &lt;span class=&quot;s1&quot;&gt;'s/apple/pine&amp;amp;/3'&lt;/span&gt; fruit.txt
+apple apple pineapple apple
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;amp;&lt;/code&gt; pattern represents the current match and in the examples we are using it to add parentheses and a prefix.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Keeping part of the match&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;abcd123 | sed &lt;span class=&quot;s1&quot;&gt;'s/\([a-z]*\).*/\1/'&lt;/span&gt;
+abcd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;\1&lt;/code&gt; means the first remembered pattern. Sed has up to nine remembered patterns.
+We can use that to remove duplicate words.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Remove duplicated words&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;hello hello world&quot;&lt;/span&gt; | sed &lt;span class=&quot;s1&quot;&gt;'s/\([a-z]*\) \1/\1/'&lt;/span&gt;
+hello world
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;practical-one-liners&quot;&gt;Practical one-liners&lt;/h2&gt;
+
+&lt;p&gt;In this section I am going to show a few practical command combinations which should fit into a single line.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Combine multiple CSV files which have the same header&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;head &lt;span class=&quot;nt&quot;&gt;-2&lt;/span&gt; file1.txt &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; all.txt&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; tail &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; +3 &lt;span class=&quot;nt&quot;&gt;-q&lt;/span&gt; file&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;.txt &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; all.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Explanation: The first part saves the header to the file &lt;code class=&quot;highlighter-rouge&quot;&gt;all.txt&lt;/code&gt;. Then all the files are concatenated into the file by using the &lt;code class=&quot;highlighter-rouge&quot;&gt;tail&lt;/code&gt; command to skip the header.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Filtering a CSV using Awk&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;awk &lt;span class=&quot;nt&quot;&gt;-F&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,&quot;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'/text/'&lt;/span&gt; source.csv &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; filtered.csv
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Explanation: The command above will output only those lines from &lt;code class=&quot;highlighter-rouge&quot;&gt;source.csv&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;filtered.csv&lt;/code&gt; where the term &lt;code class=&quot;highlighter-rouge&quot;&gt;text&lt;/code&gt; was found.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Count observations in a CSV file based on condition on a specific column&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;awk &lt;span class=&quot;nt&quot;&gt;-F&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,&quot;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'$5 &amp;gt; 40'&lt;/span&gt; all.csv | wc &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt;
+1857
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Explanation: In the example above, we are counting the lines in the CSV file where the value in the 5th column is higher than 40.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Add a new column to a CSV file&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;data.csv
+model,type,price
+A,basic,10
+B,extended,22
+C,premium,45
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;awk &lt;span class=&quot;nt&quot;&gt;-F&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,&quot;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'{ if(NR == 1) {print $0,&quot;price_doubled&quot;} else {print $0,$3 * 2}}'&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;OFS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;,&quot;&lt;/span&gt; data.csv &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; newdata.csv
+
+&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat &lt;/span&gt;newdata.csv
+model,type,price,price_doubled
+A,basic,10,20
+B,extended,22,44
+C,premium,45,90
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Explanation: In this example a new column named &lt;code class=&quot;highlighter-rouge&quot;&gt;price_doubled&lt;/code&gt; is calculated by multiplying the &lt;code class=&quot;highlighter-rouge&quot;&gt;price&lt;/code&gt; column &lt;code class=&quot;highlighter-rouge&quot;&gt;$3&lt;/code&gt; by 2. The conditional statement &lt;code class=&quot;highlighter-rouge&quot;&gt;if(NR == 1)&lt;/code&gt; in the Awk code makes sure that the header value &lt;code class=&quot;highlighter-rouge&quot;&gt;price_doubled&lt;/code&gt; is printed in the first line and the values are calculated in the &lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt; block on the next lines. The new column is added to the original data. The resulting CSV is then stored as &lt;code class=&quot;highlighter-rouge&quot;&gt;newdata.csv&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;basic-shell-scripting&quot;&gt;Basic Shell scripting&lt;/h2&gt;
+
+&lt;p&gt;A shell script is a file containing code designed to be run by the command line interpreter. From this point of view, the command line can be viewed as an interpreter of the scripting language. Writing shell scripts is very useful for automation of repeating sequences of commands and also for writing small programs.&lt;/p&gt;
+
+&lt;p&gt;A script is basically a plain text file containing code which is directly executable in the command line. No compilation to an executable file format is needed as the file is basically interpreted line by line by the shell.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The default shell in Linux, Mac OSX and other Unix-like systems is called &lt;strong&gt;Bash&lt;/strong&gt; and many times the language used is called &lt;strong&gt;Bash&lt;/strong&gt; as well. The terms &lt;strong&gt;“shell script”&lt;/strong&gt; and &lt;strong&gt;“bash script”&lt;/strong&gt; are often used interchangeably. To find out more please check here: &lt;a href=&quot;https://en.wikipedia.org/wiki/Bash_(Unix_shell)&quot;&gt;https://en.wikipedia.org/wiki/Bash_(Unix_shell)&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;A quick introduction to Bash can be found here: &lt;a href=&quot;https://learnxinyminutes.com/docs/bash/&quot;&gt;https://learnxinyminutes.com/docs/bash/&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;basics-of-bash&quot;&gt;Basics of Bash&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Bash is the worst scripting language except for all the others :)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;shebang&quot;&gt;Shebang&lt;/h3&gt;
+
+&lt;p&gt;This is a special identifier at the very first line in the file which is there for the operating system to recognize that a file is a bash script and not just some plain text document. There are many different ways to define the shebang. The most portable ways are the following:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env sh&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;More about shebang here: &lt;a href=&quot;http://en.wikipedia.org/wiki/Shebang_(Unix)&quot;&gt;http://en.wikipedia.org/wiki/Shebang_(Unix)&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;comments&quot;&gt;Comments&lt;/h3&gt;
+
+&lt;p&gt;Comments are lines of text that will be ignored by the interpreter. They are useful for documenting the code or including additional information for the readers of the script. Also the shebang is actually a comment. Here is an example script that contains just comments:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# hello there! welcome to my script!&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# this is another comment&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When the example above is executed nothing will be printed out on the screen.&lt;/p&gt;
+
+&lt;h3 id=&quot;hello-world&quot;&gt;Hello, World!&lt;/h3&gt;
+
+&lt;p&gt;Typically the first step in learning a new programming language is the obligatory &lt;em&gt;“Hello, World!”&lt;/em&gt; program. This program prints the text &lt;code class=&quot;highlighter-rouge&quot;&gt;Hello, World!&lt;/code&gt; to the screen.&lt;/p&gt;
+
+&lt;p&gt;First step is to create a new file &lt;code class=&quot;highlighter-rouge&quot;&gt;hello.sh&lt;/code&gt; with the following code:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello, World!&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Before the script can be run it has to be set as executable with the following command:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;chmod +x hello.sh
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note: This is needed for all the scripts that you create to make them executable.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;After that it can be executed by simply calling the name of the file in the command line:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;./hello.sh
+Hello, World!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;variables-and-the-if-statement&quot;&gt;Variables and the if statement&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;Name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Miro&quot;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$Name&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Tom&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;then
+    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Your name is Tom.&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else
+    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Your name isn't Tom. It's &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$Name&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;.&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The above example shows multiple features of bash scripts:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Creating a new variable &lt;code class=&quot;highlighter-rouge&quot;&gt;Name=&quot;Miro&quot;&lt;/code&gt;. This is also called a naked variable and there should be no spaces around &lt;code class=&quot;highlighter-rouge&quot;&gt;=&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; statement is used for conditional logic. In this example the condition is seen in the brackets &lt;code class=&quot;highlighter-rouge&quot;&gt;[ $Name == &quot;Tom&quot; ]&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;If the condition is &lt;strong&gt;true&lt;/strong&gt; then &lt;code class=&quot;highlighter-rouge&quot;&gt;echo &quot;Your name is Tom&quot;&lt;/code&gt; is executed.&lt;/li&gt;
+  &lt;li&gt;If the condition is &lt;strong&gt;false&lt;/strong&gt; the &lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt; part &lt;code class=&quot;highlighter-rouge&quot;&gt;echo &quot;Your name isn't Tom. It's $Name&quot;&lt;/code&gt; is executed.&lt;/li&gt;
+  &lt;li&gt;In bash the &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; statement needs to be ended with a &lt;code class=&quot;highlighter-rouge&quot;&gt;fi&lt;/code&gt; keyword.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Try changing the value of &lt;code class=&quot;highlighter-rouge&quot;&gt;Name=&quot;Miro&quot;&lt;/code&gt; above to &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;Tom&quot;&lt;/code&gt; to see the other result.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Note the space and quote positions in the above script. Misplacing a space or a quote might cause the script to stop working. Many times these bugs are hard to spot.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;loops&quot;&gt;Loops&lt;/h3&gt;
+
+&lt;p&gt;Loops are a useful construct for repeating certain statements for multiple times. Otherwise the command would have to be copy-pasted many times and that would result in code which is very hard to maintain. Below are few examples how to use loops with variables which increment on each iteration.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# range based loop&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;a &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;1..3&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;do
+    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$a&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# traditional for loop&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; b &amp;lt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; 3&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; b++&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;do
+    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$b&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# while loop with condition; -lt means &quot;less than&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-lt&lt;/span&gt; 4 &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;do
+    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$c&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$[$c&lt;/span&gt;+1] &lt;span class=&quot;c&quot;&gt;# increment the c variable&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# infinite while loop with a break condition&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;do
+    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$d&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$[$d&lt;/span&gt;+1] &lt;span class=&quot;c&quot;&gt;# increment the d variable&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$d&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-gt&lt;/span&gt; 3 &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# if d is greater than 3&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;then
+        &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;break&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# breaks out of the infinite loop&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;fi
+done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;functions&quot;&gt;Functions&lt;/h3&gt;
+
+&lt;p&gt;The code can be organized into executable functions. These can be called the same way as the built in commands. The example below shows a custom function which multiplies it’s parameter by 3 and prints the result to the screen.
+A function can also return a result by using the &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt; statement.
+Note that function parameters are referenced to as &lt;code class=&quot;highlighter-rouge&quot;&gt;$1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$3&lt;/code&gt; and so on.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;function &lt;/span&gt;multiply_and_print &lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nv&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$[$1&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; 3]
+    &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;The result is &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+
+multiply_and_print 10
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;useful-scripts&quot;&gt;Useful scripts&lt;/h3&gt;
+
+&lt;p&gt;The constructs mentioned above are the basis on which more useful and complex scripts can be built.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Reading user input&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Enter Your Name&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;name
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Welcome &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$name&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Test if file exists&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;filename&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$filename&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;then
+    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;File exists&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else
+    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;File does not exist&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Note that in this case &lt;code class=&quot;highlighter-rouge&quot;&gt;$1&lt;/code&gt; refers to the argument given to the script from the command line e. g. &lt;code class=&quot;highlighter-rouge&quot;&gt;./check_file.sh myfile.txt&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; &lt;em&gt;Enumerate files in the current directory&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+
+&lt;span class=&quot;nv&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;0
+&lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;FILE &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$PWD&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do
+   &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$[$i&lt;/span&gt; + 1]
+   &lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$i&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;: &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$FILE&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;done&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Here &lt;code class=&quot;highlighter-rouge&quot;&gt;$PWD&lt;/code&gt; is a special built in variable which is similar to the &lt;code class=&quot;highlighter-rouge&quot;&gt;pwd&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;h3 id=&quot;example-address-book&quot;&gt;Example: Address Book&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# The file to save the data&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;DATA&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;address-book.txt&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Input the name, address and phone number&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Name of person: &quot;&lt;/span&gt; 
+&lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;name
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Address: &quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;address
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Phone number: &quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;phone
+
+&lt;span class=&quot;c&quot;&gt;# Ask user for confirmation&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Save the new contact:&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$name&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; ; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$address&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; ; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$phone&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-n&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;y/n: &quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;read &lt;/span&gt;answer
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$answer&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;y&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;then
+    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$name&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; ; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$address&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; ; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$phone&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$DATA&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else
+    &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;The contant was not saved.&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;fi&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The example above is a simple script which asks the user for new contact information. After entering the details the user can confirm or decline a new entry into the Address book. If the user chooses &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; the entry is appended into the file &lt;code class=&quot;highlighter-rouge&quot;&gt;address-book.txt&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I believe that the examples provided in this guide will be a good starting point to those people who want to know more about the command line, Awk, Sed and Shell scripting. I hope this guide gives you some useful information and also inspires you to use the command line as a useful tool for many data related tasks.&lt;/p&gt;</content><author><name>Miroslav Semerad</name><uri>https://miretz.github.io/about</uri></author><summary type="html">In this article I’m going to demonstrate various tools from the UNIX command line which can be used for effective data manipulation. This guide is written mainly for absolute beginners, but hopefully it will also provide useful information for seasoned data scientists and data engineers.</summary></entry><entry><title type="html">On Meaningless work</title><link href="http://localhost:4000/philosophy/2018/02/18/on-meaningless-work.html" rel="alternate" type="text/html" title="On Meaningless work" /><published>2018-02-18T08:00:00+01:00</published><updated>2018-02-18T08:00:00+01:00</updated><id>http://localhost:4000/philosophy/2018/02/18/on-meaningless-work</id><content type="html" xml:base="http://localhost:4000/philosophy/2018/02/18/on-meaningless-work.html">&lt;p&gt;I like reading books. Many people find them to be a good source of relaxation and enjoy the stories which aim to kindle the childish imagination which is buried deep inside all of us. People might enjoy The Lord of the Rings, Harry Potter or The Hunger Games. Books that resonate with a large audience and their fantasy worlds inspired several movies. Mass production of merchandise and advertising makes sure that even those who never read the books or watch the movies know what the story is about.&lt;/p&gt;
 
 &lt;p&gt;However, I am a fan of a very different kind of literature. When you think about the typical stories in the current popular bestsellers, you realize that they are mostly one-off experiences. You will enjoy them while reading/watching, finish the consumption of the product and forget about them. The adverts everywhere will eventually make you sick of them.&lt;/p&gt;
 

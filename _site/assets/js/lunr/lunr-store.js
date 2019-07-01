@@ -18,4 +18,9 @@ var store = [{
         "excerpt":"I like reading books. Many people find them to be a good source of relaxation and enjoy the stories which aim to kindle the childish imagination which is buried deep inside all of us. People might enjoy The Lord of the Rings, Harry Potter or The Hunger Games. Books that...","categories": ["philosophy"],
         "tags": [],
         "url": "http://localhost:4000/philosophy/2018/02/18/on-meaningless-work.html",
-        "teaser":"http://localhost:4000/assets/images/meaningless-work-teaser.jpeg"}]
+        "teaser":"http://localhost:4000/assets/images/meaningless-work-teaser.jpeg"},{
+        "title": "Data manipulation from the UNIX command line",
+        "excerpt":"In this article I’m going to demonstrate various tools from the UNIX command line which can be used for effective data manipulation. This guide is written mainly for absolute beginners, but hopefully it will also provide useful information for seasoned data scientists and data engineers. What is the Command line?...","categories": ["analytics"],
+        "tags": [],
+        "url": "http://localhost:4000/analytics/2019/07/01/data-manipulation-command-line.html",
+        "teaser":"http://localhost:4000/assets/images/data-cmd-teaser.jpeg"}]

@@ -1,0 +1,1358 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Data manipulation from the UNIX command line - Homepage of Miretz</title>
+<meta name="description" content="In this article I’m going to demonstrate various tools from the UNIX command line which can be used for effective data manipulation. This guide is written mainly for absolute beginners, but hopefully it will also provide useful information for seasoned data scientists and data engineers.">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Homepage of Miretz">
+<meta property="og:title" content="Data manipulation from the UNIX command line">
+<meta property="og:url" content="http://localhost:4000/analytics/2019/07/01/data-manipulation-command-line.html">
+
+
+  <meta property="og:description" content="In this article I’m going to demonstrate various tools from the UNIX command line which can be used for effective data manipulation. This guide is written mainly for absolute beginners, but hopefully it will also provide useful information for seasoned data scientists and data engineers.">
+
+
+
+  <meta property="og:image" content="http://localhost:4000/assets/images/data-cmd.jpeg">
+
+
+
+
+
+  <meta property="article:published_time" content="2019-07-01T21:00:00+02:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/analytics/2019/07/01/data-manipulation-command-line.html">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Homepage of Miretz Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">Homepage of Miretz</a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/about/" >About</a>
+            </li></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+  
+
+
+
+
+
+
+
+
+
+
+
+<div class="page__hero--overlay"
+  style=" background-image: linear-gradient(rgba(0, 73, 101, 0.3), rgba(0, 73, 101, 0.3)), url('/assets/images/data-cmd.jpeg');"
+>
+  
+    <div class="wrapper">
+      <h1 id="page-title" class="page__title" itemprop="headline">
+        
+          Data manipulation from the UNIX command line
+
+        
+      </h1>
+      
+      
+        <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  19 minute read
+</p>
+      
+      
+      
+    </div>
+  
+  
+</div>
+
+
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+
+      
+        <img src="/assets/images/bio-foto.jpg" alt="Miroslav Semerad" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Miroslav Semerad</h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        I'm a senior analytics engineer, backend developer, data scientist and a hobby game developer.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+
+      
+        <li>
+          <a href="https://miretz.github.io/about" itemprop="url">
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i> Website
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <li>
+    <a href="https://www.linkedin.com/in/miroslav-semerad-0b620154">
+      <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn
+    </a>
+  </li>
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Data manipulation from the UNIX command line">
+    <meta itemprop="description" content="In this article I’m going to demonstrate various tools from the UNIX command line which can be used for effective data manipulation. This guide is written mainly for absolute beginners, but hopefully it will also provide useful information for seasoned data scientists and data engineers.">
+    <meta itemprop="datePublished" content="July 01, 2019">
+    
+
+    <div class="page__inner-wrap">
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#what-is-the-command-line">What is the Command line?</a></li>
+  <li><a href="#command-line-basics">Command line basics</a>
+    <ul>
+      <li><a href="#first-steps">First steps</a></li>
+      <li><a href="#getting-help">Getting help</a></li>
+      <li><a href="#navigation-and-file-operations">Navigation and file operations</a></li>
+      <li><a href="#reading-files">Reading files</a></li>
+    </ul>
+  </li>
+  <li><a href="#advanced-usage">Advanced usage</a></li>
+  <li><a href="#awk">Awk</a></li>
+  <li><a href="#sed">Sed</a></li>
+  <li><a href="#practical-one-liners">Practical one-liners</a></li>
+  <li><a href="#basic-shell-scripting">Basic Shell scripting</a>
+    <ul>
+      <li><a href="#basics-of-bash">Basics of Bash</a></li>
+      <li><a href="#shebang">Shebang</a></li>
+      <li><a href="#comments">Comments</a></li>
+      <li><a href="#hello-world">Hello, World!</a></li>
+      <li><a href="#variables-and-the-if-statement">Variables and the if statement</a></li>
+      <li><a href="#loops">Loops</a></li>
+      <li><a href="#functions">Functions</a></li>
+      <li><a href="#useful-scripts">Useful scripts</a></li>
+      <li><a href="#example-address-book">Example: Address Book</a></li>
+    </ul>
+  </li>
+  <li><a href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
+          </aside>
+        
+        <p>In this article I’m going to demonstrate various tools from the UNIX command line which can be used for effective data manipulation. This guide is written mainly for absolute beginners, but hopefully it will also provide useful information for seasoned data scientists and data engineers.</p>
+
+<h2 id="what-is-the-command-line">What is the Command line?</h2>
+
+<p>The UNIX command line (also called the UNIX shell) is a user interface which enables interaction with (Unix-like) operating systems using text-based commands.</p>
+
+<p>To run a command, you just type it in with the keyboard and then press the <em>ENTER</em> key.</p>
+
+<p>It is both an <em>interactive interpreter</em> (executes commands that you type in) and a <em>scripting language</em> (runs shell script from a file). To access the command line typically a <em>terminal emulator</em> program is used (Linux Console, Terminal, xterm, Konsole, iTerm2,…).</p>
+
+<h2 id="command-line-basics">Command line basics</h2>
+
+<p>The command line comes with various commands to navigate the file system, get information about the system and work with files.</p>
+
+<h3 id="first-steps">First steps</h3>
+
+<ul>
+  <li><strong>whoami</strong> : Displays the name of the current user.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>whoami
+miroslav
+</code></pre></div>    </div>
+  </li>
+  <li><strong>hostname</strong> : Displays the the current computer’s host name and domain name.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>hostname
+HOME-PC
+</code></pre></div>    </div>
+  </li>
+  <li><strong>echo</strong> <em>[string]</em> : Display a line of text.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo </span>hello
+hello
+</code></pre></div>    </div>
+  </li>
+  <li><strong>history</strong> : Displays the history of the commands typed in by the current user. <em>Note: You can also search the history by pressing the key combination CTRL+R.</em></li>
+</ul>
+
+<h3 id="getting-help">Getting help</h3>
+
+<ul>
+  <li><strong>man</strong> <em>[command]</em> : Opens the manual page for a specific command. Example usage:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>man whoami
+</code></pre></div>    </div>
+    <p><strong>To exit the manual press Q</strong></p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>This guide does not cover all of the existing options and features of the commands. To get all the details please use the <code class="highlighter-rouge">man</code> command above.</p>
+</blockquote>
+
+<blockquote>
+  <p>Also this guide does not cover all the possible commands as this depends on what software is installed on the system.</p>
+</blockquote>
+
+<h3 id="navigation-and-file-operations">Navigation and file operations</h3>
+
+<ul>
+  <li><strong>pwd</strong> : Display current directory location.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">pwd</span>
+/home/miroslav/stuff/
+</code></pre></div>    </div>
+  </li>
+  <li><strong>cd</strong> <em>[path]</em> : Change the current directory to the directory specified as <em>path</em>. Note that also relative paths can be used and also there are a few special symbols:
+    <ul>
+      <li>current directory: <code class="highlighter-rouge">.</code></li>
+      <li>parent directory: <code class="highlighter-rouge">..</code></li>
+      <li>home directory: <code class="highlighter-rouge">~</code></li>
+      <li>Example:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ~/stuff
+<span class="nv">$ </span><span class="nb">pwd</span>
+/home/miroslav/stuff/
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>ls</strong> : List the contents of the current directory.</li>
+  <li><strong>ls</strong> <em>[path]</em> : List the contents of the specified directory.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> ~/stuff
+file1 file2 file3
+</code></pre></div>    </div>
+  </li>
+  <li><strong>ls -lf</strong> : List the directory contents with details.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> <span class="nt">-lf</span> ~/stuff
+total 0
+drwxr-xr-x    4 miroslav  staff   128 Jun 25 13:48 <span class="nb">.</span>
+drwxr-xr-x+ 130 miroslav  staff  4160 Jun 25 13:48 ..
+<span class="nt">-rw-r--r--</span>    1 miroslav  staff     0 Jun 25 13:48 file2
+<span class="nt">-rw-r--r--</span>    1 miroslav  staff     0 Jun 25 13:48 file1
+</code></pre></div>    </div>
+  </li>
+  <li><strong>mkdir</strong> <em>[path]</em> : Create a new directory in the specified path.</li>
+  <li><strong>touch</strong> <em>[path]</em> : Create a new empty file in the specified path.</li>
+  <li><strong>cp</strong> <em>[source]</em> <em>[target]</em> : Copy a file or a folder (with the <code class="highlighter-rouge">-r</code> switch) from the <em>source</em> to <em>target</em>. Relative paths also work here just like in the <code class="highlighter-rouge">cd</code> command. Note there is an additional symbol called the wildcard <code class="highlighter-rouge">*</code> which is useful for selecting multiple files.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>cp file8.txt stuff/
+<span class="nv">$ </span>cp <span class="nt">-r</span> stuff2 stuff/
+<span class="nv">$ </span>cp <span class="nt">-r</span> <span class="k">*</span>.txt texts/
+</code></pre></div>    </div>
+  </li>
+  <li><strong>mv</strong> <em>[source]</em> <em>[target]</em> : Move a file or rename from the <em>source</em> to <em>target</em>. This command also supports relative paths just like <code class="highlighter-rouge">cp</code>.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mv file8.txt stuff/
+<span class="nv">$ </span>mv file9.txt file10.txt
+</code></pre></div>    </div>
+  </li>
+  <li><strong>find</strong> <em>[directory]</em> <em>[options]</em> : Search for files in the directory.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>find ./stuff/ <span class="nt">-name</span> file<span class="k">*</span>
+./stuff//files.txt
+./stuff//file2.txt
+./stuff//file1.txt
+./stuff//file4.txt
+</code></pre></div>    </div>
+  </li>
+  <li><strong>rm</strong> <em>[path]</em> : Delete a file. For deleting directories use the <code class="highlighter-rouge">-r</code> switch.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rm file8.txt
+<span class="nv">$ </span>rm <span class="nt">-r</span> stuff2/
+</code></pre></div>    </div>
+    <blockquote>
+      <p><strong>Warning:</strong> There is no recycle bin, so be careful when deleting files and directories.</p>
+    </blockquote>
+  </li>
+</ul>
+
+<h3 id="reading-files">Reading files</h3>
+
+<ul>
+  <li><strong>cat</strong> <em>[file]</em> : Display the whole content of a file. This command can also be used to concatenate multiple files and creating new files.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat </span>file1.txt
+file1 text
+<span class="nv">$ </span><span class="nb">cat </span>file1.txt file2.txt
+file1 text
+file2 text
+</code></pre></div>    </div>
+  </li>
+  <li><strong>cat</strong> &gt; <em>[file]</em> : Cat can also be used to type in a new file. To exit the editor press <strong>CTRL + C</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat</span> <span class="o">&gt;</span> newfile.txt
+hello
+hi
+hola
+</code></pre></div>    </div>
+  </li>
+  <li><strong>head</strong> <em>[file]</em> : Displays lines at the beginning of the file. Number of lines can be specified with the <code class="highlighter-rouge">-n</code> option.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>head <span class="nt">-n</span> 2 file8.txt
+line1
+line2
+</code></pre></div>    </div>
+  </li>
+  <li><strong>tail</strong> <em>[file]</em> : Displays lines at the end of the file. Number of lines can be specified with the <code class="highlighter-rouge">-n</code> option.</li>
+  <li><strong>less</strong> <em>[file]</em> : View contents of a file one page at a time. Allows forward and backward scrolling through the file as well as searching in the file. Ideal for opening very large files that do not fit into memory. You can use the arrow keys to scroll. <strong>To exit press Q</strong>.</li>
+</ul>
+
+<h2 id="advanced-usage">Advanced usage</h2>
+
+<ul>
+  <li><strong>wget</strong> <em>[url]</em> : Download a file from an url address.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>wget https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt
+<span class="nt">--2019-06-25</span> 14:39:24--  https://ocw.mit.edu/ans7870/6/6.006/s08/lecturenotes/files/t8.shakespeare.txt
+Resolving ocw.mit.edu <span class="o">(</span>ocw.mit.edu<span class="o">)</span>... 104.125.20.72
+Connecting to ocw.mit.edu <span class="o">(</span>ocw.mit.edu<span class="o">)</span>|104.125.20.72|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 5458199 <span class="o">(</span>5.2M<span class="o">)</span> <span class="o">[</span>text/plain]
+Saving to: ‘t8.shakespeare.txt’
+
+t8.shakespeare.txt  100%[<span class="o">===================&gt;]</span>   5.21M  10.7MB/s    <span class="k">in </span>0.5s    
+
+2019-06-25 14:39:25 <span class="o">(</span>10.7 MB/s<span class="o">)</span> - ‘t8.shakespeare.txt’ saved <span class="o">[</span>5458199/5458199]
+</code></pre></div></div>
+
+<ul>
+  <li><strong>tar</strong> <em>[options]</em> <em>[archive]</em> <em>[directory]</em>: Tar is the standard archiving utility in Unix-like operating systems. Depending on the type of compression there are various options to use. The most common are:
+    <ul>
+      <li><strong>create gzip archive</strong> : <code class="highlighter-rouge">-cvzf</code></li>
+      <li><strong>create bzip archive</strong> : <code class="highlighter-rouge">-cvjf</code></li>
+      <li><strong>extract gzip archive</strong> e.g. file.tar.gz : <code class="highlighter-rouge">-xvzf</code></li>
+      <li><strong>extract bzip archive</strong> e.g. file.tar.bz2 : <code class="highlighter-rouge">-xvjf</code></li>
+    </ul>
+  </li>
+  <li><strong>tar examples:</strong> In the first line the <em>to_archive/</em> directory is compressed into <em>archive.tar.gz</em>. In the second line the file is extracted.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">tar</span> <span class="nt">-cvzf</span> archive.tar.gz to_archive/
+<span class="nv">$ </span><span class="nb">tar</span> <span class="nt">-xvzf</span> archive.tar.gz
+</code></pre></div>    </div>
+  </li>
+  <li><strong>grep</strong> <em>[expression]</em> <em>[file]</em> : Processes files line by line and returns the lines where the expression term has been matched. The main strength of the tool is the support for <a href="https://en.wikipedia.org/wiki/Regular_expression">Regular Expressions</a>. You can play around with Regular Expressions on <a href="https://regex101.com/">Regex 101</a>.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ grep 'princess' t8.shakespeare.txt
+  And leave eighteen. Alas, poor princess,
+  And here the bracelet of the truest princess
+  Teach you our princess English?
+  Shall be call'd queen, but princess dowager
+  An aged princess; many days shall see her,
+  Holds hand with any princess of the world.
+  The best I had, a princess wrought it me-
+  Kent. Kind and dear princess!
+  ...
+</code></pre></div>    </div>
+  </li>
+  <li><strong>|</strong> : The pipe operator is used to chain output from one command to the input of another command or program. Example search for files and directories with a specific name:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> | <span class="nb">grep </span>stuff
+stuff1
+stuff2
+</code></pre></div>    </div>
+  </li>
+  <li><strong>&gt;</strong> : The redirect operator is used to pass the output to either a file or stream. Single arrow indicates that you wish to overwrite the file if it exists, while the double arrows <code class="highlighter-rouge">&gt;&gt;</code> are used to append to an existing file.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> <span class="o">&gt;</span> files.txt
+</code></pre></div>    </div>
+  </li>
+  <li><strong>wc</strong> <em>[options]</em> <em>[file]</em> : Counts the number of lines <code class="highlighter-rouge">-l</code>, characters <code class="highlighter-rouge">-m</code> or words <code class="highlighter-rouge">-w</code> in a file.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>wc <span class="nt">-l</span> t8.shakespeare.txt
+124456 t8.shakespeare.txt
+<span class="nv">$ </span>wc <span class="nt">-m</span> t8.shakespeare.txt
+ 5458199 t8.shakespeare.txt
+<span class="nv">$ </span>wc <span class="nt">-w</span> t8.shakespeare.txt
+901325 t8.shakespeare.txt
+</code></pre></div>    </div>
+  </li>
+  <li><strong>bc</strong> : Command line calculator. To exit the program type <code class="highlighter-rouge">exit</code>.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bc
+123+333
+456
+<span class="nb">exit</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>seq</strong> <em>[range]</em> : Generate a sequence of numbers.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>seq 6
+1
+2
+3
+4
+5
+6
+</code></pre></div>    </div>
+  </li>
+  <li><strong>sort</strong> <em>[file]</em> : Rearrange the lines in a text file so that they are sorted, numerically and alphabetically.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sort data.txt
+apples
+bananas
+kiwis
+oranges
+pears
+</code></pre></div>    </div>
+  </li>
+  <li><strong>uniq</strong> : Returns unique lines from the sorted input. The command can be used to display all the unique lines <code class="highlighter-rouge">-u</code> or duplicate lines <code class="highlighter-rouge">-d</code> from a file.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sort data.txt | uniq <span class="nt">-u</span>
+bananas
+kiwis
+oranges
+<span class="nv">$ </span>sort data.txt | uniq <span class="nt">-d</span>
+apples
+pears
+</code></pre></div>    </div>
+  </li>
+  <li><strong>cut</strong> <em>[options]</em> <em>[file]</em> : Select columns from output of a program. It is possible to use bytes <code class="highlighter-rouge">-b</code>, columns <code class="highlighter-rouge">-c</code>, field number <code class="highlighter-rouge">-f</code> or a specific delimiter <code class="highlighter-rouge">-d</code>. In the first example below <code class="highlighter-rouge">2-</code> means cut everything from the second byte until the end of line. In the second example there is the opposite <code class="highlighter-rouge">-2</code> cut everything from the beginning to the second byte.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>cut <span class="nt">-b</span> 2- data.txt
+pples
+ranges
+ears
+iwis
+ananas
+<span class="nv">$ </span>cut <span class="nt">-b</span> <span class="nt">-2</span> data.txt
+ap
+or
+pe
+ki
+ba
+</code></pre></div>    </div>
+  </li>
+  <li><strong>comm</strong> <em>[file1]</em> <em>[file2]</em> : Compare two sorted files and write to standard output: the lines that are common, plus the lines that are unique.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>comm file1.txt file2.txt
+file1 text
+          file2 text
+</code></pre></div>    </div>
+  </li>
+  <li><strong>cmp</strong> <em>[file1]</em> <em>[file2]</em> : Compares two files byte by byte and helps to find out if two files are identical.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>cmp file1.txt file2.txt
+file1.txt file2.txt differ: char 5, line 1
+</code></pre></div>    </div>
+  </li>
+  <li><strong>diff</strong> <em>[file1]</em> <em>[file2]</em> : Diff stands for difference. This command is used to display the differences in the files by comparing the files line by line.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>diff file1.txt file2.txt
+1c1
+&lt; file1 text
+<span class="nt">---</span>
+<span class="o">&gt;</span> file2 text
+</code></pre></div>    </div>
+  </li>
+  <li><strong>paste</strong> <em>[options]</em> <em>[file1]</em> <em>[file2]</em> : Used to join files horizontally (parallel merging) by outputting lines consisting of lines from each file. A delimiter can be specified with the <code class="highlighter-rouge">-d</code> flag.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>paste file1.txt file2.txt
+id  value
+10  12
+<span class="nv">$ </span>paste <span class="nt">-d</span> <span class="s2">","</span> file1.txt file2.txt
+id,value
+10,12
+</code></pre></div>    </div>
+  </li>
+  <li><strong>split</strong> <em>[options]</em> <em>[file]</em> : Split file into specified chunks.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>split <span class="nt">-b</span> 20M output.log
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="awk">Awk</h2>
+
+<ul>
+  <li><strong>awk</strong> <em>[options]</em> ‘<em>[code]</em>’ <em>[file]</em> : Awk is a pattern-directed scanning and processing language.</li>
+</ul>
+
+<p>Awk is a standard tool on every UNIX system. It is very useful for text-processing tasks and other scripting needs. The syntax of the language is similar to the C programming language, but without mandatory semicolons, manual memory management, or static typing.</p>
+
+<p>It excels at text processing. It can be used from the command line or as a stand-alone scripting language.</p>
+
+<blockquote>
+  <p>In this guide I’m going to show only a few useful features of this language. For a more complete tutorial please visit the <a href="http://www.grymoire.com/Unix/Awk.html">Awk Tutorial</a>.</p>
+</blockquote>
+
+<blockquote>
+  <p>A very quick introduction to the Awk language can also be found here: <a href="https://learnxinyminutes.com/docs/awk/">https://learnxinyminutes.com/docs/awk/</a>.</p>
+</blockquote>
+
+<p>In the command line the Awk code needs to be placed between quote characters <code class="highlighter-rouge">' '</code>.</p>
+
+<p><strong>Example:</strong> <em>Print words from a file which are longer than 5 characters</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat </span>words.txt
+brown
+tree
+craftsmanship
+book
+beautiful
+existence
+ministerial
+computer
+town
+
+<span class="nv">$ </span>awk <span class="s1">'length($1) &gt; 5'</span> words.txt
+craftsmanship
+beautiful
+existence
+ministerial
+computer
+</code></pre></div></div>
+
+<p>AWK is a <strong>line oriented language</strong>. It divides a file into lines and line is broken up into a sequence of fields. These fields can be accessed using the variables like: <code class="highlighter-rouge">$1</code> which represents the first field, <code class="highlighter-rouge">$2</code> the second and so on. 
+The <code class="highlighter-rouge">$0</code> variable refers to the line.</p>
+
+<p>The <code class="highlighter-rouge">length()</code> function above is also a part of the language. There are many useful built-in functions and variables.
+In the example below, the built-in variable <code class="highlighter-rouge">NR</code> contains the current line which is being processed.</p>
+
+<p><strong>Example:</strong> <em>Return every second line from a file</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>awk <span class="s1">'NR % 2 == 0 {print}'</span> words.txt
+tree
+book
+existence
+computer
+</code></pre></div></div>
+
+<p><strong>Example:</strong> <em>Print line numbers for each line in a file using the NR variable</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span> awk <span class="s1">'{print NR, $0}'</span> words.txt
+1 brown
+2 tree
+3 craftsmanship
+4 book
+5 beautiful
+6 existence
+7 ministerial
+8 computer
+9 town
+</code></pre></div></div>
+
+<p><strong>Example:</strong> <em>Search for a pattern</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>awk <span class="s1">'match($0, /^[c,b]/)'</span> words.txt
+brown
+craftsmanship
+book
+beautiful
+computer
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">match()</code> function above is another useful built-in function which also supports regular expressions.
+Match takes 2 parameters. The first one <code class="highlighter-rouge">$0</code> represents the current line of text.
+The second parameter is the regular expression <code class="highlighter-rouge">/^[c,b]/</code> which matches with the characters <code class="highlighter-rouge">c</code> or <code class="highlighter-rouge">b</code> if they are at the beginning of the line.</p>
+
+<p><strong>Example:</strong> <em>Number of lines from two files</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>awk <span class="s1">'END {print NR}'</span> words.txt words2.txt
+36
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">BEGIN</code> and <code class="highlighter-rouge">END</code> are special patterns in the language which are executed before and after every line has been processed. The example above demonstrates the use of <code class="highlighter-rouge">END</code>. It will print only once after all lines have been processed and returns 36 which is actually the number of lines in both files together.</p>
+
+<p><strong>Example:</strong> <em>Using BEGIN to create a header</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>awk <span class="s1">'BEGIN {print "id,name"}'</span> users.txt
+id,name
+1,John
+2,Tom
+3,Jane
+</code></pre></div></div>
+
+<p><strong>Example:</strong> <em>Replacing text with Awk</em></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"Hello John"</span> | awk <span class="s1">'{$2="Miroslav"; print $0}'</span>
+Hello Miroslav
+</code></pre></div></div>
+
+<p>In the example above we have reassigned the <code class="highlighter-rouge">$2</code> (second field) with our own word and printed the result. We can do this with any file and even define complex rules for replacement.</p>
+
+<p><strong>Example:</strong> <em>Replacing the field separator</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"one,two,three"</span> | awk <span class="s1">'$1=$1'</span> <span class="nv">FS</span><span class="o">=</span><span class="s2">","</span> <span class="nv">OFS</span><span class="o">=</span><span class="s2">":"</span>
+one:two:three
+</code></pre></div></div>
+
+<p>The above example uses two additional parameters:</p>
+<ul>
+  <li><code class="highlighter-rouge">FS</code> which tells Awk what is the field separator in the input data. (Alternatively <code class="highlighter-rouge">-F","</code> could have been used)</li>
+  <li><code class="highlighter-rouge">OFS</code> which is the output field separator.</li>
+</ul>
+
+<blockquote>
+  <p>Note that the default field separator in Awk is whitespace and using the FS and OFS parameters we can change it to whatever we want.</p>
+</blockquote>
+
+<p><strong>Example:</strong> <em>Using Awk to calculate fields</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"2,4,6"</span> | awk <span class="nt">-F</span><span class="s2">","</span> <span class="s1">'{print $1 * 2, $2 * 3, $3 * 4}'</span> <span class="nv">OFS</span><span class="o">=</span><span class="s2">","</span> 
+4,12,24
+</code></pre></div></div>
+
+<p>The example above shows how Awk can deal with numerical text data and do some calculations with it.
+The text <code class="highlighter-rouge">"2,4,6"</code> is split by the <code class="highlighter-rouge">,</code> and then each field is multiplied by a different number.</p>
+<ul>
+  <li>The first field <code class="highlighter-rouge">$1</code> contains 2 and the calculation is 2 * 2 = 4</li>
+  <li>Second field <code class="highlighter-rouge">$2</code> contains 4 and the calculation is 4 * 3 = 12</li>
+  <li>Third field <code class="highlighter-rouge">$3</code> contains 6 and the calculation is 6 * 4 = 24</li>
+</ul>
+
+<p>Please take a while to understand this concept as it is very useful for working with large CSV files which might be too big to do this calculation in Excel.</p>
+
+<blockquote>
+  <p>To learn about CSV files please check <a href="https://en.wikipedia.org/wiki/Comma-separated_values">https://en.wikipedia.org/wiki/Comma-separated_values</a>.</p>
+</blockquote>
+
+<h2 id="sed">Sed</h2>
+
+<ul>
+  <li><strong>sed</strong> <em>[options]</em> ‘<em>[code]</em>’ <em>[file]</em> : Stream editor.</li>
+</ul>
+
+<p>Sed is another standard UNIX command line tool. The name stands for stream editor and it can perform various functions on files like, search, find and replace, insert or delete. The most common usage is substitution of text in files (by using special patterns) without even opening them.</p>
+
+<blockquote>
+  <p>For a more detailed tutorial please check the <a href="http://www.grymoire.com/Unix/Sed.html">Sed Tutorial</a>.</p>
+</blockquote>
+
+<p><strong>Example:</strong> <em>Substitution of word in a file</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat </span>fruit.txt
+apples are great
+
+<span class="nv">$ </span>sed <span class="s1">'s/apples/oranges/'</span> fruit.txt
+oranges are great
+</code></pre></div></div>
+
+<p>Here the <code class="highlighter-rouge">s</code> specifies the substitution operation. The <code class="highlighter-rouge">/</code> are delimiters. The text <code class="highlighter-rouge">apples</code> is the search pattern and the text <code class="highlighter-rouge">oranges</code> is the replacement string.</p>
+
+<p><strong>Example:</strong> <em>Replacing the Nth occurrence</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat </span>fruit.txt
+apple apple apple apple
+<span class="nv">$ </span>sed <span class="s1">'s/apple/orange/3'</span> fruit.txt
+apple apple orange apple
+</code></pre></div></div>
+<p><strong>Example:</strong> <em>Replacing all the occurrences</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat </span>fruit.txt
+apple apple apple apple
+<span class="nv">$ </span>sed <span class="s1">'s/apple/orange/g'</span> fruit.txt
+orange orange orange orange
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">g</code> parameter means global as oposed to the previous example where we used <code class="highlighter-rouge">3</code> to substitute only the 3rd occurrence.</p>
+
+<p><strong>Example:</strong> <em>Add parentheses around a word</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sed <span class="s1">'s/apple/(&amp;)/3'</span> fruit.txt
+apple apple <span class="o">(</span>apple<span class="o">)</span> apple
+</code></pre></div></div>
+
+<p><strong>Example:</strong> <em>Add a prefix to a word</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sed <span class="s1">'s/apple/pine&amp;/3'</span> fruit.txt
+apple apple pineapple apple
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">&amp;</code> pattern represents the current match and in the examples we are using it to add parentheses and a prefix.</p>
+
+<p><strong>Example:</strong> <em>Keeping part of the match</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo </span>abcd123 | sed <span class="s1">'s/\([a-z]*\).*/\1/'</span>
+abcd
+</code></pre></div></div>
+
+<p>The <code class="highlighter-rouge">\1</code> means the first remembered pattern. Sed has up to nine remembered patterns.
+We can use that to remove duplicate words.</p>
+
+<p><strong>Example:</strong> <em>Remove duplicated words</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"hello hello world"</span> | sed <span class="s1">'s/\([a-z]*\) \1/\1/'</span>
+hello world
+</code></pre></div></div>
+
+<h2 id="practical-one-liners">Practical one-liners</h2>
+
+<p>In this section I am going to show a few practical command combinations which should fit into a single line.</p>
+
+<p><strong>Example:</strong> <em>Combine multiple CSV files which have the same header</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>head <span class="nt">-2</span> file1.txt <span class="o">&gt;</span> all.txt<span class="p">;</span> tail <span class="nt">-n</span> +3 <span class="nt">-q</span> file<span class="k">*</span>.txt <span class="o">&gt;&gt;</span> all.txt
+</code></pre></div></div>
+
+<p>Explanation: The first part saves the header to the file <code class="highlighter-rouge">all.txt</code>. Then all the files are concatenated into the file by using the <code class="highlighter-rouge">tail</code> command to skip the header.</p>
+
+<p><strong>Example:</strong> <em>Filtering a CSV using Awk</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>awk <span class="nt">-F</span><span class="s2">","</span> <span class="s1">'/text/'</span> source.csv <span class="o">&gt;</span> filtered.csv
+</code></pre></div></div>
+
+<p>Explanation: The command above will output only those lines from <code class="highlighter-rouge">source.csv</code> to <code class="highlighter-rouge">filtered.csv</code> where the term <code class="highlighter-rouge">text</code> was found.</p>
+
+<p><strong>Example:</strong> <em>Count observations in a CSV file based on condition on a specific column</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>awk <span class="nt">-F</span><span class="s2">","</span> <span class="s1">'$5 &gt; 40'</span> all.csv | wc <span class="nt">-l</span>
+1857
+</code></pre></div></div>
+
+<p>Explanation: In the example above, we are counting the lines in the CSV file where the value in the 5th column is higher than 40.</p>
+
+<p><strong>Example:</strong> <em>Add a new column to a CSV file</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat </span>data.csv
+model,type,price
+A,basic,10
+B,extended,22
+C,premium,45
+
+<span class="nv">$ </span>awk <span class="nt">-F</span><span class="s2">","</span> <span class="s1">'{ if(NR == 1) {print $0,"price_doubled"} else {print $0,$3 * 2}}'</span> <span class="nv">OFS</span><span class="o">=</span><span class="s2">","</span> data.csv <span class="o">&gt;</span> newdata.csv
+
+<span class="nv">$ </span><span class="nb">cat </span>newdata.csv
+model,type,price,price_doubled
+A,basic,10,20
+B,extended,22,44
+C,premium,45,90
+</code></pre></div></div>
+
+<p>Explanation: In this example a new column named <code class="highlighter-rouge">price_doubled</code> is calculated by multiplying the <code class="highlighter-rouge">price</code> column <code class="highlighter-rouge">$3</code> by 2. The conditional statement <code class="highlighter-rouge">if(NR == 1)</code> in the Awk code makes sure that the header value <code class="highlighter-rouge">price_doubled</code> is printed in the first line and the values are calculated in the <code class="highlighter-rouge">else</code> block on the next lines. The new column is added to the original data. The resulting CSV is then stored as <code class="highlighter-rouge">newdata.csv</code>.</p>
+
+<h2 id="basic-shell-scripting">Basic Shell scripting</h2>
+
+<p>A shell script is a file containing code designed to be run by the command line interpreter. From this point of view, the command line can be viewed as an interpreter of the scripting language. Writing shell scripts is very useful for automation of repeating sequences of commands and also for writing small programs.</p>
+
+<p>A script is basically a plain text file containing code which is directly executable in the command line. No compilation to an executable file format is needed as the file is basically interpreted line by line by the shell.</p>
+
+<blockquote>
+  <p>The default shell in Linux, Mac OSX and other Unix-like systems is called <strong>Bash</strong> and many times the language used is called <strong>Bash</strong> as well. The terms <strong>“shell script”</strong> and <strong>“bash script”</strong> are often used interchangeably. To find out more please check here: <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">https://en.wikipedia.org/wiki/Bash_(Unix_shell)</a>.</p>
+</blockquote>
+
+<blockquote>
+  <p>A quick introduction to Bash can be found here: <a href="https://learnxinyminutes.com/docs/bash/">https://learnxinyminutes.com/docs/bash/</a>.</p>
+</blockquote>
+
+<h3 id="basics-of-bash">Basics of Bash</h3>
+
+<blockquote>
+  <p>Bash is the worst scripting language except for all the others :)</p>
+</blockquote>
+
+<h3 id="shebang">Shebang</h3>
+
+<p>This is a special identifier at the very first line in the file which is there for the operating system to recognize that a file is a bash script and not just some plain text document. There are many different ways to define the shebang. The most portable ways are the following:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env sh</span>
+</code></pre></div></div>
+<p>or</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>More about shebang here: <a href="http://en.wikipedia.org/wiki/Shebang_(Unix)">http://en.wikipedia.org/wiki/Shebang_(Unix)</a></p>
+</blockquote>
+
+<h3 id="comments">Comments</h3>
+
+<p>Comments are lines of text that will be ignored by the interpreter. They are useful for documenting the code or including additional information for the readers of the script. Also the shebang is actually a comment. Here is an example script that contains just comments:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+
+<span class="c"># hello there! welcome to my script!</span>
+<span class="c"># this is another comment</span>
+</code></pre></div></div>
+
+<p>When the example above is executed nothing will be printed out on the screen.</p>
+
+<h3 id="hello-world">Hello, World!</h3>
+
+<p>Typically the first step in learning a new programming language is the obligatory <em>“Hello, World!”</em> program. This program prints the text <code class="highlighter-rouge">Hello, World!</code> to the screen.</p>
+
+<p>First step is to create a new file <code class="highlighter-rouge">hello.sh</code> with the following code:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+<span class="nb">echo</span> <span class="s2">"Hello, World!"</span>
+</code></pre></div></div>
+
+<p>Before the script can be run it has to be set as executable with the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>chmod +x hello.sh
+</code></pre></div></div>
+
+<blockquote>
+  <p>Note: This is needed for all the scripts that you create to make them executable.</p>
+</blockquote>
+
+<p>After that it can be executed by simply calling the name of the file in the command line:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>./hello.sh
+Hello, World!
+</code></pre></div></div>
+
+<h3 id="variables-and-the-if-statement">Variables and the if statement</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+<span class="nv">Name</span><span class="o">=</span><span class="s2">"Miro"</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$Name</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"Tom"</span> <span class="o">]</span>
+<span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"Your name is Tom."</span>
+<span class="k">else
+    </span><span class="nb">echo</span> <span class="s2">"Your name isn't Tom. It's </span><span class="nv">$Name</span><span class="s2">."</span>
+<span class="k">fi</span>
+</code></pre></div></div>
+
+<p>The above example shows multiple features of bash scripts:</p>
+<ul>
+  <li>Creating a new variable <code class="highlighter-rouge">Name="Miro"</code>. This is also called a naked variable and there should be no spaces around <code class="highlighter-rouge">=</code>.</li>
+  <li>The <code class="highlighter-rouge">if</code> statement is used for conditional logic. In this example the condition is seen in the brackets <code class="highlighter-rouge">[ $Name == "Tom" ]</code>.</li>
+  <li>If the condition is <strong>true</strong> then <code class="highlighter-rouge">echo "Your name is Tom"</code> is executed.</li>
+  <li>If the condition is <strong>false</strong> the <code class="highlighter-rouge">else</code> part <code class="highlighter-rouge">echo "Your name isn't Tom. It's $Name"</code> is executed.</li>
+  <li>In bash the <code class="highlighter-rouge">if</code> statement needs to be ended with a <code class="highlighter-rouge">fi</code> keyword.</li>
+</ul>
+
+<p>Try changing the value of <code class="highlighter-rouge">Name="Miro"</code> above to <code class="highlighter-rouge">"Tom"</code> to see the other result.</p>
+
+<blockquote>
+  <p>Note the space and quote positions in the above script. Misplacing a space or a quote might cause the script to stop working. Many times these bugs are hard to spot.</p>
+</blockquote>
+
+<h3 id="loops">Loops</h3>
+
+<p>Loops are a useful construct for repeating certain statements for multiple times. Otherwise the command would have to be copy-pasted many times and that would result in code which is very hard to maintain. Below are few examples how to use loops with variables which increment on each iteration.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+<span class="c"># range based loop</span>
+<span class="k">for </span>a <span class="k">in</span> <span class="o">{</span>1..3<span class="o">}</span>
+<span class="k">do
+    </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$a</span><span class="s2">"</span>
+<span class="k">done</span>
+
+<span class="c"># traditional for loop</span>
+<span class="k">for</span> <span class="o">((</span><span class="nv">b</span><span class="o">=</span>1<span class="p">;</span> b &lt;<span class="o">=</span> 3<span class="p">;</span> b++<span class="o">))</span>
+<span class="k">do
+    </span><span class="nb">echo</span> <span class="nv">$b</span>
+<span class="k">done</span>
+
+<span class="c"># while loop with condition; -lt means "less than"</span>
+<span class="nv">c</span><span class="o">=</span><span class="s2">"0"</span>
+<span class="k">while</span> <span class="o">[</span> <span class="nv">$c</span> <span class="nt">-lt</span> 4 <span class="o">]</span>
+<span class="k">do
+    </span><span class="nb">echo</span> <span class="nv">$c</span>
+    <span class="nv">c</span><span class="o">=</span><span class="nv">$[$c</span>+1] <span class="c"># increment the c variable</span>
+<span class="k">done</span>
+
+<span class="c"># infinite while loop with a break condition</span>
+<span class="nv">d</span><span class="o">=</span><span class="s2">"0"</span>
+<span class="k">while</span> <span class="o">[</span> <span class="nb">true</span> <span class="o">]</span>
+<span class="k">do
+    </span><span class="nb">echo</span> <span class="nv">$d</span>
+    <span class="nv">d</span><span class="o">=</span><span class="nv">$[$d</span>+1] <span class="c"># increment the d variable</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="nv">$d</span> <span class="nt">-gt</span> 3 <span class="o">]</span> <span class="c"># if d is greater than 3</span>
+    <span class="k">then
+        </span><span class="nb">break</span> <span class="c"># breaks out of the infinite loop</span>
+    <span class="k">fi
+done</span>
+</code></pre></div></div>
+
+<h3 id="functions">Functions</h3>
+
+<p>The code can be organized into executable functions. These can be called the same way as the built in commands. The example below shows a custom function which multiplies it’s parameter by 3 and prints the result to the screen.
+A function can also return a result by using the <code class="highlighter-rouge">return</code> statement.
+Note that function parameters are referenced to as <code class="highlighter-rouge">$1</code>, <code class="highlighter-rouge">$2</code>, <code class="highlighter-rouge">$3</code> and so on.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+
+<span class="k">function </span>multiply_and_print <span class="o">()</span>
+<span class="o">{</span>
+    <span class="nv">result</span><span class="o">=</span><span class="nv">$[$1</span> <span class="k">*</span> 3]
+    <span class="nb">echo</span> <span class="s2">"The result is </span><span class="nv">$result</span><span class="s2">"</span>
+    <span class="k">return</span> <span class="nv">$result</span>
+<span class="o">}</span>
+
+multiply_and_print 10
+</code></pre></div></div>
+
+<h3 id="useful-scripts">Useful scripts</h3>
+
+<p>The constructs mentioned above are the basis on which more useful and complex scripts can be built.</p>
+
+<p><strong>Example:</strong> <em>Reading user input</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+<span class="nb">echo</span> <span class="s2">"Enter Your Name"</span>
+<span class="nb">read </span>name
+<span class="nb">echo</span> <span class="s2">"Welcome </span><span class="nv">$name</span><span class="s2">"</span>
+</code></pre></div></div>
+
+<p><strong>Example:</strong> <em>Test if file exists</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+<span class="nv">filename</span><span class="o">=</span><span class="nv">$1</span>
+<span class="k">if</span> <span class="o">[</span> <span class="nt">-f</span> <span class="s2">"</span><span class="nv">$filename</span><span class="s2">"</span> <span class="o">]</span>
+<span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"File exists"</span>
+<span class="k">else
+    </span><span class="nb">echo</span> <span class="s2">"File does not exist"</span>
+<span class="k">fi</span>
+</code></pre></div></div>
+<p>Note that in this case <code class="highlighter-rouge">$1</code> refers to the argument given to the script from the command line e. g. <code class="highlighter-rouge">./check_file.sh myfile.txt</code>.</p>
+
+<p><strong>Example:</strong> <em>Enumerate files in the current directory</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+
+<span class="nv">i</span><span class="o">=</span>0
+<span class="k">for </span>FILE <span class="k">in</span> <span class="nv">$PWD</span>/<span class="k">*</span><span class="p">;</span> <span class="k">do
+   </span><span class="nv">i</span><span class="o">=</span><span class="nv">$[$i</span> + 1]
+   <span class="nb">echo</span> <span class="s2">"</span><span class="nv">$i</span><span class="s2">: </span><span class="nv">$FILE</span><span class="s2">"</span>
+<span class="k">done</span>
+</code></pre></div></div>
+
+<p>Here <code class="highlighter-rouge">$PWD</code> is a special built in variable which is similar to the <code class="highlighter-rouge">pwd</code> command.</p>
+
+<h3 id="example-address-book">Example: Address Book</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
+
+<span class="c"># The file to save the data</span>
+<span class="nv">DATA</span><span class="o">=</span><span class="s2">"address-book.txt"</span>
+
+<span class="c"># Input the name, address and phone number</span>
+<span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"Name of person: "</span> 
+<span class="nb">read </span>name
+<span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"Address: "</span>
+<span class="nb">read </span>address
+<span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"Phone number: "</span>
+<span class="nb">read </span>phone
+
+<span class="c"># Ask user for confirmation</span>
+<span class="nb">echo</span> <span class="s2">"Save the new contact:"</span>
+<span class="nb">echo</span> <span class="nt">-e</span> <span class="s2">"</span><span class="nv">$name</span><span class="s2"> ; </span><span class="nv">$address</span><span class="s2"> ; </span><span class="nv">$phone</span><span class="s2"> </span><span class="se">\n</span><span class="s2">"</span>
+<span class="nb">echo</span> <span class="nt">-n</span> <span class="s2">"y/n: "</span>
+<span class="nb">read </span>answer
+
+<span class="k">if</span> <span class="o">[</span> <span class="s2">"</span><span class="nv">$answer</span><span class="s2">"</span> <span class="o">==</span> <span class="s2">"y"</span> <span class="o">]</span> 
+<span class="k">then
+    </span><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$name</span><span class="s2"> ; </span><span class="nv">$address</span><span class="s2"> ; </span><span class="nv">$phone</span><span class="s2">"</span> <span class="o">&gt;&gt;</span><span class="nv">$DATA</span>
+<span class="k">else
+    </span><span class="nb">echo</span> <span class="s2">"The contant was not saved."</span>
+<span class="k">fi</span>
+</code></pre></div></div>
+
+<p>The example above is a simple script which asks the user for new contact information. After entering the details the user can confirm or decline a new entry into the Address book. If the user chooses <code class="highlighter-rouge">y</code> the entry is appended into the file <code class="highlighter-rouge">address-book.txt</code>.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>I believe that the examples provided in this guide will be a good starting point to those people who want to know more about the command line, Awk, Sed and Shell scripting. I hope this guide gives you some useful information and also inspires you to use the command line as a useful tool for many data related tasks.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-07-01T21:00:00+02:00">July 01, 2019</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Data+manipulation+from+the+UNIX+command+line%20http%3A%2F%2Flocalhost%3A4000%2Fanalytics%2F2019%2F07%2F01%2Fdata-manipulation-command-line.html" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fanalytics%2F2019%2F07%2F01%2Fdata-manipulation-command-line.html" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fanalytics%2F2019%2F07%2F01%2Fdata-manipulation-command-line.html" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/philosophy/2018/02/18/on-meaningless-work.html" class="pagination--pager" title="On Meaningless work
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/meaningless-work-teaser.jpeg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/philosophy/2018/02/18/on-meaningless-work.html" rel="permalink">On Meaningless work
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">I like reading books. Many people find them to be a good source of relaxation and enjoy the stories which aim to kindle the childish imagination which is bur...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/code-quality-teaser.jpeg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/management/2018/02/18/how-to-manage-software-quality.html" rel="permalink">How to manage software quality
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  6 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">At the heart of the software project lifecycle is the development phase. I have described how projects get to this phase in my previous post on How to start ...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/startup-photos-teaser.jpeg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/management/2018/02/13/starting-new-projects.html" rel="permalink">How to start new projects
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">In the current world of business, IT is tightly integrated into every process of the company. Each operation is usually supported, controlled or monitored us...</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+      <div class="archive__item-teaser">
+        <img src=
+          
+            "/assets/images/old-docs-teaser.jpeg"
+          
+          alt="">
+      </div>
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/analytics/2018/02/11/why-companies-need-text-mining.html" rel="permalink">Why companies need text mining
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">The business world is littered with all kinds of documents which contain important data. Corporate employees have to process thousands of documents every day...</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+    <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2019 Miretz. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

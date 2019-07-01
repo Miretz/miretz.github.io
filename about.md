@@ -33,7 +33,7 @@ If you want to keep in touch, you can find me on LinkedIn:
 
 | Interests | Programming, Data Science, IT Management, Web Development, Game development |
 | Years of professional experience | 8 |
-| Programming Languages | Python, R, Java, Kotlin, C++ |
+| Programming Languages | Python, R, Java, C++, JavaScript |
 | Tools | JetBrains IDE's, Jupyter Notebook, VSCode, RStudio, Docker, Atlassian products |
 | Methodologies | Agile Scrum, DevOps, Continuous Integration |
 | OS | Mac OSX, Windows, Linux |
