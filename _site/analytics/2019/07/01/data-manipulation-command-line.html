@@ -779,7 +779,7 @@ The text <code class="highlighter-rouge">"2,4,6"</code> is split by the <code cl
   <li><strong>sed</strong> <em>[options]</em> ‘<em>[code]</em>’ <em>[file]</em> : Stream editor.</li>
 </ul>
 
-<p>Sed is another standard UNIX command line tool. The name stands for stream editor and it can perform various functions on files like, search, find and replace, insert or delete. The most common usage is substitution of text in files (by using special patterns) without even opening them.</p>
+<p>Sed is another standard UNIX command line tool. The name stands for stream editor and it can perform various functions on files like search, find and replace, insert or delete. The most common usage is substitution of text in files (by using special patterns) without even opening them.</p>
 
 <blockquote>
   <p>For a more detailed tutorial please check the <a href="http://www.grymoire.com/Unix/Sed.html">Sed Tutorial</a>.</p>
@@ -923,7 +923,7 @@ C,premium,45,90
 
 <h3 id="comments">Comments</h3>
 
-<p>Comments are lines of text that will be ignored by the interpreter. They are useful for documenting the code or including additional information for the readers of the script. Also the shebang is actually a comment. Here is an example script that contains just comments:</p>
+<p>Comments are lines of text that will be ignored by the interpreter. They are useful for documenting the code or including additional information for the readers of the script. Also the shebang is actually a comment. Here is an example script which contains only comments:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
 
@@ -931,7 +931,7 @@ C,premium,45,90
 <span class="c"># this is another comment</span>
 </code></pre></div></div>
 
-<p>When the example above is executed nothing will be printed out on the screen.</p>
+<p>When the example above is executed nothing will be printed out to the screen.</p>
 
 <h3 id="hello-world">Hello, World!</h3>
 
@@ -976,7 +976,7 @@ Hello, World!
   <li>Creating a new variable <code class="highlighter-rouge">Name="Miro"</code>. This is also called a naked variable and there should be no spaces around <code class="highlighter-rouge">=</code>.</li>
   <li>The <code class="highlighter-rouge">if</code> statement is used for conditional logic. In this example the condition is seen in the brackets <code class="highlighter-rouge">[ $Name == "Tom" ]</code>.</li>
   <li>If the condition is <strong>true</strong> then <code class="highlighter-rouge">echo "Your name is Tom"</code> is executed.</li>
-  <li>If the condition is <strong>false</strong> the <code class="highlighter-rouge">else</code> part <code class="highlighter-rouge">echo "Your name isn't Tom. It's $Name"</code> is executed.</li>
+  <li>If the condition is <strong>false</strong> the <code class="highlighter-rouge">else</code> part <code class="highlighter-rouge">echo "Your name isn't Tom. It's $Name."</code> is executed.</li>
   <li>In bash the <code class="highlighter-rouge">if</code> statement needs to be ended with a <code class="highlighter-rouge">fi</code> keyword.</li>
 </ul>
 
@@ -988,7 +988,7 @@ Hello, World!
 
 <h3 id="loops">Loops</h3>
 
-<p>Loops are a useful construct for repeating certain statements for multiple times. Otherwise the command would have to be copy-pasted many times and that would result in code which is very hard to maintain. Below are few examples how to use loops with variables which increment on each iteration.</p>
+<p>Loops are a useful construct for repeating certain statements for multiple times. Otherwise the command would have to be copy-pasted many times and that would result in code which is very hard to maintain. Below are few examples how to use loops which increment a variable on each iteration.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
 <span class="c"># range based loop</span>
@@ -1028,7 +1028,7 @@ done</span>
 
 <p>The code can be organized into executable functions. These can be called the same way as the built in commands. The example below shows a custom function which multiplies it’s parameter by 3 and prints the result to the screen.
 A function can also return a result by using the <code class="highlighter-rouge">return</code> statement.
-Note that function parameters are referenced to as <code class="highlighter-rouge">$1</code>, <code class="highlighter-rouge">$2</code>, <code class="highlighter-rouge">$3</code> and so on.</p>
+Note that the function parameters are referenced to as <code class="highlighter-rouge">$1</code>, <code class="highlighter-rouge">$2</code>, <code class="highlighter-rouge">$3</code> and so on.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
 

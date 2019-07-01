@@ -449,7 +449,7 @@ Please take a while to understand this concept as it is very useful for working 
 
 - **sed** *[options]* '*[code]*' *[file]* : Stream editor.
 
-Sed is another standard UNIX command line tool. The name stands for stream editor and it can perform various functions on files like, search, find and replace, insert or delete. The most common usage is substitution of text in files (by using special patterns) without even opening them.
+Sed is another standard UNIX command line tool. The name stands for stream editor and it can perform various functions on files like search, find and replace, insert or delete. The most common usage is substitution of text in files (by using special patterns) without even opening them.
 
 > For a more detailed tutorial please check the [Sed Tutorial](http://www.grymoire.com/Unix/Sed.html).
 
@@ -596,7 +596,7 @@ or
 
 ### Comments
 
-Comments are lines of text that will be ignored by the interpreter. They are useful for documenting the code or including additional information for the readers of the script. Also the shebang is actually a comment. Here is an example script that contains just comments:
+Comments are lines of text that will be ignored by the interpreter. They are useful for documenting the code or including additional information for the readers of the script. Also the shebang is actually a comment. Here is an example script which contains only comments:
 
 ```bash
 #!/usr/bin/env bash
@@ -605,7 +605,7 @@ Comments are lines of text that will be ignored by the interpreter. They are use
 # this is another comment
 ```
 
-When the example above is executed nothing will be printed out on the screen.
+When the example above is executed nothing will be printed out to the screen.
 
 ### Hello, World!
 
@@ -651,7 +651,7 @@ The above example shows multiple features of bash scripts:
 * Creating a new variable ``` Name="Miro" ```. This is also called a naked variable and there should be no spaces around ``` = ```.
 * The ``` if ``` statement is used for conditional logic. In this example the condition is seen in the brackets ``` [ $Name == "Tom" ] ```.
 * If the condition is **true** then ``` echo "Your name is Tom" ``` is executed.
-* If the condition is **false** the ``` else ``` part ``` echo "Your name isn't Tom. It's $Name" ``` is executed.
+* If the condition is **false** the ``` else ``` part ``` echo "Your name isn't Tom. It's $Name." ``` is executed.
 * In bash the ``` if ``` statement needs to be ended with a ``` fi ``` keyword.
 
 Try changing the value of ``` Name="Miro" ``` above to ``` "Tom" ``` to see the other result.
@@ -660,7 +660,7 @@ Try changing the value of ``` Name="Miro" ``` above to ``` "Tom" ``` to see the 
 
 ### Loops
 
-Loops are a useful construct for repeating certain statements for multiple times. Otherwise the command would have to be copy-pasted many times and that would result in code which is very hard to maintain. Below are few examples how to use loops with variables which increment on each iteration.
+Loops are a useful construct for repeating certain statements for multiple times. Otherwise the command would have to be copy-pasted many times and that would result in code which is very hard to maintain. Below are few examples how to use loops which increment a variable on each iteration.
 
 ```bash
 #!/usr/bin/env bash
@@ -701,7 +701,7 @@ done
 
 The code can be organized into executable functions. These can be called the same way as the built in commands. The example below shows a custom function which multiplies it's parameter by 3 and prints the result to the screen.
 A function can also return a result by using the ``` return ``` statement.
-Note that function parameters are referenced to as ``` $1 ```, ``` $2 ```, ``` $3 ``` and so on.
+Note that the function parameters are referenced to as ``` $1 ```, ``` $2 ```, ``` $3 ``` and so on.
 
 ```bash
 #!/usr/bin/env bash

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-01T23:50:46+02:00</updated><id>http://localhost:4000/</id><title type="html">Homepage of Miroslav Semerad</title><subtitle>Welcome to my personal website! I'm a senior analytics engineer, backend developer, data scientist and a hobby game developer. </subtitle><author><name>Miroslav Semerad</name><uri>https://miretz.github.io/about</uri></author><entry><title type="html">Data manipulation from the UNIX command line</title><link href="http://localhost:4000/analytics/2019/07/01/data-manipulation-command-line.html" rel="alternate" type="text/html" title="Data manipulation from the UNIX command line" /><published>2019-07-01T21:00:00+02:00</published><updated>2019-07-01T21:00:00+02:00</updated><id>http://localhost:4000/analytics/2019/07/01/data-manipulation-command-line</id><content type="html" xml:base="http://localhost:4000/analytics/2019/07/01/data-manipulation-command-line.html">&lt;p&gt;In this article I’m going to demonstrate various tools from the UNIX command line which can be used for effective data manipulation. This guide is written mainly for absolute beginners, but hopefully it will also provide useful information for the seasoned data scientists and data engineers.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-07-02T00:13:10+02:00</updated><id>http://localhost:4000/</id><title type="html">Homepage of Miroslav Semerad</title><subtitle>Welcome to my personal website! I'm a senior analytics engineer, backend developer, data scientist and a hobby game developer. </subtitle><author><name>Miroslav Semerad</name><uri>https://miretz.github.io/about</uri></author><entry><title type="html">Data manipulation from the UNIX command line</title><link href="http://localhost:4000/analytics/2019/07/01/data-manipulation-command-line.html" rel="alternate" type="text/html" title="Data manipulation from the UNIX command line" /><published>2019-07-01T21:00:00+02:00</published><updated>2019-07-01T21:00:00+02:00</updated><id>http://localhost:4000/analytics/2019/07/01/data-manipulation-command-line</id><content type="html" xml:base="http://localhost:4000/analytics/2019/07/01/data-manipulation-command-line.html">&lt;p&gt;In this article I’m going to demonstrate various tools from the UNIX command line which can be used for effective data manipulation. This guide is written mainly for absolute beginners, but hopefully it will also provide useful information for the seasoned data scientists and data engineers.&lt;/p&gt;
 
 &lt;h2 id=&quot;what-is-the-command-line&quot;&gt;What is the Command line?&lt;/h2&gt;
 
@@ -446,7 +446,7 @@ The text &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;2,4,6&quot;&lt;/c
   &lt;li&gt;&lt;strong&gt;sed&lt;/strong&gt; &lt;em&gt;[options]&lt;/em&gt; ‘&lt;em&gt;[code]&lt;/em&gt;’ &lt;em&gt;[file]&lt;/em&gt; : Stream editor.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Sed is another standard UNIX command line tool. The name stands for stream editor and it can perform various functions on files like, search, find and replace, insert or delete. The most common usage is substitution of text in files (by using special patterns) without even opening them.&lt;/p&gt;
+&lt;p&gt;Sed is another standard UNIX command line tool. The name stands for stream editor and it can perform various functions on files like search, find and replace, insert or delete. The most common usage is substitution of text in files (by using special patterns) without even opening them.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;For a more detailed tutorial please check the &lt;a href=&quot;http://www.grymoire.com/Unix/Sed.html&quot;&gt;Sed Tutorial&lt;/a&gt;.&lt;/p&gt;
@@ -590,7 +590,7 @@ C,premium,45,90
 
 &lt;h3 id=&quot;comments&quot;&gt;Comments&lt;/h3&gt;
 
-&lt;p&gt;Comments are lines of text that will be ignored by the interpreter. They are useful for documenting the code or including additional information for the readers of the script. Also the shebang is actually a comment. Here is an example script that contains just comments:&lt;/p&gt;
+&lt;p&gt;Comments are lines of text that will be ignored by the interpreter. They are useful for documenting the code or including additional information for the readers of the script. Also the shebang is actually a comment. Here is an example script which contains only comments:&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
 
@@ -598,7 +598,7 @@ C,premium,45,90
 &lt;span class=&quot;c&quot;&gt;# this is another comment&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;When the example above is executed nothing will be printed out on the screen.&lt;/p&gt;
+&lt;p&gt;When the example above is executed nothing will be printed out to the screen.&lt;/p&gt;
 
 &lt;h3 id=&quot;hello-world&quot;&gt;Hello, World!&lt;/h3&gt;
 
@@ -643,7 +643,7 @@ Hello, World!
   &lt;li&gt;Creating a new variable &lt;code class=&quot;highlighter-rouge&quot;&gt;Name=&quot;Miro&quot;&lt;/code&gt;. This is also called a naked variable and there should be no spaces around &lt;code class=&quot;highlighter-rouge&quot;&gt;=&lt;/code&gt;.&lt;/li&gt;
   &lt;li&gt;The &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; statement is used for conditional logic. In this example the condition is seen in the brackets &lt;code class=&quot;highlighter-rouge&quot;&gt;[ $Name == &quot;Tom&quot; ]&lt;/code&gt;.&lt;/li&gt;
   &lt;li&gt;If the condition is &lt;strong&gt;true&lt;/strong&gt; then &lt;code class=&quot;highlighter-rouge&quot;&gt;echo &quot;Your name is Tom&quot;&lt;/code&gt; is executed.&lt;/li&gt;
-  &lt;li&gt;If the condition is &lt;strong&gt;false&lt;/strong&gt; the &lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt; part &lt;code class=&quot;highlighter-rouge&quot;&gt;echo &quot;Your name isn't Tom. It's $Name&quot;&lt;/code&gt; is executed.&lt;/li&gt;
+  &lt;li&gt;If the condition is &lt;strong&gt;false&lt;/strong&gt; the &lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt; part &lt;code class=&quot;highlighter-rouge&quot;&gt;echo &quot;Your name isn't Tom. It's $Name.&quot;&lt;/code&gt; is executed.&lt;/li&gt;
   &lt;li&gt;In bash the &lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; statement needs to be ended with a &lt;code class=&quot;highlighter-rouge&quot;&gt;fi&lt;/code&gt; keyword.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -655,7 +655,7 @@ Hello, World!
 
 &lt;h3 id=&quot;loops&quot;&gt;Loops&lt;/h3&gt;
 
-&lt;p&gt;Loops are a useful construct for repeating certain statements for multiple times. Otherwise the command would have to be copy-pasted many times and that would result in code which is very hard to maintain. Below are few examples how to use loops with variables which increment on each iteration.&lt;/p&gt;
+&lt;p&gt;Loops are a useful construct for repeating certain statements for multiple times. Otherwise the command would have to be copy-pasted many times and that would result in code which is very hard to maintain. Below are few examples how to use loops which increment a variable on each iteration.&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# range based loop&lt;/span&gt;
@@ -695,7 +695,7 @@ done&lt;/span&gt;
 
 &lt;p&gt;The code can be organized into executable functions. These can be called the same way as the built in commands. The example below shows a custom function which multiplies it’s parameter by 3 and prints the result to the screen.
 A function can also return a result by using the &lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt; statement.
-Note that function parameters are referenced to as &lt;code class=&quot;highlighter-rouge&quot;&gt;$1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$3&lt;/code&gt; and so on.&lt;/p&gt;
+Note that the function parameters are referenced to as &lt;code class=&quot;highlighter-rouge&quot;&gt;$1&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$2&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;$3&lt;/code&gt; and so on.&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#!/usr/bin/env bash&lt;/span&gt;
 
