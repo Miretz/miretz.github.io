@@ -20,7 +20,7 @@ var store = [{
         "url": "http://localhost:4000/philosophy/2018/02/18/on-meaningless-work.html",
         "teaser":"http://localhost:4000/assets/images/meaningless-work-teaser.jpeg"},{
         "title": "Data manipulation from the UNIX command line",
-        "excerpt":"In this article I’m going to demonstrate various tools from the UNIX command line which can be used for effective data manipulation. This guide is written mainly for absolute beginners, but hopefully it will also provide useful information for seasoned data scientists and data engineers. What is the Command line?...","categories": ["analytics"],
+        "excerpt":"In this article I’m going to demonstrate various tools from the UNIX command line which can be used for effective data manipulation. This guide is written mainly for absolute beginners, but hopefully it will also provide useful information for the seasoned data scientists and data engineers. What is the Command...","categories": ["analytics"],
         "tags": [],
         "url": "http://localhost:4000/analytics/2019/07/01/data-manipulation-command-line.html",
         "teaser":"http://localhost:4000/assets/images/data-cmd-teaser.jpeg"}]

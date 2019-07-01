@@ -10,7 +10,7 @@ header:
     teaser: /assets/images/data-cmd-teaser.jpeg
 ---
 
-In this article I'm going to demonstrate various tools from the UNIX command line which can be used for effective data manipulation. This guide is written mainly for absolute beginners, but hopefully it will also provide useful information for seasoned data scientists and data engineers. 
+In this article I'm going to demonstrate various tools from the UNIX command line which can be used for effective data manipulation. This guide is written mainly for absolute beginners, but hopefully it will also provide useful information for the seasoned data scientists and data engineers. 
 
 ## What is the Command line?
 
@@ -41,7 +41,7 @@ HOME-PC
 $ echo hello
 hello
 ```
-- **history** : Displays the history of the commands typed in by the current user. *Note: You can also search the history by pressing the key combination CTRL+R.*
+- **history** : Displays the history of the commands typed in by the current user. *Note: You can also search the history by pressing the key combination CTRL + R.*
 
 ### Getting help
 
@@ -57,12 +57,12 @@ $ man whoami
 
 ### Navigation and file operations
 
-- **pwd** : Display current directory location.
+- **pwd** : Display the current directory location.
 ```bash
 $ pwd
 /home/miroslav/stuff/
 ```
-- **cd** *[path]* : Change the current directory to the directory specified as *path*. Note that also relative paths can be used and also there are a few special symbols:
+- **cd** *[path]* : Change the current directory to the directory specified as *path*. Note that also relative paths can be used and there are a few special symbols:
     * current directory: ``` . ```
     * parent directory: ``` .. ```
     * home directory: ``` ~ ```
@@ -79,7 +79,7 @@ $ pwd
 $ ls ~/stuff
 file1 file2 file3
 ```
-- **ls -lf** : List the directory contents with details.
+- **ls -lf** : List the directory contents with more details.
 ```bash
 $ ls -lf ~/stuff
 total 0
