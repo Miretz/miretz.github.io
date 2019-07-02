@@ -212,7 +212,7 @@ $ wc -w t8.shakespeare.txt
   901325 t8.shakespeare.txt
 ```
 
-- **bc** : Command line calculator. To exit the program type ``` exit ```.
+- **bc** : Command line calculator. To exit the program type ``` exit ``` or press **CTRL + C**.
 ```bash
 $ bc
 123+333
