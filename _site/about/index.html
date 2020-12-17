@@ -1,7 +1,7 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
-  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
@@ -10,8 +10,11 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>About - Homepage of Miroslav Semerad</title>
-<meta name="description" content="Welcome to my personal website! I’m a senior analytics engineer, backend developer, data scientist and a hobby game developer.">
+<meta name="description" content="Welcome to my personal website! I’m a Senior Full Stack Developer and Data Engineer from Slovakia.">
 
+
+  <meta name="author" content="Miroslav Semerad">
+  
 
 
 <meta property="og:type" content="website">
@@ -20,6 +23,8 @@
 <meta property="og:title" content="About">
 <meta property="og:url" content="http://localhost:4000/about/">
 
+
+  <meta property="og:description" content="Welcome to my personal website! I’m a Senior Full Stack Developer and Data Engineer from Slovakia.">
 
 
 
@@ -37,9 +42,16 @@
 
 
 
-
-
-
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Miroslav Semerad",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
 
 
 
@@ -60,8 +72,9 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
 
-<!--[if IE ]>
+<!--[if IE]>
   <style>
     /* old IE unsupported flexbox fixes */
     .greedy-nav .site-title {
@@ -107,9 +120,12 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-        <a class="site-title" href="/">Homepage of Miroslav Semerad</a>
+        <a class="site-title" href="/">
+          Homepage of Miroslav Semerad
+          
+        </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/about/" >About</a>
+              <a href="/about/">About</a>
             </li></ul>
         
         <button class="search__toggle" type="button">
@@ -138,6 +154,7 @@
 <div id="main" role="main">
   
 
+
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="About">
     
@@ -150,31 +167,28 @@
           <h1 id="page-title" class="page__title" itemprop="headline">About
 </h1>
           
+
+
         </header>
       
 
       <section class="page__content" itemprop="text">
         
-        <p>Welcome to my personal website! I’m a senior analytics engineer, backend developer, data scientist and a hobby game developer.</p>
+        <p>Welcome to my personal website! I’m a Senior Full Stack Developer &amp; Data Engineer from Slovakia.</p>
 
-<p>My IT journey began in my high school years when I started to write simple applications in Delphi and 
-websites using PHP. During my college years I shifted my focus to Java, as there was a high
-demand for Java programmers at the time and I saw it as perfect way to begin my career in IT.</p>
+<p>My programming journey began in my high school years, when I first learned to code simple applications using <a href="https://www.embarcadero.com/products/delphi">Delphi</a> and building dynamic websites using <a href="https://www.php.net/">PHP</a>, <a href="https://www.w3.org/standards/webdesign/htmlcss.html">HTML and CSS</a>. During my college years my focus has shifted to <a href="https://www.java.com/en/">Java</a>, as there was a high demand for Java Software Engineers at the time and I saw it as perfect way to begin my career in IT.</p>
 
-<p>I’ve spent most of my years as a Java developer working on complex enterprise applications.
-Working for a company that builds and sells <a href="https://en.wikipedia.org/wiki/Records_management">Records Management</a> and
-<a href="https://en.wikipedia.org/wiki/Information_governance">Information Governance</a> software made me realize 
-how hard it is for a company to correctly catalog huge amounts of documents.
-Companies lose track of important data in terabytes of various documents processed each day.</p>
+<p>I’ve spent most of my years as a Java Software Engineer developing large enterprise applications.
+Working for a company that provided custom solutions for <a href="https://en.wikipedia.org/wiki/Records_management">Records Management</a> and
+<a href="https://en.wikipedia.org/wiki/Information_governance">Information Governance</a> made me realize
+how hard it is for a company to correctly catalog huge amounts of data.</p>
 
-<p>I started to study how to mine unstructured data and how to extract valuable information from it.
-Understanding this enables companies gain insight into their data and also automate their processing.</p>
+<p>I’ve studied multiple data mining techniques to extract useful information from structured and unstructured sources.
+This knowledge allowed me to switch the direction of my career towards Data Engineering and Data Science.</p>
 
-<p>Currently as a member of the analytics team I’m working on both structured and unstructured data.
-As a data scientist with software engineering background, I’m involved in every phase of a product’s life cycle.</p>
-
-<p>My language of choice is Python. It is ideal for building productive applications and at the same time provides powerful data exploration capabilities. I’m also actively using the R language for statistical data analysis and visualization.
-For both of these languages there are many powerful scientific libraries and strong community support.</p>
+<p>Currently as a member of the Analytics Products team I’m using my whole skillset to support all phases of data product development.
+This includes Frontend (<a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a>, <a href="https://www.typescriptlang.org/">TypeScript</a>, <a href="https://angular.io/">Angular</a>), Backend (<a href="https://nodejs.org/en/">Node.js</a>, <a href="https://www.python.org/">Python</a>, <a href="https://www.java.com/en/">Java</a>, <a href="https://dotnet.microsoft.com/">.NET</a>) and Data (<a href="https://spark.apache.org/">Apache Spark</a>, <a href="https://databricks.com/">Databricks</a>, <a href="https://airflow.apache.org/">Airflow</a>).
+I’m constantly exploring new technologies and use them on my various side-projects.</p>
 
 <p>If you want to keep in touch, you can find me on LinkedIn:
 <a href="https://www.linkedin.com/in/miroslav-semerad-0b620154">Miroslav Semerad</a></p>
@@ -185,19 +199,19 @@ For both of these languages there are many powerful scientific libraries and str
   <tbody>
     <tr>
       <td>Interests</td>
-      <td>Programming, Data Science, IT Management, Web Development, Game development</td>
+      <td>Software Engineering, Data Science, Web Development</td>
     </tr>
     <tr>
       <td>Years of professional experience</td>
-      <td>8</td>
+      <td>9</td>
     </tr>
     <tr>
       <td>Programming Languages</td>
-      <td>Python, R, Java, C++, JavaScript</td>
+      <td>Python, Java, C#, JavaScript, TypeScript, C/C++, Rust</td>
     </tr>
     <tr>
       <td>Tools</td>
-      <td>JetBrains IDE’s, Jupyter Notebook, VSCode, RStudio, Docker, Atlassian products</td>
+      <td>JetBrains IDE’s, Jupyter Notebook, Visual Studio Code, PowerBI, Docker, Atlassian products</td>
     </tr>
     <tr>
       <td>Methodologies</td>
@@ -210,7 +224,6 @@ For both of these languages there are many powerful scientific libraries and str
   </tbody>
 </table>
 
-
         
       </section>
 
@@ -220,6 +233,7 @@ For both of these languages there are many powerful scientific libraries and str
 
 
         
+
       </footer>
 
       
@@ -238,8 +252,13 @@ For both of these languages there are many powerful scientific libraries and str
 
     
       <div class="search-content">
-        <div class="search-content__inner-wrap"><input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term..." />
-    <div id="results" class="results"></div></div>
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
 
       </div>
     
@@ -259,14 +278,13 @@ For both of these languages there are many powerful scientific libraries and str
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Miroslav Semerad. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Miroslav Semerad. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
 
     
   <script src="/assets/js/main.min.js"></script>
-  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
 
 
 

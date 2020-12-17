@@ -17,7 +17,7 @@ title: Homepage of Miroslav Semerad
 email: 
 name: "Miroslav Semerad"
 description: >- # this means to ignore newlines until "baseurl:"
-  Welcome to my personal website! I'm a senior analytics engineer, backend developer, data scientist and a hobby game developer. 
+  Welcome to my personal website! I'm a Senior Full Stack Developer and Data Engineer from Slovakia. 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://miretz.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
@@ -44,7 +44,7 @@ paginate_path: /page:num/
 author:
   name   : "Miroslav Semerad"
   avatar : "/assets/images/bio-foto.jpg"
-  bio    : "I'm a senior analytics engineer, backend developer, data scientist and a hobby game developer."
+  bio    : "I'm a Senior Full Stack Developer and Data Engineer from Slovakia."
   email  : # optional
   uri    : "https://miretz.github.io/about"
   home   : # null (default), "absolute or relative url to link to author home"

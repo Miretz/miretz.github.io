@@ -1,7 +1,7 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
-  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
@@ -12,6 +12,11 @@
 <!-- begin _includes/seo.html --><title>Data manipulation from the UNIX command line - Homepage of Miroslav Semerad</title>
 <meta name="description" content="In this article I’m going to demonstrate various tools from the UNIX command line which can be used for effective data manipulation. This guide is written mainly for absolute beginners, but hopefully it will also provide useful information for the seasoned data scientists and data engineers.">
 
+
+  <meta name="author" content="Miroslav Semerad">
+  
+  <meta property="article:author" content="Miroslav Semerad">
+  
 
 
 <meta property="og:type" content="article">
@@ -43,9 +48,16 @@
 
 
 
-
-
-
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Miroslav Semerad",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
 
 
 
@@ -66,8 +78,9 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
 
-<!--[if IE ]>
+<!--[if IE]>
   <style>
     /* old IE unsupported flexbox fixes */
     .greedy-nav .site-title {
@@ -113,9 +126,12 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-        <a class="site-title" href="/">Homepage of Miroslav Semerad</a>
+        <a class="site-title" href="/">
+          Homepage of Miroslav Semerad
+          
+        </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/about/" >About</a>
+              <a href="/about/">About</a>
             </li></ul>
         
         <button class="search__toggle" type="button">
@@ -146,10 +162,6 @@
 
 
 
-
-
-
-
 <div class="page__hero--overlay"
   style=" background-image: linear-gradient(rgba(0, 73, 101, 0.3), rgba(0, 73, 101, 0.3)), url('/assets/images/data-cmd.jpeg');"
 >
@@ -163,14 +175,26 @@
       </h1>
       
       
-        <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
+  <p class="page__meta">
+    
 
+    
 
-
-  19 minute read
-</p>
+    
       
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          19 minute read
+        
+      </span>
+    
+  </p>
+
+
       
       
     </div>
@@ -193,8 +217,6 @@
   
     <div class="author__avatar">
       
-
-      
         <img src="/assets/images/bio-foto.jpg" alt="Miroslav Semerad" itemprop="image">
       
     </div>
@@ -205,9 +227,10 @@
       <h3 class="author__name" itemprop="name">Miroslav Semerad</h3>
     
     
-      <p class="author__bio" itemprop="description">
-        I'm a senior analytics engineer, backend developer, data scientist and a hobby game developer.
-      </p>
+      <div class="author__bio" itemprop="description">
+        <p>I’m a Senior Full Stack Developer and Data Engineer from Slovakia.</p>
+
+      </div>
     
   </div>
 
@@ -221,7 +244,7 @@
       
         <li>
           <a href="https://miretz.github.io/about" itemprop="url">
-            <i class="fas fa-fw fa-link" aria-hidden="true"></i> Website
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span>
           </a>
         </li>
       
@@ -285,10 +308,11 @@
   </div>
 
 
+
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Data manipulation from the UNIX command line">
     <meta itemprop="description" content="In this article I’m going to demonstrate various tools from the UNIX command line which can be used for effective data manipulation. This guide is written mainly for absolute beginners, but hopefully it will also provide useful information for the seasoned data scientists and data engineers.">
-    <meta itemprop="datePublished" content="July 01, 2019">
+    <meta itemprop="datePublished" content="2019-07-01T21:00:00+02:00">
     
 
     <div class="page__inner-wrap">
@@ -299,35 +323,8 @@
           <aside class="sidebar__right ">
             <nav class="toc">
               <header><h4 class="nav__title"><i class="fas fa-file-alt"></i> On this page</h4></header>
-              <ul class="toc__menu">
-  <li><a href="#what-is-the-command-line">What is the Command line?</a></li>
-  <li><a href="#command-line-basics">Command line basics</a>
-    <ul>
-      <li><a href="#first-steps">First steps</a></li>
-      <li><a href="#getting-help">Getting help</a></li>
-      <li><a href="#navigation-and-file-operations">Navigation and file operations</a></li>
-      <li><a href="#reading-files">Reading files</a></li>
-    </ul>
-  </li>
-  <li><a href="#advanced-usage">Advanced usage</a></li>
-  <li><a href="#awk">Awk</a></li>
-  <li><a href="#sed">Sed</a></li>
-  <li><a href="#practical-one-liners">Practical one-liners</a></li>
-  <li><a href="#basic-shell-scripting">Basic Shell scripting</a>
-    <ul>
-      <li><a href="#basics-of-bash">Basics of Bash</a></li>
-      <li><a href="#shebang">Shebang</a></li>
-      <li><a href="#comments">Comments</a></li>
-      <li><a href="#hello-world">Hello, World!</a></li>
-      <li><a href="#variables-and-the-if-statement">Variables and the if statement</a></li>
-      <li><a href="#loops">Loops</a></li>
-      <li><a href="#functions">Functions</a></li>
-      <li><a href="#useful-scripts">Useful scripts</a></li>
-      <li><a href="#example-address-book">Example: Address Book</a></li>
-    </ul>
-  </li>
-  <li><a href="#conclusion">Conclusion</a></li>
-</ul>
+              <ul class="toc__menu"><li><a href="#what-is-the-command-line">What is the Command line?</a></li><li><a href="#command-line-basics">Command line basics</a><ul><li><a href="#first-steps">First steps</a></li><li><a href="#getting-help">Getting help</a></li><li><a href="#navigation-and-file-operations">Navigation and file operations</a></li><li><a href="#reading-files">Reading files</a></li></ul></li><li><a href="#advanced-usage">Advanced usage</a></li><li><a href="#awk">Awk</a></li><li><a href="#sed">Sed</a></li><li><a href="#practical-one-liners">Practical one-liners</a></li><li><a href="#basic-shell-scripting">Basic Shell scripting</a><ul><li><a href="#basics-of-bash">Basics of Bash</a></li><li><a href="#shebang">Shebang</a></li><li><a href="#comments">Comments</a></li><li><a href="#hello-world">Hello, World!</a></li><li><a href="#variables-and-the-if-statement">Variables and the if statement</a></li><li><a href="#loops">Loops</a></li><li><a href="#functions">Functions</a></li><li><a href="#useful-scripts">Useful scripts</a></li><li><a href="#example-address-book">Example: Address Book</a></li></ul></li><li><a href="#conclusion">Conclusion</a></li></ul>
+
             </nav>
           </aside>
         
@@ -349,13 +346,13 @@
 
 <ul>
   <li><strong>whoami</strong> : Displays the name of the current user.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>whoami
-miroslav
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">whoami
+</span>miroslav
 </code></pre></div>    </div>
   </li>
   <li><strong>hostname</strong> : Displays the the current computer’s host name and domain name.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>hostname
-HOME-PC
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">hostname
+</span>HOME-PC
 </code></pre></div>    </div>
   </li>
   <li><strong>echo</strong> <em>[string]</em> : Display a line of text.
@@ -370,14 +367,14 @@ hello
 
 <ul>
   <li><strong>man</strong> <em>[command]</em> : Opens the manual page for a specific command. Example usage:
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>man whoami
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>man <span class="nb">whoami</span>
 </code></pre></div>    </div>
     <p><strong>To exit the manual press Q</strong></p>
   </li>
 </ul>
 
 <blockquote>
-  <p>This guide does not cover all of the existing options and features of the commands. To get all the details please use the <code class="highlighter-rouge">man</code> command above.</p>
+  <p>This guide does not cover all of the existing options and features of the commands. To get all the details please use the <code class="language-plaintext highlighter-rouge">man</code> command above.</p>
 </blockquote>
 
 <blockquote>
@@ -394,9 +391,9 @@ hello
   </li>
   <li><strong>cd</strong> <em>[path]</em> : Change the current directory to the directory specified as <em>path</em>. Note that also relative paths can be used and there are a few special symbols:
     <ul>
-      <li>current directory: <code class="highlighter-rouge">.</code></li>
-      <li>parent directory: <code class="highlighter-rouge">..</code></li>
-      <li>home directory: <code class="highlighter-rouge">~</code></li>
+      <li>current directory: <code class="language-plaintext highlighter-rouge">.</code></li>
+      <li>parent directory: <code class="language-plaintext highlighter-rouge">..</code></li>
+      <li>home directory: <code class="language-plaintext highlighter-rouge">~</code></li>
       <li>Example:
         <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cd</span> ~/stuff
 <span class="nv">$ </span><span class="nb">pwd</span>
@@ -422,15 +419,15 @@ drwxr-xr-x+ 130 miroslav  staff  4160 Jun 25 13:48 ..
   </li>
   <li><strong>mkdir</strong> <em>[path]</em> : Create a new directory in the specified path.</li>
   <li><strong>touch</strong> <em>[path]</em> : Create a new empty file in the specified path.</li>
-  <li><strong>cp</strong> <em>[source]</em> <em>[target]</em> : Copy a file or a folder (with the <code class="highlighter-rouge">-r</code> switch) from the <em>source</em> to <em>target</em>. Relative paths also work here just like in the <code class="highlighter-rouge">cd</code> command. Note there is an additional symbol called the wildcard <code class="highlighter-rouge">*</code> which is useful for selecting multiple files.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>cp file8.txt stuff/
-<span class="nv">$ </span>cp <span class="nt">-r</span> stuff2 stuff/
-<span class="nv">$ </span>cp <span class="nt">-r</span> <span class="k">*</span>.txt texts/
+  <li><strong>cp</strong> <em>[source]</em> <em>[target]</em> : Copy a file or a folder (with the <code class="language-plaintext highlighter-rouge">-r</code> switch) from the <em>source</em> to <em>target</em>. Relative paths also work here just like in the <code class="language-plaintext highlighter-rouge">cd</code> command. Note there is an additional symbol called the wildcard <code class="language-plaintext highlighter-rouge">*</code> which is useful for selecting multiple files.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cp </span>file8.txt stuff/
+<span class="nv">$ </span><span class="nb">cp</span> <span class="nt">-r</span> stuff2 stuff/
+<span class="nv">$ </span><span class="nb">cp</span> <span class="nt">-r</span> <span class="k">*</span>.txt texts/
 </code></pre></div>    </div>
   </li>
-  <li><strong>mv</strong> <em>[source]</em> <em>[target]</em> : Move a file or rename from the <em>source</em> to <em>target</em>. This command also supports relative paths just like <code class="highlighter-rouge">cp</code>.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>mv file8.txt stuff/
-<span class="nv">$ </span>mv file9.txt file10.txt
+  <li><strong>mv</strong> <em>[source]</em> <em>[target]</em> : Move a file or rename from the <em>source</em> to <em>target</em>. This command also supports relative paths just like <code class="language-plaintext highlighter-rouge">cp</code>.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mv </span>file8.txt stuff/
+<span class="nv">$ </span><span class="nb">mv </span>file9.txt file10.txt
 </code></pre></div>    </div>
   </li>
   <li><strong>find</strong> <em>[directory]</em> <em>[options]</em> : Search for files in the directory.
@@ -441,9 +438,9 @@ drwxr-xr-x+ 130 miroslav  staff  4160 Jun 25 13:48 ..
 ./stuff//file4.txt
 </code></pre></div>    </div>
   </li>
-  <li><strong>rm</strong> <em>[path]</em> : Delete a file. For deleting directories use the <code class="highlighter-rouge">-r</code> switch.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>rm file8.txt
-<span class="nv">$ </span>rm <span class="nt">-r</span> stuff2/
+  <li><strong>rm</strong> <em>[path]</em> : Delete a file. For deleting directories use the <code class="language-plaintext highlighter-rouge">-r</code> switch.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">rm </span>file8.txt
+<span class="nv">$ </span><span class="nb">rm</span> <span class="nt">-r</span> stuff2/
 </code></pre></div>    </div>
     <blockquote>
       <p><strong>Warning:</strong> There is no recycle bin, so be careful when deleting files and directories.</p>
@@ -469,13 +466,13 @@ hi
 hola
 </code></pre></div>    </div>
   </li>
-  <li><strong>head</strong> <em>[file]</em> : Displays lines at the beginning of the file. Number of lines can be specified with the <code class="highlighter-rouge">-n</code> option.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>head <span class="nt">-n</span> 2 file8.txt
+  <li><strong>head</strong> <em>[file]</em> : Displays lines at the beginning of the file. Number of lines can be specified with the <code class="language-plaintext highlighter-rouge">-n</code> option.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">head</span> <span class="nt">-n</span> 2 file8.txt
 line1
 line2
 </code></pre></div>    </div>
   </li>
-  <li><strong>tail</strong> <em>[file]</em> : Displays lines at the end of the file. Number of lines can be specified with the <code class="highlighter-rouge">-n</code> option.</li>
+  <li><strong>tail</strong> <em>[file]</em> : Displays lines at the end of the file. Number of lines can be specified with the <code class="language-plaintext highlighter-rouge">-n</code> option.</li>
   <li><strong>less</strong> <em>[file]</em> : View contents of a file one page at a time. Allows forward and backward scrolling through the file as well as searching in the file. Ideal for opening very large files that do not fit into memory. You can use the arrow keys to scroll. <strong>To exit press Q</strong>.</li>
 </ul>
 
@@ -501,10 +498,10 @@ t8.shakespeare.txt  100%[<span class="o">===================&gt;]</span>   5.21M
 <ul>
   <li><strong>tar</strong> <em>[options]</em> <em>[archive]</em> <em>[directory]</em>: Tar is the standard archiving utility in Unix-like operating systems. Depending on the type of compression there are various options to use. The most common are:
     <ul>
-      <li><strong>create gzip archive</strong> : <code class="highlighter-rouge">-cvzf</code></li>
-      <li><strong>create bzip archive</strong> : <code class="highlighter-rouge">-cvjf</code></li>
-      <li><strong>extract gzip archive</strong> e.g. file.tar.gz : <code class="highlighter-rouge">-xvzf</code></li>
-      <li><strong>extract bzip archive</strong> e.g. file.tar.bz2 : <code class="highlighter-rouge">-xvjf</code></li>
+      <li><strong>create gzip archive</strong> : <code class="language-plaintext highlighter-rouge">-cvzf</code></li>
+      <li><strong>create bzip archive</strong> : <code class="language-plaintext highlighter-rouge">-cvjf</code></li>
+      <li><strong>extract gzip archive</strong> e.g. file.tar.gz : <code class="language-plaintext highlighter-rouge">-xvzf</code></li>
+      <li><strong>extract bzip archive</strong> e.g. file.tar.bz2 : <code class="language-plaintext highlighter-rouge">-xvjf</code></li>
     </ul>
   </li>
   <li><strong>tar examples:</strong> In the first line the <em>to_archive/</em> directory is compressed into <em>archive.tar.gz</em>. In the second line the file is extracted.
@@ -513,7 +510,7 @@ t8.shakespeare.txt  100%[<span class="o">===================&gt;]</span>   5.21M
 </code></pre></div>    </div>
   </li>
   <li><strong>grep</strong> <em>[expression]</em> <em>[file]</em> : Processes files line by line and returns the lines where the expression term has been matched. The main strength of the tool is the support for <a href="https://en.wikipedia.org/wiki/Regular_expression">Regular Expressions</a>. You can play around with Regular Expressions on <a href="https://regex101.com/">Regex 101</a>.
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ grep 'princess' t8.shakespeare.txt
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ grep 'princess' t8.shakespeare.txt
   And leave eighteen. Alas, poor princess,
   And here the bracelet of the truest princess
   Teach you our princess English?
@@ -531,20 +528,20 @@ stuff1
 stuff2
 </code></pre></div>    </div>
   </li>
-  <li><strong>&gt;</strong> : The redirect operator is used to pass the output to either a file or stream. Single arrow indicates that you wish to overwrite the file if it exists, while the double arrows <code class="highlighter-rouge">&gt;&gt;</code> are used to append to an existing file.
+  <li><strong>&gt;</strong> : The redirect operator is used to pass the output to either a file or stream. Single arrow indicates that you wish to overwrite the file if it exists, while the double arrows <code class="language-plaintext highlighter-rouge">&gt;&gt;</code> are used to append to an existing file.
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">ls</span> <span class="o">&gt;</span> files.txt
 </code></pre></div>    </div>
   </li>
-  <li><strong>wc</strong> <em>[options]</em> <em>[file]</em> : Counts the number of lines <code class="highlighter-rouge">-l</code>, characters <code class="highlighter-rouge">-m</code> or words <code class="highlighter-rouge">-w</code> in a file.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>wc <span class="nt">-l</span> t8.shakespeare.txt
+  <li><strong>wc</strong> <em>[options]</em> <em>[file]</em> : Counts the number of lines <code class="language-plaintext highlighter-rouge">-l</code>, characters <code class="language-plaintext highlighter-rouge">-m</code> or words <code class="language-plaintext highlighter-rouge">-w</code> in a file.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">wc</span> <span class="nt">-l</span> t8.shakespeare.txt
 124456 t8.shakespeare.txt
-<span class="nv">$ </span>wc <span class="nt">-m</span> t8.shakespeare.txt
+<span class="nv">$ </span><span class="nb">wc</span> <span class="nt">-m</span> t8.shakespeare.txt
  5458199 t8.shakespeare.txt
-<span class="nv">$ </span>wc <span class="nt">-w</span> t8.shakespeare.txt
+<span class="nv">$ </span><span class="nb">wc</span> <span class="nt">-w</span> t8.shakespeare.txt
 901325 t8.shakespeare.txt
 </code></pre></div>    </div>
   </li>
-  <li><strong>bc</strong> : Command line calculator. To exit the program type <code class="highlighter-rouge">exit</code>.
+  <li><strong>bc</strong> : Command line calculator. To exit the program type <code class="language-plaintext highlighter-rouge">exit</code> or press <strong>CTRL + C</strong>.
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>bc
 123+333
 456
@@ -552,7 +549,7 @@ stuff2
 </code></pre></div>    </div>
   </li>
   <li><strong>seq</strong> <em>[range]</em> : Generate a sequence of numbers.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>seq 6
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">seq </span>6
 1
 2
 3
@@ -562,7 +559,7 @@ stuff2
 </code></pre></div>    </div>
   </li>
   <li><strong>sort</strong> <em>[file]</em> : Rearrange the lines in a text file so that they are sorted, numerically and alphabetically.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sort data.txt
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sort </span>data.txt
 apples
 bananas
 kiwis
@@ -570,24 +567,24 @@ oranges
 pears
 </code></pre></div>    </div>
   </li>
-  <li><strong>uniq</strong> : Returns unique lines from the sorted input. The command can be used to display all the unique lines <code class="highlighter-rouge">-u</code> or duplicate lines <code class="highlighter-rouge">-d</code> from a file.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sort data.txt | uniq <span class="nt">-u</span>
+  <li><strong>uniq</strong> : Returns unique lines from the sorted input. The command can be used to display all the unique lines <code class="language-plaintext highlighter-rouge">-u</code> or duplicate lines <code class="language-plaintext highlighter-rouge">-d</code> from a file.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sort </span>data.txt | <span class="nb">uniq</span> <span class="nt">-u</span>
 bananas
 kiwis
 oranges
-<span class="nv">$ </span>sort data.txt | uniq <span class="nt">-d</span>
+<span class="nv">$ </span><span class="nb">sort </span>data.txt | <span class="nb">uniq</span> <span class="nt">-d</span>
 apples
 pears
 </code></pre></div>    </div>
   </li>
-  <li><strong>cut</strong> <em>[options]</em> <em>[file]</em> : Select columns from output of a program. It is possible to use bytes <code class="highlighter-rouge">-b</code>, columns <code class="highlighter-rouge">-c</code>, field number <code class="highlighter-rouge">-f</code> or a specific delimiter <code class="highlighter-rouge">-d</code>. In the first example below <code class="highlighter-rouge">2-</code> means cut everything from the second byte until the end of line. In the second example there is the opposite <code class="highlighter-rouge">-2</code> cut everything from the beginning to the second byte.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>cut <span class="nt">-b</span> 2- data.txt
+  <li><strong>cut</strong> <em>[options]</em> <em>[file]</em> : Select columns from output of a program. It is possible to use bytes <code class="language-plaintext highlighter-rouge">-b</code>, columns <code class="language-plaintext highlighter-rouge">-c</code>, field number <code class="language-plaintext highlighter-rouge">-f</code> or a specific delimiter <code class="language-plaintext highlighter-rouge">-d</code>. In the first example below <code class="language-plaintext highlighter-rouge">2-</code> means cut everything from the second byte until the end of line. In the second example there is the opposite <code class="language-plaintext highlighter-rouge">-2</code> cut everything from the beginning to the second byte.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cut</span> <span class="nt">-b</span> 2- data.txt
 pples
 ranges
 ears
 iwis
 ananas
-<span class="nv">$ </span>cut <span class="nt">-b</span> <span class="nt">-2</span> data.txt
+<span class="nv">$ </span><span class="nb">cut</span> <span class="nt">-b</span> <span class="nt">-2</span> data.txt
 ap
 or
 pe
@@ -596,7 +593,7 @@ ba
 </code></pre></div>    </div>
   </li>
   <li><strong>comm</strong> <em>[file1]</em> <em>[file2]</em> : Compare two sorted files and write to standard output: the lines that are common, plus the lines that are unique.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>comm file1.txt file2.txt
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">comm </span>file1.txt file2.txt
 file1 text
           file2 text
 </code></pre></div>    </div>
@@ -614,17 +611,17 @@ file1.txt file2.txt differ: char 5, line 1
 <span class="o">&gt;</span> file2 text
 </code></pre></div>    </div>
   </li>
-  <li><strong>paste</strong> <em>[options]</em> <em>[file1]</em> <em>[file2]</em> : Used to join files horizontally (parallel merging) by outputting lines consisting of lines from each file. A delimiter can be specified with the <code class="highlighter-rouge">-d</code> flag.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>paste file1.txt file2.txt
-id  value
+  <li><strong>paste</strong> <em>[options]</em> <em>[file1]</em> <em>[file2]</em> : Used to join files horizontally (parallel merging) by outputting lines consisting of lines from each file. A delimiter can be specified with the <code class="language-plaintext highlighter-rouge">-d</code> flag.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">paste </span>file1.txt file2.txt
+<span class="nb">id  </span>value
 10  12
-<span class="nv">$ </span>paste <span class="nt">-d</span> <span class="s2">","</span> file1.txt file2.txt
-id,value
+<span class="nv">$ </span><span class="nb">paste</span> <span class="nt">-d</span> <span class="s2">","</span> file1.txt file2.txt
+<span class="nb">id</span>,value
 10,12
 </code></pre></div>    </div>
   </li>
   <li><strong>split</strong> <em>[options]</em> <em>[file]</em> : Split file into specified chunks.
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>split <span class="nt">-b</span> 20M output.log
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">split</span> <span class="nt">-b</span> 20M output.log
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -647,7 +644,7 @@ id,value
   <p>A very quick introduction to the Awk language can also be found here: <a href="https://learnxinyminutes.com/docs/awk/">https://learnxinyminutes.com/docs/awk/</a>.</p>
 </blockquote>
 
-<p>In the command line the Awk code needs to be placed between quote characters <code class="highlighter-rouge">' '</code>.</p>
+<p>In the command line the Awk code needs to be placed between quote characters <code class="language-plaintext highlighter-rouge">' '</code>.</p>
 
 <p><strong>Example:</strong> <em>Print words from a file which are longer than 5 characters</em></p>
 
@@ -662,7 +659,7 @@ ministerial
 computer
 town
 
-<span class="nv">$ </span>awk <span class="s1">'length($1) &gt; 5'</span> words.txt
+<span class="nv">$ </span><span class="nb">awk</span> <span class="s1">'length($1) &gt; 5'</span> words.txt
 craftsmanship
 beautiful
 existence
@@ -670,15 +667,15 @@ ministerial
 computer
 </code></pre></div></div>
 
-<p>AWK is a <strong>line oriented language</strong>. It divides a file into lines and line is broken up into a sequence of fields. These fields can be accessed using the variables like: <code class="highlighter-rouge">$1</code> which represents the first field, <code class="highlighter-rouge">$2</code> the second and so on. 
-The <code class="highlighter-rouge">$0</code> variable refers to the line.</p>
+<p>AWK is a <strong>line oriented language</strong>. It divides a file into lines and line is broken up into a sequence of fields. These fields can be accessed using the variables like: <code class="language-plaintext highlighter-rouge">$1</code> which represents the first field, <code class="language-plaintext highlighter-rouge">$2</code> the second and so on. 
+The <code class="language-plaintext highlighter-rouge">$0</code> variable refers to the line.</p>
 
-<p>The <code class="highlighter-rouge">length()</code> function above is also a part of the language. There are many useful built-in functions and variables.
-In the example below, the built-in variable <code class="highlighter-rouge">NR</code> contains the current line which is being processed.</p>
+<p>The <code class="language-plaintext highlighter-rouge">length()</code> function above is also a part of the language. There are many useful built-in functions and variables.
+In the example below, the built-in variable <code class="language-plaintext highlighter-rouge">NR</code> contains the current line which is being processed.</p>
 
 <p><strong>Example:</strong> <em>Return every second line from a file</em></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>awk <span class="s1">'NR % 2 == 0 {print}'</span> words.txt
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">awk</span> <span class="s1">'NR % 2 == 0 {print}'</span> words.txt
 tree
 book
 existence
@@ -687,7 +684,7 @@ computer
 
 <p><strong>Example:</strong> <em>Print line numbers for each line in a file using the NR variable</em></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span> awk <span class="s1">'{print NR, $0}'</span> words.txt
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span> <span class="nb">awk</span> <span class="s1">'{print NR, $0}'</span> words.txt
 1 brown
 2 tree
 3 craftsmanship
@@ -701,7 +698,7 @@ computer
 
 <p><strong>Example:</strong> <em>Search for a pattern</em></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>awk <span class="s1">'match($0, /^[c,b]/)'</span> words.txt
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">awk</span> <span class="s1">'match($0, /^[c,b]/)'</span> words.txt
 brown
 craftsmanship
 book
@@ -709,44 +706,44 @@ beautiful
 computer
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">match()</code> function above is another useful built-in function which also supports regular expressions.
-Match takes 2 parameters. The first one <code class="highlighter-rouge">$0</code> represents the current line of text.
-The second parameter is the regular expression <code class="highlighter-rouge">/^[c,b]/</code> which matches with the characters <code class="highlighter-rouge">c</code> or <code class="highlighter-rouge">b</code> if they are at the beginning of the line.</p>
+<p>The <code class="language-plaintext highlighter-rouge">match()</code> function above is another useful built-in function which also supports regular expressions.
+Match takes 2 parameters. The first one <code class="language-plaintext highlighter-rouge">$0</code> represents the current line of text.
+The second parameter is the regular expression <code class="language-plaintext highlighter-rouge">/^[c,b]/</code> which matches with the characters <code class="language-plaintext highlighter-rouge">c</code> or <code class="language-plaintext highlighter-rouge">b</code> if they are at the beginning of the line.</p>
 
 <p><strong>Example:</strong> <em>Number of lines from two files</em></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>awk <span class="s1">'END {print NR}'</span> words.txt words2.txt
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">awk</span> <span class="s1">'END {print NR}'</span> words.txt words2.txt
 36
 </code></pre></div></div>
 
-<p><code class="highlighter-rouge">BEGIN</code> and <code class="highlighter-rouge">END</code> are special patterns in the language which are executed before and after every line has been processed. The example above demonstrates the use of <code class="highlighter-rouge">END</code>. It will print only once after all lines have been processed and returns 36 which is actually the number of lines in both files together.</p>
+<p><code class="language-plaintext highlighter-rouge">BEGIN</code> and <code class="language-plaintext highlighter-rouge">END</code> are special patterns in the language which are executed before and after every line has been processed. The example above demonstrates the use of <code class="language-plaintext highlighter-rouge">END</code>. It will print only once after all lines have been processed and returns 36 which is actually the number of lines in both files together.</p>
 
 <p><strong>Example:</strong> <em>Using BEGIN to create a header</em></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>awk <span class="s1">'BEGIN {print "id,name"}'</span> users.txt
-id,name
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">awk</span> <span class="s1">'BEGIN {print "id,name"}'</span> users.txt
+<span class="nb">id</span>,name
 1,John
 2,Tom
 3,Jane
 </code></pre></div></div>
 
 <p><strong>Example:</strong> <em>Replacing text with Awk</em></p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"Hello John"</span> | awk <span class="s1">'{$2="Miroslav"; print $0}'</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"Hello John"</span> | <span class="nb">awk</span> <span class="s1">'{$2="Miroslav"; print $0}'</span>
 Hello Miroslav
 </code></pre></div></div>
 
-<p>In the example above we have reassigned the <code class="highlighter-rouge">$2</code> (second field) with our own word and printed the result. We can do this with any file and even define complex rules for replacement.</p>
+<p>In the example above we have reassigned the <code class="language-plaintext highlighter-rouge">$2</code> (second field) with our own word and printed the result. We can do this with any file and even define complex rules for replacement.</p>
 
 <p><strong>Example:</strong> <em>Replacing the field separator</em></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"one,two,three"</span> | awk <span class="s1">'$1=$1'</span> <span class="nv">FS</span><span class="o">=</span><span class="s2">","</span> <span class="nv">OFS</span><span class="o">=</span><span class="s2">":"</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"one,two,three"</span> | <span class="nb">awk</span> <span class="s1">'$1=$1'</span> <span class="nv">FS</span><span class="o">=</span><span class="s2">","</span> <span class="nv">OFS</span><span class="o">=</span><span class="s2">":"</span>
 one:two:three
 </code></pre></div></div>
 
 <p>The above example uses two additional parameters:</p>
 <ul>
-  <li><code class="highlighter-rouge">FS</code> which tells Awk what is the field separator in the input data. (Alternatively <code class="highlighter-rouge">-F","</code> could have been used)</li>
-  <li><code class="highlighter-rouge">OFS</code> which is the output field separator.</li>
+  <li><code class="language-plaintext highlighter-rouge">FS</code> which tells Awk what is the field separator in the input data. (Alternatively <code class="language-plaintext highlighter-rouge">-F","</code> could have been used)</li>
+  <li><code class="language-plaintext highlighter-rouge">OFS</code> which is the output field separator.</li>
 </ul>
 
 <blockquote>
@@ -755,16 +752,16 @@ one:two:three
 
 <p><strong>Example:</strong> <em>Using Awk to calculate fields</em></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"2,4,6"</span> | awk <span class="nt">-F</span><span class="s2">","</span> <span class="s1">'{print $1 * 2, $2 * 3, $3 * 4}'</span> <span class="nv">OFS</span><span class="o">=</span><span class="s2">","</span> 
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"2,4,6"</span> | <span class="nb">awk</span> <span class="nt">-F</span><span class="s2">","</span> <span class="s1">'{print $1 * 2, $2 * 3, $3 * 4}'</span> <span class="nv">OFS</span><span class="o">=</span><span class="s2">","</span> 
 4,12,24
 </code></pre></div></div>
 
 <p>The example above shows how Awk can deal with numerical text data and do some calculations with it.
-The text <code class="highlighter-rouge">"2,4,6"</code> is split by the <code class="highlighter-rouge">,</code> and then each field is multiplied by a different number.</p>
+The text <code class="language-plaintext highlighter-rouge">"2,4,6"</code> is split by the <code class="language-plaintext highlighter-rouge">,</code> and then each field is multiplied by a different number.</p>
 <ul>
-  <li>The first field <code class="highlighter-rouge">$1</code> contains 2 and the calculation is 2 * 2 = 4</li>
-  <li>Second field <code class="highlighter-rouge">$2</code> contains 4 and the calculation is 4 * 3 = 12</li>
-  <li>Third field <code class="highlighter-rouge">$3</code> contains 6 and the calculation is 6 * 4 = 24</li>
+  <li>The first field <code class="language-plaintext highlighter-rouge">$1</code> contains 2 and the calculation is 2 * 2 = 4</li>
+  <li>Second field <code class="language-plaintext highlighter-rouge">$2</code> contains 4 and the calculation is 4 * 3 = 12</li>
+  <li>Third field <code class="language-plaintext highlighter-rouge">$3</code> contains 6 and the calculation is 6 * 4 = 24</li>
 </ul>
 
 <p>Please take a while to understand this concept as it is very useful for working with large CSV files which might be too big to do this calculation in Excel.</p>
@@ -790,55 +787,55 @@ The text <code class="highlighter-rouge">"2,4,6"</code> is split by the <code cl
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat </span>fruit.txt
 apples are great
 
-<span class="nv">$ </span>sed <span class="s1">'s/apples/oranges/'</span> fruit.txt
+<span class="nv">$ </span><span class="nb">sed</span> <span class="s1">'s/apples/oranges/'</span> fruit.txt
 oranges are great
 </code></pre></div></div>
 
-<p>Here the <code class="highlighter-rouge">s</code> specifies the substitution operation. The <code class="highlighter-rouge">/</code> are delimiters. The text <code class="highlighter-rouge">apples</code> is the search pattern and the text <code class="highlighter-rouge">oranges</code> is the replacement string.</p>
+<p>Here the <code class="language-plaintext highlighter-rouge">s</code> specifies the substitution operation. The <code class="language-plaintext highlighter-rouge">/</code> are delimiters. The text <code class="language-plaintext highlighter-rouge">apples</code> is the search pattern and the text <code class="language-plaintext highlighter-rouge">oranges</code> is the replacement string.</p>
 
 <p><strong>Example:</strong> <em>Replacing the Nth occurrence</em></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat </span>fruit.txt
 apple apple apple apple
-<span class="nv">$ </span>sed <span class="s1">'s/apple/orange/3'</span> fruit.txt
+<span class="nv">$ </span><span class="nb">sed</span> <span class="s1">'s/apple/orange/3'</span> fruit.txt
 apple apple orange apple
 </code></pre></div></div>
 <p><strong>Example:</strong> <em>Replacing all the occurrences</em></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat </span>fruit.txt
 apple apple apple apple
-<span class="nv">$ </span>sed <span class="s1">'s/apple/orange/g'</span> fruit.txt
+<span class="nv">$ </span><span class="nb">sed</span> <span class="s1">'s/apple/orange/g'</span> fruit.txt
 orange orange orange orange
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">g</code> parameter means global as oposed to the previous example where we used <code class="highlighter-rouge">3</code> to substitute only the 3rd occurrence.</p>
+<p>The <code class="language-plaintext highlighter-rouge">g</code> parameter means global as oposed to the previous example where we used <code class="language-plaintext highlighter-rouge">3</code> to substitute only the 3rd occurrence.</p>
 
 <p><strong>Example:</strong> <em>Add parentheses around a word</em></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sed <span class="s1">'s/apple/(&amp;)/3'</span> fruit.txt
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sed</span> <span class="s1">'s/apple/(&amp;)/3'</span> fruit.txt
 apple apple <span class="o">(</span>apple<span class="o">)</span> apple
 </code></pre></div></div>
 
 <p><strong>Example:</strong> <em>Add a prefix to a word</em></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>sed <span class="s1">'s/apple/pine&amp;/3'</span> fruit.txt
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sed</span> <span class="s1">'s/apple/pine&amp;/3'</span> fruit.txt
 apple apple pineapple apple
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">&amp;</code> pattern represents the current match and in the examples we are using it to add parentheses and a prefix.</p>
+<p>The <code class="language-plaintext highlighter-rouge">&amp;</code> pattern represents the current match and in the examples we are using it to add parentheses and a prefix.</p>
 
 <p><strong>Example:</strong> <em>Keeping part of the match</em></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo </span>abcd123 | sed <span class="s1">'s/\([a-z]*\).*/\1/'</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo </span>abcd123 | <span class="nb">sed</span> <span class="s1">'s/\([a-z]*\).*/\1/'</span>
 abcd
 </code></pre></div></div>
 
-<p>The <code class="highlighter-rouge">\1</code> means the first remembered pattern. Sed has up to nine remembered patterns.
+<p>The <code class="language-plaintext highlighter-rouge">\1</code> means the first remembered pattern. Sed has up to nine remembered patterns.
 We can use that to remove duplicate words.</p>
 
 <p><strong>Example:</strong> <em>Remove duplicated words</em></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"hello hello world"</span> | sed <span class="s1">'s/\([a-z]*\) \1/\1/'</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">echo</span> <span class="s2">"hello hello world"</span> | <span class="nb">sed</span> <span class="s1">'s/\([a-z]*\) \1/\1/'</span>
 hello world
 </code></pre></div></div>
 
@@ -848,21 +845,21 @@ hello world
 
 <p><strong>Example:</strong> <em>Combine multiple CSV files which have the same header</em></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>head <span class="nt">-2</span> file1.txt <span class="o">&gt;</span> all.txt<span class="p">;</span> tail <span class="nt">-n</span> +3 <span class="nt">-q</span> file<span class="k">*</span>.txt <span class="o">&gt;&gt;</span> all.txt
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">head</span> <span class="nt">-2</span> file1.txt <span class="o">&gt;</span> all.txt<span class="p">;</span> <span class="nb">tail</span> <span class="nt">-n</span> +3 <span class="nt">-q</span> file<span class="k">*</span>.txt <span class="o">&gt;&gt;</span> all.txt
 </code></pre></div></div>
 
-<p>Explanation: The first part saves the header to the file <code class="highlighter-rouge">all.txt</code>. Then all the files are concatenated into the file by using the <code class="highlighter-rouge">tail</code> command to skip the header.</p>
+<p>Explanation: The first part saves the header to the file <code class="language-plaintext highlighter-rouge">all.txt</code>. Then all the files are concatenated into the file by using the <code class="language-plaintext highlighter-rouge">tail</code> command to skip the header.</p>
 
 <p><strong>Example:</strong> <em>Filtering a CSV using Awk</em></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>awk <span class="nt">-F</span><span class="s2">","</span> <span class="s1">'/text/'</span> source.csv <span class="o">&gt;</span> filtered.csv
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">awk</span> <span class="nt">-F</span><span class="s2">","</span> <span class="s1">'/text/'</span> source.csv <span class="o">&gt;</span> filtered.csv
 </code></pre></div></div>
 
-<p>Explanation: The command above will output only those lines from <code class="highlighter-rouge">source.csv</code> to <code class="highlighter-rouge">filtered.csv</code> where the term <code class="highlighter-rouge">text</code> was found.</p>
+<p>Explanation: The command above will output only those lines from <code class="language-plaintext highlighter-rouge">source.csv</code> to <code class="language-plaintext highlighter-rouge">filtered.csv</code> where the term <code class="language-plaintext highlighter-rouge">text</code> was found.</p>
 
 <p><strong>Example:</strong> <em>Count observations in a CSV file based on condition on a specific column</em></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>awk <span class="nt">-F</span><span class="s2">","</span> <span class="s1">'$5 &gt; 40'</span> all.csv | wc <span class="nt">-l</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">awk</span> <span class="nt">-F</span><span class="s2">","</span> <span class="s1">'$5 &gt; 40'</span> all.csv | <span class="nb">wc</span> <span class="nt">-l</span>
 1857
 </code></pre></div></div>
 
@@ -876,7 +873,7 @@ A,basic,10
 B,extended,22
 C,premium,45
 
-<span class="nv">$ </span>awk <span class="nt">-F</span><span class="s2">","</span> <span class="s1">'{ if(NR == 1) {print $0,"price_doubled"} else {print $0,$3 * 2}}'</span> <span class="nv">OFS</span><span class="o">=</span><span class="s2">","</span> data.csv <span class="o">&gt;</span> newdata.csv
+<span class="nv">$ </span><span class="nb">awk</span> <span class="nt">-F</span><span class="s2">","</span> <span class="s1">'{ if(NR == 1) {print $0,"price_doubled"} else {print $0,$3 * 2}}'</span> <span class="nv">OFS</span><span class="o">=</span><span class="s2">","</span> data.csv <span class="o">&gt;</span> newdata.csv
 
 <span class="nv">$ </span><span class="nb">cat </span>newdata.csv
 model,type,price,price_doubled
@@ -885,7 +882,7 @@ B,extended,22,44
 C,premium,45,90
 </code></pre></div></div>
 
-<p>Explanation: In this example a new column named <code class="highlighter-rouge">price_doubled</code> is calculated by multiplying the <code class="highlighter-rouge">price</code> column <code class="highlighter-rouge">$3</code> by 2. The conditional statement <code class="highlighter-rouge">if(NR == 1)</code> in the Awk code makes sure that the header value <code class="highlighter-rouge">price_doubled</code> is printed in the first line and the values are calculated in the <code class="highlighter-rouge">else</code> block on the next lines. The new column is added to the original data. The resulting CSV is then stored as <code class="highlighter-rouge">newdata.csv</code>.</p>
+<p>Explanation: In this example a new column named <code class="language-plaintext highlighter-rouge">price_doubled</code> is calculated by multiplying the <code class="language-plaintext highlighter-rouge">price</code> column <code class="language-plaintext highlighter-rouge">$3</code> by 2. The conditional statement <code class="language-plaintext highlighter-rouge">if(NR == 1)</code> in the Awk code makes sure that the header value <code class="language-plaintext highlighter-rouge">price_doubled</code> is printed in the first line and the values are calculated in the <code class="language-plaintext highlighter-rouge">else</code> block on the next lines. The new column is added to the original data. The resulting CSV is then stored as <code class="language-plaintext highlighter-rouge">newdata.csv</code>.</p>
 
 <h2 id="basic-shell-scripting">Basic Shell scripting</h2>
 
@@ -935,9 +932,9 @@ C,premium,45,90
 
 <h3 id="hello-world">Hello, World!</h3>
 
-<p>Typically the first step in learning a new programming language is the obligatory <em>“Hello, World!”</em> program. This program prints the text <code class="highlighter-rouge">Hello, World!</code> to the screen.</p>
+<p>Typically the first step in learning a new programming language is the obligatory <em>“Hello, World!”</em> program. This program prints the text <code class="language-plaintext highlighter-rouge">Hello, World!</code> to the screen.</p>
 
-<p>First step is to create a new file <code class="highlighter-rouge">hello.sh</code> with the following code:</p>
+<p>First step is to create a new file <code class="language-plaintext highlighter-rouge">hello.sh</code> with the following code:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
 <span class="nb">echo</span> <span class="s2">"Hello, World!"</span>
@@ -945,7 +942,7 @@ C,premium,45,90
 
 <p>Before the script can be run it has to be set as executable with the following command:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>chmod +x hello.sh
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod</span> +x hello.sh
 </code></pre></div></div>
 
 <blockquote>
@@ -973,14 +970,14 @@ Hello, World!
 
 <p>The above example shows multiple features of bash scripts:</p>
 <ul>
-  <li>Creating a new variable <code class="highlighter-rouge">Name="Miro"</code>. This is also called a naked variable and there should be no spaces around <code class="highlighter-rouge">=</code>.</li>
-  <li>The <code class="highlighter-rouge">if</code> statement is used for conditional logic. In this example the condition is seen in the brackets <code class="highlighter-rouge">[ $Name == "Tom" ]</code>.</li>
-  <li>If the condition is <strong>true</strong> then <code class="highlighter-rouge">echo "Your name is Tom"</code> is executed.</li>
-  <li>If the condition is <strong>false</strong> the <code class="highlighter-rouge">else</code> part <code class="highlighter-rouge">echo "Your name isn't Tom. It's $Name."</code> is executed.</li>
-  <li>In bash the <code class="highlighter-rouge">if</code> statement needs to be ended with a <code class="highlighter-rouge">fi</code> keyword.</li>
+  <li>Creating a new variable <code class="language-plaintext highlighter-rouge">Name="Miro"</code>. This is also called a naked variable and there should be no spaces around <code class="language-plaintext highlighter-rouge">=</code>.</li>
+  <li>The <code class="language-plaintext highlighter-rouge">if</code> statement is used for conditional logic. In this example the condition is seen in the brackets <code class="language-plaintext highlighter-rouge">[ $Name == "Tom" ]</code>.</li>
+  <li>If the condition is <strong>true</strong> then <code class="language-plaintext highlighter-rouge">echo "Your name is Tom"</code> is executed.</li>
+  <li>If the condition is <strong>false</strong> the <code class="language-plaintext highlighter-rouge">else</code> part <code class="language-plaintext highlighter-rouge">echo "Your name isn't Tom. It's $Name."</code> is executed.</li>
+  <li>In bash the <code class="language-plaintext highlighter-rouge">if</code> statement needs to be ended with a <code class="language-plaintext highlighter-rouge">fi</code> keyword.</li>
 </ul>
 
-<p>Try changing the value of <code class="highlighter-rouge">Name="Miro"</code> above to <code class="highlighter-rouge">"Tom"</code> to see the other result.</p>
+<p>Try changing the value of <code class="language-plaintext highlighter-rouge">Name="Miro"</code> above to <code class="language-plaintext highlighter-rouge">"Tom"</code> to see the other result.</p>
 
 <blockquote>
   <p>Note the space and quote positions in the above script. Misplacing a space or a quote might cause the script to stop working. Many times these bugs are hard to spot.</p>
@@ -1027,8 +1024,8 @@ done</span>
 <h3 id="functions">Functions</h3>
 
 <p>The code can be organized into executable functions. These can be called the same way as the built in commands. The example below shows a custom function which multiplies it’s parameter by 3 and prints the result to the screen.
-A function can also return a result by using the <code class="highlighter-rouge">return</code> statement.
-Note that the function parameters are referenced to as <code class="highlighter-rouge">$1</code>, <code class="highlighter-rouge">$2</code>, <code class="highlighter-rouge">$3</code> and so on.</p>
+A function can also return a result by using the <code class="language-plaintext highlighter-rouge">return</code> statement.
+Note that the function parameters are referenced to as <code class="language-plaintext highlighter-rouge">$1</code>, <code class="language-plaintext highlighter-rouge">$2</code>, <code class="language-plaintext highlighter-rouge">$3</code> and so on.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/usr/bin/env bash</span>
 
@@ -1065,7 +1062,7 @@ multiply_and_print 10
     </span><span class="nb">echo</span> <span class="s2">"File does not exist"</span>
 <span class="k">fi</span>
 </code></pre></div></div>
-<p>Note that in this case <code class="highlighter-rouge">$1</code> refers to the argument given to the script from the command line e. g. <code class="highlighter-rouge">./check_file.sh myfile.txt</code>.</p>
+<p>Note that in this case <code class="language-plaintext highlighter-rouge">$1</code> refers to the argument given to the script from the command line e. g. <code class="language-plaintext highlighter-rouge">./check_file.sh myfile.txt</code>.</p>
 
 <p><strong>Example:</strong> <em>Enumerate files in the current directory</em></p>
 
@@ -1078,7 +1075,7 @@ multiply_and_print 10
 <span class="k">done</span>
 </code></pre></div></div>
 
-<p>Here <code class="highlighter-rouge">$PWD</code> is a special built in variable which is similar to the <code class="highlighter-rouge">pwd</code> command.</p>
+<p>Here <code class="language-plaintext highlighter-rouge">$PWD</code> is a special built in variable which is similar to the <code class="language-plaintext highlighter-rouge">pwd</code> command.</p>
 
 <h3 id="example-address-book">Example: Address Book</h3>
 
@@ -1109,7 +1106,7 @@ multiply_and_print 10
 <span class="k">fi</span>
 </code></pre></div></div>
 
-<p>The example above is a simple script which asks the user for new contact information. After entering the details the user can confirm or decline a new entry into the Address book. If the user chooses <code class="highlighter-rouge">y</code> the entry is appended into the file <code class="highlighter-rouge">address-book.txt</code>.</p>
+<p>The example above is a simple script which asks the user for new contact information. After entering the details the user can confirm or decline a new entry into the Address book. If the user chooses <code class="language-plaintext highlighter-rouge">y</code> the entry is appended into the file <code class="language-plaintext highlighter-rouge">address-book.txt</code>.</p>
 
 <h2 id="conclusion">Conclusion</h2>
 
@@ -1124,8 +1121,9 @@ multiply_and_print 10
 
 
         
-          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-07-01T21:00:00+02:00">July 01, 2019</time></p>
-        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2019-07-01T21:00:00+02:00">July 1, 2019</time></p>
+
+
       </footer>
 
       <section class="page__share">
@@ -1142,7 +1140,7 @@ multiply_and_print 10
       
   <nav class="pagination">
     
-      <a href="/philosophy/2018/02/18/on-meaningless-work.html" class="pagination--pager" title="On Meaningless work
+      <a href="/management/2018/02/18/how-to-manage-software-quality.html" class="pagination--pager" title="How to manage software quality
 ">Previous</a>
     
     
@@ -1169,63 +1167,36 @@ multiply_and_print 10
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src=
-          
-            "/assets/images/meaningless-work-teaser.jpeg"
-          
-          alt="">
+        <img src="/assets/images/code-quality-teaser.jpeg" alt="">
       </div>
     
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/philosophy/2018/02/18/on-meaningless-work.html" rel="permalink">On Meaningless work
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  4 minute read
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">I like reading books. Many people find them to be a good source of relaxation and enjoy the stories which aim to kindle the childish imagination which is bur...</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-      <div class="archive__item-teaser">
-        <img src=
-          
-            "/assets/images/code-quality-teaser.jpeg"
-          
-          alt="">
-      </div>
-    
-    <h2 class="archive__item-title" itemprop="headline">
+    <h2 class="archive__item-title no_toc" itemprop="headline">
       
         <a href="/management/2018/02/18/how-to-manage-software-quality.html" rel="permalink">How to manage software quality
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
-
-
-
-  6 minute read
-</p>
+  <p class="page__meta">
     
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
     <p class="archive__item-excerpt" itemprop="description">At the heart of the software project lifecycle is the development phase. I have described how projects get to this phase in my previous post on How to start ...</p>
   </article>
 </div>
@@ -1239,28 +1210,36 @@ multiply_and_print 10
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src=
-          
-            "/assets/images/startup-photos-teaser.jpeg"
-          
-          alt="">
+        <img src="/assets/images/startup-photos-teaser.jpeg" alt="">
       </div>
     
-    <h2 class="archive__item-title" itemprop="headline">
+    <h2 class="archive__item-title no_toc" itemprop="headline">
       
         <a href="/management/2018/02/13/starting-new-projects.html" rel="permalink">How to start new projects
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
-
-
-
-  4 minute read
-</p>
+  <p class="page__meta">
     
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
     <p class="archive__item-excerpt" itemprop="description">In the current world of business, IT is tightly integrated into every process of the company. Each operation is usually supported, controlled or monitored us...</p>
   </article>
 </div>
@@ -1274,28 +1253,36 @@ multiply_and_print 10
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
       <div class="archive__item-teaser">
-        <img src=
-          
-            "/assets/images/old-docs-teaser.jpeg"
-          
-          alt="">
+        <img src="/assets/images/old-docs-teaser.jpeg" alt="">
       </div>
     
-    <h2 class="archive__item-title" itemprop="headline">
+    <h2 class="archive__item-title no_toc" itemprop="headline">
       
         <a href="/analytics/2018/02/11/why-companies-need-text-mining.html" rel="permalink">Why companies need text mining
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
-
-
-
-  4 minute read
-</p>
+  <p class="page__meta">
     
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
     <p class="archive__item-excerpt" itemprop="description">The business world is littered with all kinds of documents which contain important data. Corporate employees have to process thousands of documents every day...</p>
   </article>
 </div>
@@ -1311,8 +1298,13 @@ multiply_and_print 10
 
     
       <div class="search-content">
-        <div class="search-content__inner-wrap"><input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term..." />
-    <div id="results" class="results"></div></div>
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
 
       </div>
     
@@ -1332,14 +1324,13 @@ multiply_and_print 10
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Miroslav Semerad. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Miroslav Semerad. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
 
     
   <script src="/assets/js/main.min.js"></script>
-  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
 
 
 

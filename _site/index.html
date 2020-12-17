@@ -1,7 +1,7 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
-  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Minimal Mistakes Jekyll Theme 4.21.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
 -->
@@ -10,8 +10,11 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Homepage of Miroslav Semerad</title>
-<meta name="description" content="Welcome to my personal website! I’m a senior analytics engineer, backend developer, data scientist and a hobby game developer.">
+<meta name="description" content="Welcome to my personal website! I’m a Senior Full Stack Developer and Data Engineer from Slovakia.">
 
+
+  <meta name="author" content="Miroslav Semerad">
+  
 
 
 <meta property="og:type" content="website">
@@ -20,6 +23,8 @@
 <meta property="og:title" content="Homepage of Miroslav Semerad">
 <meta property="og:url" content="http://localhost:4000/">
 
+
+  <meta property="og:description" content="Welcome to my personal website! I’m a Senior Full Stack Developer and Data Engineer from Slovakia.">
 
 
 
@@ -39,9 +44,16 @@
 
 
 
-
-
-
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Miroslav Semerad",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
 
 
 
@@ -62,8 +74,9 @@
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
 
-<!--[if IE ]>
+<!--[if IE]>
   <style>
     /* old IE unsupported flexbox fixes */
     .greedy-nav .site-title {
@@ -109,9 +122,12 @@
     <div class="masthead__menu">
       <nav id="site-nav" class="greedy-nav">
         
-        <a class="site-title" href="/">Homepage of Miroslav Semerad</a>
+        <a class="site-title" href="/">
+          Homepage of Miroslav Semerad
+          
+        </a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/about/" >About</a>
+              <a href="/about/">About</a>
             </li></ul>
         
         <button class="search__toggle" type="button">
@@ -142,12 +158,8 @@
 
 
 
-
-
-
-
 <div class="page__hero"
-  style=" "
+  style=" background-image: url('');"
 >
   
     <img src="/assets/images/title.jpeg" alt="" class="page__hero-image">
@@ -170,8 +182,6 @@
   
     <div class="author__avatar">
       
-
-      
         <img src="/assets/images/bio-foto.jpg" alt="Miroslav Semerad" itemprop="image">
       
     </div>
@@ -182,9 +192,10 @@
       <h3 class="author__name" itemprop="name">Miroslav Semerad</h3>
     
     
-      <p class="author__bio" itemprop="description">
-        I'm a senior analytics engineer, backend developer, data scientist and a hobby game developer.
-      </p>
+      <div class="author__bio" itemprop="description">
+        <p>I’m a Senior Full Stack Developer and Data Engineer from Slovakia.</p>
+
+      </div>
     
   </div>
 
@@ -198,7 +209,7 @@
       
         <li>
           <a href="https://miretz.github.io/about" itemprop="url">
-            <i class="fas fa-fw fa-link" aria-hidden="true"></i> Website
+            <i class="fas fa-fw fa-link" aria-hidden="true"></i><span class="label">Website</span>
           </a>
         </li>
       
@@ -262,6 +273,7 @@
   </div>
 
 
+
   <div class="archive">
     
       <h1 id="page-title" class="page__title"></h1>
@@ -271,141 +283,167 @@
 <h3 class="archive__subtitle">Recent Posts</h3>
 
 
+
+
+<div class="entries-list">
   
+    
 
 
 
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title" itemprop="headline">
+    <h2 class="archive__item-title no_toc" itemprop="headline">
       
         <a href="/analytics/2019/07/01/data-manipulation-command-line.html" rel="permalink">Data manipulation from the UNIX command line
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
-
-
-
-  19 minute read
-</p>
+  <p class="page__meta">
     
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          19 minute read
+        
+      </span>
+    
+  </p>
+
+
     <p class="archive__item-excerpt" itemprop="description">In this article I’m going to demonstrate various tools from the UNIX command line which can be used for effective data manipulation. This guide is written ma...</p>
   </article>
 </div>
 
-
   
+    
 
 
 
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/philosophy/2018/02/18/on-meaningless-work.html" rel="permalink">On Meaningless work
-</a>
-      
-    </h2>
-    
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
-
-
-
-
-  4 minute read
-</p>
-    
-    <p class="archive__item-excerpt" itemprop="description">I like reading books. Many people find them to be a good source of relaxation and enjoy the stories which aim to kindle the childish imagination which is bur...</p>
-  </article>
-</div>
-
-
-  
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
+    <h2 class="archive__item-title no_toc" itemprop="headline">
       
         <a href="/management/2018/02/18/how-to-manage-software-quality.html" rel="permalink">How to manage software quality
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
-
-
-
-  6 minute read
-</p>
+  <p class="page__meta">
     
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
     <p class="archive__item-excerpt" itemprop="description">At the heart of the software project lifecycle is the development phase. I have described how projects get to this phase in my previous post on How to start ...</p>
   </article>
 </div>
 
-
   
+    
 
 
 
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title" itemprop="headline">
+    <h2 class="archive__item-title no_toc" itemprop="headline">
       
         <a href="/management/2018/02/13/starting-new-projects.html" rel="permalink">How to start new projects
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
-
-
-
-  4 minute read
-</p>
+  <p class="page__meta">
     
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
     <p class="archive__item-excerpt" itemprop="description">In the current world of business, IT is tightly integrated into every process of the company. Each operation is usually supported, controlled or monitored us...</p>
   </article>
 </div>
 
-
   
+    
 
 
 
 <div class="list__item">
   <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
     
-    <h2 class="archive__item-title" itemprop="headline">
+    <h2 class="archive__item-title no_toc" itemprop="headline">
       
         <a href="/analytics/2018/02/11/why-companies-need-text-mining.html" rel="permalink">Why companies need text mining
 </a>
       
     </h2>
     
-      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
 
-
-
-
-  4 minute read
-</p>
+  <p class="page__meta">
     
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
     <p class="archive__item-excerpt" itemprop="description">The business world is littered with all kinds of documents which contain important data. Corporate employees have to process thousands of documents every day...</p>
   </article>
 </div>
 
-
+  
+</div>
 
 
 
@@ -416,8 +454,13 @@
 
     
       <div class="search-content">
-        <div class="search-content__inner-wrap"><input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term..." />
-    <div id="results" class="results"></div></div>
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
 
       </div>
     
@@ -437,14 +480,13 @@
   </ul>
 </div>
 
-<div class="page__footer-copyright">&copy; 2019 Miroslav Semerad. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+<div class="page__footer-copyright">&copy; 2020 Miroslav Semerad. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
 
       </footer>
     </div>
 
     
   <script src="/assets/js/main.min.js"></script>
-  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
 
 
 

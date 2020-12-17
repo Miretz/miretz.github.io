@@ -4,41 +4,30 @@ title: About
 permalink: /about/
 ---
 
-Welcome to my personal website! I'm a senior analytics engineer, backend developer, data scientist and a hobby game developer.
+Welcome to my personal website! I'm a Senior Full Stack Developer & Data Engineer from Slovakia.
 
-My IT journey began in my high school years when I started to write simple applications in Delphi and 
-websites using PHP. During my college years I shifted my focus to Java, as there was a high
-demand for Java programmers at the time and I saw it as perfect way to begin my career in IT.
+My programming journey began in my high school years, when I first learned to code simple applications using [Delphi](https://www.embarcadero.com/products/delphi) and building dynamic websites using [PHP](https://www.php.net/), [HTML and CSS](https://www.w3.org/standards/webdesign/htmlcss.html). During my college years my focus has shifted to [Java](https://www.java.com/en/), as there was a high demand for Java Software Engineers at the time and I saw it as perfect way to begin my career in IT.
 
-I've spent most of my years as a Java developer working on complex enterprise applications.
-Working for a company that builds and sells [Records Management](https://en.wikipedia.org/wiki/Records_management) and
-[Information Governance](https://en.wikipedia.org/wiki/Information_governance) software made me realize 
-how hard it is for a company to correctly catalog huge amounts of documents.
-Companies lose track of important data in terabytes of various documents processed each day.
+I've spent most of my years as a Java Software Engineer developing large enterprise applications.
+Working for a company that provided custom solutions for [Records Management](https://en.wikipedia.org/wiki/Records_management) and
+[Information Governance](https://en.wikipedia.org/wiki/Information_governance) made me realize
+how hard it is for a company to correctly catalog huge amounts of data.
 
-I started to study how to mine unstructured data and how to extract valuable information from it.
-Understanding this enables companies gain insight into their data and also automate their processing.
+I've studied multiple data mining techniques to extract useful information from structured and unstructured sources.
+This knowledge allowed me to switch the direction of my career towards Data Engineering and Data Science.
 
-Currently as a member of the analytics team I'm working on both structured and unstructured data.
-As a data scientist with software engineering background, I'm involved in every phase of a product's life cycle.
-
-My language of choice is Python. It is ideal for building productive applications and at the same time provides powerful data exploration capabilities. I'm also actively using the R language for statistical data analysis and visualization.
-For both of these languages there are many powerful scientific libraries and strong community support.
+Currently as a member of the Analytics Products team I'm using my whole skillset to support all phases of data product development.
+This includes Frontend ([JavaScript](https://en.wikipedia.org/wiki/JavaScript), [TypeScript](https://www.typescriptlang.org/), [Angular](https://angular.io/)), Backend ([Node.js](https://nodejs.org/en/), [Python](https://www.python.org/), [Java](https://www.java.com/en/), [.NET](https://dotnet.microsoft.com/)) and Data ([Apache Spark](https://spark.apache.org/), [Databricks](https://databricks.com/), [Airflow](https://airflow.apache.org/)).
+I'm constantly exploring new technologies and use them on my various side-projects.
 
 If you want to keep in touch, you can find me on LinkedIn:
 [Miroslav Semerad](https://www.linkedin.com/in/miroslav-semerad-0b620154)
 
-
 ## More about me
 
-| Interests | Programming, Data Science, IT Management, Web Development, Game development |
-| Years of professional experience | 8 |
-| Programming Languages | Python, R, Java, C++, JavaScript |
-| Tools | JetBrains IDE's, Jupyter Notebook, VSCode, RStudio, Docker, Atlassian products |
+| Interests | Software Engineering, Data Science, Web Development |
+| Years of professional experience | 9 |
+| Programming Languages | Python, Java, C#, JavaScript, TypeScript, C/C++, Rust |
+| Tools | JetBrains IDE's, Jupyter Notebook, Visual Studio Code, PowerBI, Docker, Atlassian products |
 | Methodologies | Agile Scrum, DevOps, Continuous Integration |
-| OS | Mac OSX, Windows, Linux |
-
-
-
-
-
+| OS | Mac OSX, Linux, Windows |
